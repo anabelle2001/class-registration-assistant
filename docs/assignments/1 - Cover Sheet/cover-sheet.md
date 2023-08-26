@@ -1,9 +1,15 @@
 ---
 title: Smart and private parking system using Blockchain and smart contracts
 author:
+<<<<<<< Updated upstream
 - Anabelle VanDenburgh
 - b
 - Connor Fitzgerald
+=======
+- a
+- Matt Stewart
+- c
+>>>>>>> Stashed changes
 - d
 ---
 
@@ -32,7 +38,7 @@ OUR product is more secure because it is built using Hyperledger, is easy to use
 
 # Group members:
 1. A
-2. B
+2. B: Matt Stewart
 3. C
 4. D
 
