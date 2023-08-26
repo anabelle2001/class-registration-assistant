@@ -1,15 +1,9 @@
 ---
 title: Smart and private parking system using Blockchain and smart contracts
 author:
-<<<<<<< Updated upstream
 - Anabelle VanDenburgh
-- b
-- Connor Fitzgerald
-=======
-- a
 - Matt Stewart
-- c
->>>>>>> Stashed changes
+- Connor Fitzgerald
 - d
 ---
 
