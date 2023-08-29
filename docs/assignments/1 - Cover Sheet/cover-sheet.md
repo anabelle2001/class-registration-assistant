@@ -58,8 +58,8 @@ A webpage that lists information about a particular section. This could include:
 |:---|:---:|:---:|:---:|:---:|
 | Database Design | X |   |   |   |
 | HTML / CSS | X |   |   |   |
-| Javascript | X |   |   |   |
-| Markdown | X |   |   |   |
+| Javascript | X |   | X |   |
+| Markdown | X |   | X |   |
 | Git | X |   |   |   |
-| Python | X |   |   |   |
+| Python | X |   | X |   |
 | Linux Server Administration | X |   |   |   |
