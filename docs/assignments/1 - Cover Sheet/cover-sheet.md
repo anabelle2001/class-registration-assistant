@@ -4,7 +4,7 @@ author:
 - Anabelle VanDenburgh
 - Matt Stewart
 - Connor Fitzgerald
-- S
+- Sierra Puwalowski
 ---
 
 # Abstract:
@@ -34,6 +34,6 @@ OUR product is more secure because it is built using Hyperledger, is easy to use
 1. Anabelle VanDenburgh
 2. Matt Stewart
 3. Connor Fitzgerald
-4. S
+4. Sierra Puwalowski
 
 # Group skills:
