@@ -7,16 +7,22 @@ author:
 - Connor Fitzgerald
 - Sierra Puwalowski
 date: 31 August 2023
-description: 
 ---
 
-# 0. Goal
-Help students discover relevant sections of CofC courses.
-Relevant, in this case, means:
+# 0. Vision
+FOR students trying to register for classes
+
+WHO are unable to find sections relevant to them,
+
+THE class registration assistant is a tool that helps them discover 
 
 - Courses that satisfy degree requirements
 - Sections taught by professors that they enjoy
 - Sections that are not full
+
+UNLIKE the default class registration tool, which does not show whether a class counts towards one's degree
+
+OUR product will incorporate graduation requirements into the system.
 
 # 1. Potential Deliverables
 ## 1.1 Section View
