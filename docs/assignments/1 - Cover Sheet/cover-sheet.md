@@ -1,39 +1,59 @@
 ---
-title: Smart and private parking system using Blockchain and smart contracts
+title: "Class Registration Assistant: Cover Sheet"
+subtitle: College of Charleston, CSCI362
 author:
 - Anabelle VanDenburgh
 - Matt Stewart
 - Connor Fitzgerald
-- S
+- Sierra Puwalowski
+date: 31 August 2023
+description: 
 ---
 
-# Abstract:
+# 0. Goal
+Help students discover relevant sections of CofC courses.
+Relevant, in this case, means:
 
-Between the years of 2012 and 2020 the United States has seen an increase of roughly 38.2 million vehicle registrations - an increase of around 4.7 million per year. This causes a growing shortage of locations for operators to park their vehicles thus causing new facilities to be built to house these cars - all the while homeowners and landowners leave vacant spaces that could be used by the growing number of motorists. ParkD is a web application that provides a parking service similar to how AirBnB provides a service for temporarily renting houses. After registering with personal, vehicle, and financial details, users can explore parking spots within a certain area that fit their desired criteria and then book these spots for the price listed by the host. These exchanges will occur through blockchain transactions through Hyperledger Fabric, allowing it to be secure through decentralization. Renters will be able to make money off their unused space, drivers will be able to find cheap and local parking, and the environment will benefit from less construction to compensate for the increasing number of vehicles.
+- Courses that satisfy degree requirements
+- Sections taught by professors that they enjoy
+- Sections that are not full
 
-# Vision:
-FOR drivers and property owners.
+# 1. Potential Deliverables
+## 1.1 Section View
+A webpage that lists all sections meeting a certain criteria. 
+Possible features include:
 
-WHO are looking for cheap parking and property owners who want to rent out their parking spaces.
+- Sort / Filter by
+    - column values
+    - degree requirements
+    - ratemyprofessors data
+- higlight sections taught by professors whose you've taken before
+- Automatically choose a Schedule based off of declared Major
 
-THE ParkD application is a parking service.
+## 1.2. Automated Sign-Up
+Backend infrastructure that helps students sign up for class.
+This could involve
 
-THAT connects drivers with parking space owners and helps drivers to search for cheap available parking
+- Reminders - The system could send emails / text when it's time to register
+- Automatic Registration - A student would select their desired classes ahead of time, and the program would use COFC's registration API to sign them up for specific classes
 
-relative to ordinary parking services.
+## 1.3. Detailed Section Information
+A webpage that lists information about a particular section. This could include:
+- exhaustive information (eg: all json data) about a section
+- A graph showing the history of open seats (to help students anticipate class capacity)
 
-UNLIKE BestParking, in that ParkD displays the type of parking environment making for better ease of
+# 2. Potential Integrations
+- Use a SQL database to store class info, changes, etc.
+- Accept and/or incentivize Ethereum (ETH) Donations/Payment
 
-use in finding the location by sight rather than street names. ParkD is also different from the local
+# 3. Group skills:
 
-competitor XpressPark in that it relies on decentralized technology for greater security.
-
-OUR product is more secure because it is built using Hyperledger, is easy to use, and is cheaper for users.
-
-# Group members:
-1. Anabelle VanDenburgh
-2. Matt Stewart
-3. Connor Fitzgerald
-4. S
-
-# Group skills:
+| Skill Name | Anabelle | Matt | Connor | Sierra |
+|:---|:---:|:---:|:---:|:---:|
+| Database Design | X |   |   |   |
+| HTML / CSS | X |   |   |   |
+| Javascript | X |   |   |   |
+| Markdown | X |   |   |   |
+| Git | X |   |   |   |
+| Python | X |   |   |   |
+| Linux Server Administration | X |   |   |   |
