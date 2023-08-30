@@ -57,7 +57,7 @@ A webpage that lists information about a particular section. This could include:
 | Skill Name | Anabelle | Matt | Connor | Sierra |
 |:---|:---:|:---:|:---:|:---:|
 | Database Design | X |   |   |   |
-| HTML / CSS | X |   |   |   |
+| HTML / CSS | X |   |   | X |
 | Javascript | X |   | X |   |
 | Markdown | X |   | X |   |
 | Git | X |   |   |   |
