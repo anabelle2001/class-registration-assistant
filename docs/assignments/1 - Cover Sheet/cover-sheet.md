@@ -14,17 +14,18 @@ FOR students trying to register for classes
 
 WHO are unable to find sections relevant to them,
 
-THE class registration assistant is a tool that helps them discover 
+THE Class Registration Assistant is a tool that helps them discover courses which:
 
-- Courses that satisfy degree requirements
-- Sections taught by professors that they enjoy
-- Sections that are not full
+i.   satisfy degree requirements,
+ii.  are taught by professors that they enjoy,
+iii. and are not full.
 
-UNLIKE the default class registration tool, which does not show whether a class counts towards one's degree
+this is UNLIKE the default class registration tool, which
 
-OUR product will incorporate graduation requirements into the system.
+iv.  *does not* show which classes meet degree requirements, and
+v.   *does not* show crowd-sourced professor feedback
 
-# 1. Potential Deliverables
+# 1. Deliverables
 ## 1.1 Section View
 A webpage that lists all sections meeting a certain criteria. 
 Possible features include:
@@ -32,34 +33,37 @@ Possible features include:
 - Sort / Filter by
     - column values
     - degree requirements
-    - ratemyprofessors data
-- higlight sections taught by professors whose you've taken before
-- Automatically choose a Schedule based off of declared Major
+    - ratemyprofessors data (stretch&nbsp;goal)
+
+- Highlight sections taught by professors whose you've taken before (stretch&nbsp;goal)
+- Automatically choose a Schedule based off of declared Major (stretch&nbsp;goal)
 
 ## 1.2. Automated Sign-Up
 Backend infrastructure that helps students sign up for class.
 This could involve
 
 - Reminders - The system could send emails / text when it's time to register
-- Automatic Registration - A student would select their desired classes ahead of time, and the program would use COFC's registration API to sign them up for specific classes
+- Automatic Registration - A student would select their desired classes ahead of time, and the program would use CofC's registration API to sign them up for specific classes (stretch&nbsp;goal)
 
 ## 1.3. Detailed Section Information
 A webpage that lists information about a particular section. This could include:
-- exhaustive information (eg: all json data) about a section
-- A graph showing the history of open seats (to help students anticipate class capacity)
+
+- Exhaustive information about a section (eg: a dump of the JSON data)
+- A graph showing the history of open seats, to help students anticipate class capacity.
 
 # 2. Potential Integrations
 - Use a SQL database to store class info, changes, etc.
-- Accept and/or incentivize Ethereum (ETH) Donations/Payment
+- Accept and/or incentivize Ethereum (ETH) Donations/Payment (stretch&nbsp;goal)
 
 # 3. Group skills:
 
-| Skill Name | Anabelle | Matt | Connor | Sierra |
-|:---|:---:|:---:|:---:|:---:|
-| Database Design | X |   |   |   |
-| HTML / CSS | X |   |   | X |
-| Javascript | X |   | X |   |
-| Markdown | X |   | X |   |
-| Git | X |   |   |   |
-| Python | X |   | X |   |
-| Linux Server Administration | X |   |   |   |
+| Skill Name                   | Anabelle | Matt | Connor | Sierra |
+| :---                         | :------: | :--: | :----: | :----: |
+| Java                         |     X    |  ?   |        |   ?    |
+| JavaScript                   |     X    |      |    X   |   ~    |
+| Python                       |     X    |      |    X   |        |
+| Pandoc / Markdown            |     X    |      |    X   |        |
+| HTML / CSS                   |     X    |      |        |   X    |
+| Databases                    |     X    |      |        |   ~    |
+| Git                          |     X    |      |        |        |
+| Linux Server Administration  |     X    |      |        |        |
