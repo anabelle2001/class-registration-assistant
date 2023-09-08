@@ -59,11 +59,11 @@ A webpage that lists information about a particular section. This could include:
 
 | Skill Name                   | Anabelle | Matt | Connor | Sierra |
 | :---                         | :------: | :--: | :----: | :----: |
-| Java                         |     X    |  ?   |        |   ?    |
-| JavaScript                   |     X    |      |    X   |   ~    |
-| Python                       |     X    |      |    X   |        |
-| Pandoc / Markdown            |     X    |      |    X   |        |
-| HTML / CSS                   |     X    |      |        |   X    |
-| Databases                    |     X    |      |        |   ~    |
-| Git                          |     X    |      |        |        |
-| Linux Server Administration  |     X    |      |        |        |
+| Python                       |   Yes    | Yes  |  Yes   |   -    |
+| HTML / CSS                   |   Yes    | Yes  |   -    |  Yes   |
+| JavaScript                   |   Yes    | Some |  Yes   |  Some  |
+| Pandoc / Markdown            |   Yes    |  -   |  Yes   |   -    |
+| Java                         |  Some    | Yes  |  Some  |  Some  |
+| Databases                    |   Yes    | Some |   -    |  Some  |
+| Git                          |   Yes    |  -   |   -    |   -    |
+| Linux Server Administration  |   Yes    |  -   |   -    |   -    |
