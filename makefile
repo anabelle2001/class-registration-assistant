@@ -4,6 +4,9 @@ SHELL := /bin/bash
 # into pandoc
 
 %.pdf: %.md
+	pandoc -F mermaid-filter "$<" -o "$@"
+	rm mermaid-filter.err
+
 %.tex: %.md
 	pandoc -F mermaid-filter "$<" -o "$@"
 	rm mermaid-filter.err
