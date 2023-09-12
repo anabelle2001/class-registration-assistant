@@ -16,6 +16,7 @@ baza hint:
 
 ## Existing Works 
 - assigned to Connor
+
 baza hint: 
 
 > Market Survey/related or existing works. what are the pros and cons of them? How your system will address these limitations? -->
@@ -57,6 +58,7 @@ Baza hint:
 
 ## Risk Analysis
 - Assigned to Matt
+
 I'm not 100% sure if he wants things that would risk non-delivery, or would risk causing harm
 
 
@@ -70,7 +72,7 @@ I'm not 100% sure if he wants things that would risk non-delivery, or would risk
 
 ## Budget
 - Nothing Required
-- Domain name 
+- Domain name
   - classes.anabelle.dev - Free
   - cougarclass.es - $20
   - cougarclasses.org - $8
