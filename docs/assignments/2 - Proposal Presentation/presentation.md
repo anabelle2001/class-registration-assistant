@@ -92,7 +92,32 @@ Baza hint:
 - will use mermaid.live to make gannt chart
 
 ```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
 
+    section SQL
+    Define Schema: SQLSchema, 2023-09-14, 7d
+
+    section AJAX Api
+    /api/sections/: sectionsApi, after SQLSchema, 3d
+
+    section Frontend - Table View of Sections
+    Unstyled HTML: baseHTML, 2023-09-14, 3d
+    CSS Styling [CSS]: CSS, after baseHTML, 7d
+    
+    Fetch & Store Section Data [JS]: fetchAndStore, after baseHTML sectionsApi, 3d
+    Populate Table With Data: populate, after fetchAndStore, 3d
+    Per-Column Sorting, Filtering [Stretch, JS]: sortAndFilter, after populate, 3d
+
+    section Scraper
+    fetchAllData():done, 2023-09-14, 3d
+    getRemainingSeats(CRN) -> int: 2023-09-14, 3d
+
+    
+
+
+    section Architecture Decisions
 ```
 
 ## Risk Analysis
@@ -122,8 +147,8 @@ I'm not 100% sure if he wants things that would risk non-delivery, or would risk
 
 <!--Links-->
 [Bun]:             bun.sh
-[Hono]:	           hono.dev
-[SQLite]:	   sqlite.org
+[Hono]:            hono.dev
+[SQLite]:          sqlite.org
 [Python]:          python.org
 [jQuery]:          jquery.com
 [Pandoc]:          pandoc.org
