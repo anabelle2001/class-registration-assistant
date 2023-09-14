@@ -36,7 +36,46 @@ baza hint:
 # How are we Building it?
 
 ## Proposed System Design
-- Assigned to Anabelle
+
+### Option A: Independent Scraper & Web-Server
+```mermaid
+graph LR
+    CofC[CofC's Course Database]
+    Scrape[Python Scraper]
+    SQL[SQL Server]
+    NodeJS[NodeJS / Bun Server]
+    Browser[Web Browser]
+
+    Scrape -->|Query| CofC
+    CofC -->|Respose| Scrape
+    Scrape -->|Cache Response in| SQL
+    
+    SQL -->|Provide Data To| NodeJS
+    NodeJS -->|Request Data Update| Scrape
+
+    NodeJS --> |Serve Static Webpages to| Browser
+
+    NodeJS <--> |AJAX API for Section Data| Browser
+
+```
+### Option B: Monolithic
+```mermaid
+graph LR
+    CofC[CofC's Course Database]
+    Scrape[Python Scraper]
+    SQL[Bun's Builtin SQLite DB]
+    Bun[Bun Server]
+    Browser[Web Browser]
+
+    Bun -->|Query| CofC
+    CofC -->|Respose| Bun
+    Bun <-->|Cache Course Data| SQL
+    
+
+    Bun --> |Serve Static Webpages to| Browser
+    Bun <--> |AJAX API for Section Data| Browser
+
+```
 
 ## Process
 - Assigned to Connor
