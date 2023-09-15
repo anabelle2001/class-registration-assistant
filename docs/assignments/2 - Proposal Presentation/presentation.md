@@ -2,6 +2,7 @@
 Title: Class Registration Assistant
 Author:
 - Anabelle VanDenburgh
+- Connor Fitzgerald
 # Add your name here!
 ---
 
@@ -40,11 +41,11 @@ baza hint:
 
 ## Process
 - Assigned to Connor
-- probably agile. 
-
-Baza hint: 
-
-> explain why
+- We will be using the Agile development model for our project because it offers several benefits.
+- 1. Early and Continuous Delivery: Agile prioritizes the delivery of working software early and often, which helps in identifying issues, gathering feedback, and making necessary adjustments early in the development process.
+- 2. Improved Quality: Frequent testing and quality assurance activities are integral to Agile. This results in higher software quality, as issues are detected and resolved promptly, reducing the chances of delivering a buggy product.
+- 3. Risk Management: Agile encourages risk mitigation through regular assessment and adaptation. By breaking down the project into smaller, manageable increments, it becomes easier to identify and manage risks effectively.
+- 4.  Customer involvement: Agile encourages active involvement of customers and end-users throughout the development process, ensuring that the product aligns with their expectations and needs.
 
 
 ## Timeline 
