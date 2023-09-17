@@ -110,13 +110,8 @@ ensuring that the product aligns with their expectations and needs.
 
 
 ## Timeline
-- Assigned to Anabelle
-- will probably get group approval for this
-- will use mermaid.live to make gannt chart
-
 ```mermaid
 gantt
-    title A Gantt Diagram
     dateFormat  YYYY-MM-DD
 
     section SQL
@@ -136,9 +131,6 @@ gantt
     section Scraper
     fetchAllData():done, 2023-09-14, 3d
     getRemainingSeats(CRN) -> int: 2023-09-14, 3d
-
-    
-
 
     section Architecture Decisions
 ```
