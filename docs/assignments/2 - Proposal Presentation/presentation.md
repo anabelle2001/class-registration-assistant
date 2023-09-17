@@ -192,10 +192,12 @@ timing constraints on a rolling basis.
   - classes.anabelle.dev - Free
   - cougarclass.es - $20
   - cougarclasses.org - $8
-- Self-Hosting with own computer - Free
+- Hosting:
+  - Self-Hosting with own computer - Free
+  - AWS Free Tier - Free
 
 ## Contingency Plans
-- We could probably use Apache if [Bun] becomes unstable
+- We could probably use Apache, SQLITE, and Node.js if [Bun] becomes unstable
 
 <!--Links-->
 [Bun]:             bun.sh
