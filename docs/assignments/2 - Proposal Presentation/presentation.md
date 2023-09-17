@@ -174,9 +174,9 @@ or is presented in a manner that makes it unintuitive or too difficult for end
 users to want to use it. As such, as end-users ourselves, the development team
 have our own list of additional functionality we want to implement to help 
 mitigate this risk. In addition, as part of the agile development process,
- implementing additional functionality, removing unused functionality, or 
- improving accessibility to the end user will be done based on feedback or 
- timing constraints on a rolling basis.
+implementing additional functionality, removing unused functionality, or 
+improving accessibility to the end user will be done based on feedback or 
+timing constraints on a rolling basis.
 
 ## Development Tools
 - [Bun](?)
