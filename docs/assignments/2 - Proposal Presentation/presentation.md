@@ -12,31 +12,41 @@ date: September 17, 2023
 # What are we Building?
 
 ## Project Idea
-- assigned to Sierra
+assigned to Sierra
 
 baza hint:
 
 > what is the problem that your system solves? give statistics !!!
 
 ## Existing Works
-- An existing work that we're trying to improve on is the College of Charleston class registration system.
-- The pros of this service
-- 1. You can't sign up for classes that conflict with your schedule.
-- 2. Shows you the fees that the classes will add to your bill.
-- 3. Has direct CRN lookup so you don't have to search for the class you want.
-- The cons of this service
-- 1. There are no recommendations for what classes to take, you instead must view degree works to see what classes you're missing.
-- 2. No reminders about when to sign up so if you miss your sign-ups you might not get a class you need for graduation.
-- 3. Have to compete with other students to get the classes you need for graduation.
+CofC's existing registration system has several pros/cons compared to our proposed system:
 
-- Our system will address these limitations by being able to filter classes by major and get recommendations for what classes to take based on major these two solutions simplify the registration process for students just looking to complete what they need for their major. The registration assistant will also send the student reminders about when registration starts and the registration assistant will automatically register the student for classes they desire ahead of time which eliminates the chance of missing sign-ups.
+#### Pros:
+1. You can't sign up for classes that conflict with your schedule.
+2. Shows you the fees that the classes will add to your bill.
+3. Has direct CRN lookup so you don't have to search for the class you want.
+
+#### Cons:
+1. There are no recommendations for what classes to take, you instead must view degree works to see what classes you're missing.
+2. No reminders about when to sign up so if you miss your sign-ups you might not get a class you need for graduation.
+3. Have to compete with other students to get the classes you need for graduation.
+
+<!-- Our system will address these limitations by being able to filter classes by major and get recommendations for what classes to take based on major these two solutions simplify the registration process for students just looking to complete what they need for their major. The registration assistant will also send the student reminders about when registration starts and the registration assistant will automatically register the student for classes they desire ahead of time which eliminates the chance of missing sign-ups. -->
+
+
+## Stakeholders
+
+### Customer: College of Charleston.
+The purpose of this project is to make it easier for their customers(CofC students) to manage their classes and schedules; CofC directly benefits from any improvement in this process. Will need to ensure their current methods of maintaining their class database do not significantly alter to ensure we can capture and process the data.
+
+### End User: Students
+Our project only covers the College of Charleston, and as such the only end users for this project will be students actively enrolled at CofC or those interested in enrolling. As development progresses, potential end-users may be contacted for testing/feedback purposes to improve the end product.
+
+### Dev Team: Our Group
+Handled by the project team, with potential outsourcing of beta testing for user feedback.
 
 
 
-## Stakeholders.
-- Customer: College of Charleston. The purpose of this project is to make it easier for their customers(CofC students) to manage their classes and schedules; CofC directly benefits from any improvement in this process. Will need to ensure their current methods of maintaining their class database do not significantly alter to ensure we can capture and process the data.
-- End User (Students): Our project only covers the College of Charleston, and as such the only end users for this project will be students actively enrolled at CofC or those interested in enrolling. As development progresses, potential end-users may be contacted for testing/feedback purposes to improve the end product.
-- Development Team/Maintenance (Us): Handled by the project team, with potential outsourcing of beta testing for user feedback.
 
 ## Requirements
 - assigned to Sierra
@@ -64,12 +74,30 @@ graph LR
 
 ```
 
-## Process
-- We will be using the Agile development model for our project because it offers several benefits.
-- 1. Early and Continuous Delivery: Agile prioritizes the delivery of working software early and often, which helps in identifying issues, gathering feedback, and making necessary adjustments early in the development process.
-- 2. Improved Quality: Frequent testing and quality assurance activities are integral to Agile. This results in higher software quality, as issues are detected and resolved promptly, reducing the chances of delivering a buggy product.
-- 3. Risk Management: Agile encourages risk mitigation through regular assessment and adaptation. By breaking down the project into smaller, manageable increments, it becomes easier to identify and manage risks effectively.
-- 4.  Customer involvement: Agile encourages the active involvement of customers and end-users throughout the development process, ensuring that the product aligns with their expectations and needs.
+## Process - Why use Agile?
+
+### 1. Early and Continuous Delivery:
+Agile prioritizes the delivery of working software early and often,
+which helps in identifying issues, gathering feedback,
+and making necessary adjustments early in the development process.
+
+### 2. Improved Quality:
+Frequent testing and quality assurance activities are integral to Agile.
+This results in higher software quality,
+as issues are detected and resolved promptly,
+reducing the chances of delivering a buggy product.
+
+### 3. Risk Management:
+Agile encourages risk mitigation through regular assessment and adaptation. 
+By breaking down the project into smaller,
+manageable increments,
+it becomes easier to identify and manage risks effectively.
+
+## Process - Why use Agile? (Continued)
+
+### 4. Customer involvement:
+Agile encourages the active involvement of customers and end-users throughout the development process,
+ensuring that the product aligns with their expectations and needs.
 
 
 ## Timeline
@@ -109,7 +137,6 @@ gantt
 ## Risk Analysis, 1-2/4
 
 ### Time Risk: 
-
 All projects suffer the inherent risk of going over their alloted development time.
 Whether it be due to troubleshooting, difficulty in implementation/launching,
 or changes to the project based on feedback causing it to extend past deadlines,
@@ -118,7 +145,6 @@ To mitigate time issues, the project will be developed using an Agile developmen
 model, as covered previously.
 
 ### Database Risk: 
-
 As no personal user data will be stored on an external server, 
 there is minimal risk to stakeholders in the event of a database breach;
 all personally-identifiable information(PII) will be maintained at the user-level.
@@ -127,7 +153,6 @@ As such, no mitigation is needed for this risk.
 ## Risk Analysis, 3/4
 
 ### Resource Risk:
-
 To prevent development from being delayed or outright stopped due to lack of proper development tools or funds,
 this project will be run using public, open-source software on personal equipment, developed primarily in a Linux environment. 
 In the event of individual personal equipment failure, there are backup laptops available for use in development as needed, 
