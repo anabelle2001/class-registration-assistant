@@ -1,9 +1,12 @@
 ---
-Title: Class Registration Assistant
-Author:
+title: "Class Registration Assistant:"
+subtitle: A Project Proposal
+author:
 - Anabelle VanDenburgh
 - Connor Fitzgerald
 - Matt Stewart
+institute: College of Charleston
+date: September 17, 2023
 ---
 
 # What are we Building?
