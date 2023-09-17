@@ -49,12 +49,21 @@ Handled by the project team, with potential outsourcing of beta testing for user
 
 
 ## Requirements
-- assigned to Sierra
+assigned to Sierra
 
 ### Functional
+- Example Functional Requirement 1
+- Example Functional Requirement 2
+- Example Functional Requirement 3
+
 ### Non-Functional
+- Example Non-Functional Requirement 1
+- Example Non-Functional Requirement 2
+- Example Non-Functional Requirement 3
+
 
 # How are we Building it?
+
 
 ## Proposed System Design
 ```mermaid
