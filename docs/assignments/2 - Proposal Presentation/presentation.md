@@ -8,7 +8,7 @@ Author:
 
 # What are we Building?
 
-## Project Idea 
+## Project Idea
 - assigned to Sierra
 
 baza hint:
@@ -31,9 +31,9 @@ baza hint:
 
 
 ## Stakeholders.
-- assigned to Matt
-- Explain the stakeholders with the role(s) of each stakeholder.
-- at least 3-4 stakeholders needed
+- Customer: College of Charleston. The purpose of this project is to make it easier for their customers(CofC students) to manage their classes and schedules; CofC directly benefits from any improvement in this process. Will need to ensure their current methods of maintaining their class database do not significantly alter to ensure we can capture and process the data.
+-End User (Students): Our project only covers the College of Charleston, and as such the only end users for this project will be students actively enrolled at CofC or those interested in enrolling. As development progresses, potential end-users may be contacted for testing/feedback purposes to improve the end product.
+-Development Team/Maintenance (Us): Handled by the project team, with potential outsourcing of beta testing for user feedback.
 
 ## Requirements
 - assigned to Sierra
