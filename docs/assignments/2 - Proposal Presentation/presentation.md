@@ -16,11 +16,18 @@ baza hint:
 > what is the problem that your system solves? give statistics !!!
 
 ## Existing Works 
-- assigned to Connor
+- An existing work that we're trying to improve on is the College of Charleston class registration system.
+- The pros of this service
+- 1. You can't sign up for classes that conflict with your schedule.
+- 2. Shows you the fees that the classes will add to your bill.
+- 3. Has direct CRN lookup so you don't have to search for the class you want.
+- The cons of this service
+- 1. There are no recommendations for what classes to take, you instead must view degree works to see what classes you're missing.
+- 2. No reminders about when to sign up so if you miss your sign-ups you might not get a class you need for graduation.
+- 3. Have to compete with other students to get the classes you need for graduation.
+ 
+- Our system will address these limitations by being able to filter classes by major and get recommendations for what classes to take based on major these two solutions simplify the registration process for students just looking to complete what they need for their major. The registration assistant will also send the student reminders about when registration starts and the registration assistant will automatically register the student for classes they desire ahead of time which eliminates the chance of missing sign-ups.
 
-baza hint: 
-
-> Market Survey/related or existing works. what are the pros and cons of them? How your system will address these limitations? -->
 
 
 ## Stakeholders. 
@@ -40,12 +47,11 @@ baza hint:
 - Assigned to Anabelle
 
 ## Process
-- Assigned to Connor
 - We will be using the Agile development model for our project because it offers several benefits.
 - 1. Early and Continuous Delivery: Agile prioritizes the delivery of working software early and often, which helps in identifying issues, gathering feedback, and making necessary adjustments early in the development process.
 - 2. Improved Quality: Frequent testing and quality assurance activities are integral to Agile. This results in higher software quality, as issues are detected and resolved promptly, reducing the chances of delivering a buggy product.
 - 3. Risk Management: Agile encourages risk mitigation through regular assessment and adaptation. By breaking down the project into smaller, manageable increments, it becomes easier to identify and manage risks effectively.
-- 4.  Customer involvement: Agile encourages active involvement of customers and end-users throughout the development process, ensuring that the product aligns with their expectations and needs.
+- 4.  Customer involvement: Agile encourages the active involvement of customers and end-users throughout the development process, ensuring that the product aligns with their expectations and needs.
 
 
 ## Timeline 
