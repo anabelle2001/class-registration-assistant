@@ -17,6 +17,7 @@ date: September 17, 2023
 ### Problem: 
 
 Current class registration tools:
+
 - Don't show if the classes meet degree requirements
 - Don't show crowd-sourced professor feedback
 - Currently requrire cross-referencing  websites
@@ -194,7 +195,7 @@ gantt
 - Many base functions for registration already exist in MyPortal. Goal of this project is to expand this functionality with additional quality-of-life improvements. Risk involved of implementing redundant or unused functionality. Mitigated by removing unused functionality and introducing requested functionality based on rolling testing, ideally with non-development team testers to provide additional feedback.
 
 ## Development Tools
-- [Bun](?)
+- [Bun]
 - [Hono]
 - [SQLite]
 - [Python]
