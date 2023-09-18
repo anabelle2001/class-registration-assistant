@@ -109,31 +109,68 @@ Agile encourages the active involvement of customers and end-users throughout th
 ensuring that the product aligns with their expectations and needs.
 
 
-## Timeline
+## Sprint Dates
+
+| Sprint Name                    | Ends on
+| ---                            | :----:  
+| 8 Sprints Left                 | 2023-09-24
+| 7 Sprints Left                 | 2023-10-01
+| 6 Sprints Left                 | 2023-10-08
+| 5 Sprints Left                 | 2023-10-15
+| 4 Sprints Left                 | 2023-10-22
+| 3 Sprints Left                 | 2023-10-29
+| 2 Sprints Left                 | 2023-11-05
+| Peinultimate Sprint            | 2023-11-12
+| Final Sprint                   | 2023-11-19
+| ~~Thanksgiving Week~~          | ~~2023-11-26~~
+| ~~Final Full Week of Classes~~ | ~~2023-12-03~~
+
+<!--
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
 
     section SQL
-    Define Schema: SQLSchema, 2023-09-14, 7d
+    Define Schema - User:               SQLUser, 2023-09-14, 1d
+    Define Schema - Section:            SQLSection, 2023-09-14, 1d
+    Define Schema - Rate my Professors: SQLRMP, 2023-09-14,1d
 
     section AJAX Api
-    /api/sections/: sectionsApi, after SQLSchema, 3d
+    /api/sections/ schema:          APIListSectionSchema, after SQLSection, 3d
+    /api/sections/ implementation:  APIListSection, after APIListSectionSchema jsonSQL, 3d
+    /api/section schema:            APISingleSectionSchema, after SQLSection, 3d
+    /api/section implementation:    APISingleSection, after APISingleSectionSchema jsonSQL, 3d
 
-    section Frontend - Table View of Sections
-    Unstyled HTML: baseHTML, 2023-09-14, 3d
-    CSS Styling [CSS]: CSS, after baseHTML, 7d
-    
-    Fetch & Store Section Data [JS]: fetchAndStore, after baseHTML sectionsApi, 3d
-    Populate Table With Data: populate, after fetchAndStore, 3d
-    Per-Column Sorting, Filtering [Stretch, JS]: sortAndFilter, after populate, 3d
+    section Frontend - Sections Table
+    Base HTML:                  tableBaseHTML, 2023-09-14, 3d
+    CSS:                        tableCSS, after tableBaseHTML, 7d
+    Fetch & Store Section Data: tableFetchAndStore, after tableBaseHTML APIListSectionSchema, 3d
+    Populate Table With Data:   tablePopulate, after tableFetchAndStore, 3d
+    Sorting:                    tableSorting, after tablePopulate, 1d
+    Filtering:                  tableFiltering, after tablePopulate, 1d
 
-    section Scraper
-    fetchAllData():done, 2023-09-14, 3d
+    section Frontend - Class Details
+    Base HTML:                          sectionHTML, 2023-09-14, 1d
+    CSS:                                sectionCSS, after sectionHTML, 1d
+    Fetch & Populate Section Data:      sectionFetch, after sectionHTML
+    Graph of Remaining Seats over Time: sectionGraph, after sectionHTML
+
+    section Accounts
+    /login HTML, CSS:                   authHTML
+    Authentication Tokens:              authCookie
+    Past Professors - user input HTML: 
+
+
+    fetchAllData():                done, 2023-09-14, 3d
     getRemainingSeats(CRN) -> int: 2023-09-14, 3d
 
-    section Architecture Decisions
+    section WebScraper
+    Rewrite auth code in node.js:    scraperRewriteNode
+    JSON <-> SQL Helper Functions:   jsonSQL, after scraperRewriteNode
+    
+
 ```
+-->
 
 ## Risk Analysis, 1-2/4
 
