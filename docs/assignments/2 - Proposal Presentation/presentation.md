@@ -5,6 +5,7 @@ author:
 - Anabelle VanDenburgh
 - Connor Fitzgerald
 - Matt Stewart
+- Sierra Puwalowski
 institute: College of Charleston
 date: September 17, 2023
 ---
@@ -12,11 +13,19 @@ date: September 17, 2023
 # What are we Building?
 
 ## Project Idea
-assigned to Sierra
+- 
+###Problem: 
+Current class registration tools:
+- Don't show if the classes meet degree requirements
+- Don't show crowd-sourced professor feedback
+- Currently requrire cross-referencing  websites
 
-baza hint:
+###Solution: 
+Create a single accessible tool that allows students to plan their next semester
 
-> what is the problem that your system solves? give statistics !!!
+###Benefits: 
+- Easier to find courses that satisfy degree requirements
+- Help to create a Schedule to fit the needs of the student
 
 ## Existing Works
 CofC's existing registration system has several pros/cons compared to our proposed system:
@@ -49,17 +58,16 @@ Handled by the project team, with potential outsourcing of beta testing for user
 
 
 ## Requirements
-assigned to Sierra
 
 ### Functional
-- Example Functional Requirement 1
-- Example Functional Requirement 2
-- Example Functional Requirement 3
+- Students should be able to search for classes by column values and degree requirements
+- Students should recieve reminders for when class registration opens
+- Students should be able to access additional information on sections
 
 ### Non-Functional
-- Example Non-Functional Requirement 1
-- Example Non-Functional Requirement 2
-- Example Non-Functional Requirement 3
+- Publication to a domain so that anyone with updated browsers should be able to fully experience the website
+- Website should be able to handle 40 simutaneous users
+- Website should have WCHE accessible colors
 
 
 # How are we Building it?
