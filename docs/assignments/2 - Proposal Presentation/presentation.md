@@ -69,7 +69,7 @@ Handled by the project team, with potential outsourcing of beta testing for user
 ### Non-Functional
 - Publication to a domain so that anyone with updated browsers should be able to fully experience the website
 - Website should be able to handle 40 simutaneous users
-- Website should have WCHE accessible colors
+- Website should have WCAG accessible colors
 
 
 # How are we Building it?
@@ -121,13 +121,13 @@ ensuring that the product aligns with their expectations and needs.
 
 | Sprint Name                    | Ends on
 | ---                            | :----:  
-| 8 Sprints Left                 | 2023-09-24
-| 7 Sprints Left                 | 2023-10-01
-| 6 Sprints Left                 | 2023-10-08
-| 5 Sprints Left                 | 2023-10-15
-| 4 Sprints Left                 | 2023-10-22
-| 3 Sprints Left                 | 2023-10-29
-| 2 Sprints Left                 | 2023-11-05
+| "8 Sprints Left"                 | 2023-09-24
+| "7 Sprints Left"                 | 2023-10-01
+| "6 Sprints Left"                 | 2023-10-08
+| "5 Sprints Left"                 | 2023-10-15
+| "4 Sprints Left"                 | 2023-10-22
+| "3 Sprints Left"                 | 2023-10-29
+| "2 Sprints Left"                 | 2023-11-05
 | Peinultimate Sprint            | 2023-11-12
 | Final Sprint                   | 2023-11-19
 | ~~Thanksgiving Week~~          | ~~2023-11-26~~
@@ -186,7 +186,9 @@ gantt
 - Inherent risk of going over allotted development time. To mitigate time issues, the project will be developed using an Agile development model, as covered previously.
 
 ### Database Risk:
-- No risk of database breach of user data as user data will be stored locally on user devices.
+- We'll mitigate priavcy concerns by storing sensitive user data in the browser instead of on our own servers.
+
+## Risk Analysis, Continued
 
 ### Resource Risk:
 - Potential risk of delayed development due to lack of tools/equipment. Mitigated by using open-source software and personal equipment, with backup laptops available if needed.
@@ -198,7 +200,6 @@ gantt
 - [Bun]
 - [Hono]
 - [SQLite]
-- [Python]
 - [jQuery]
 - [Pandoc]
 
@@ -213,7 +214,10 @@ gantt
   - AWS Free Tier - Free
 
 ## Contingency Plans
-- We could probably use Apache, SQLITE, and Node.js if [Bun] becomes unstable
+If we need to switch from [bun] to nodejs:
+
+- We'll use Apache to serve static content
+- We'll use SQLITE instead of the builtin SQL server
 
 <!--Links-->
 [Bun]:             bun.sh
