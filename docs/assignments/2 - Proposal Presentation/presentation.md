@@ -147,7 +147,6 @@ gantt
     /api/section schema:            APISingleSectionSchema, after SQLSection, 3d
     /api/section implementation:    APISingleSection, after APISingleSectionSchema jsonSQL, 3d
 
-<<<<<<< HEAD
     section Frontend - Sections Table
     Base HTML:                  tableBaseHTML, 2023-09-14, 3d
     CSS:                        tableCSS, after tableBaseHTML, 7d
@@ -155,15 +154,6 @@ gantt
     Populate Table With Data:   tablePopulate, after tableFetchAndStore, 3d
     Sorting:                    tableSorting, after tablePopulate, 1d
     Filtering:                  tableFiltering, after tablePopulate, 1d
-=======
-    section Frontend - Table View of Sections
-    Unstyled HTML: baseHTML, 2023-09-14, 3d
-    CSS Styling [CSS]: CSS, after baseHTML, 7d
-
-    Fetch & Store Section Data [JS]: fetchAndStore, after baseHTML sectionsApi, 3d
-    Populate Table With Data: populate, after fetchAndStore, 3d
-    Per-Column Sorting, Filtering [Stretch, JS]: sortAndFilter, after populate, 3d
->>>>>>> 1d09c431d7b2e95dce15530275cb48a8522b8a61
 
     section Frontend - Class Details
     Base HTML:                          sectionHTML, 2023-09-14, 1d
