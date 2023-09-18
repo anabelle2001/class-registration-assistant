@@ -13,17 +13,18 @@ date: September 17, 2023
 # What are we Building?
 
 ## Project Idea
-- 
-###Problem: 
+
+### Problem: 
+
 Current class registration tools:
 - Don't show if the classes meet degree requirements
 - Don't show crowd-sourced professor feedback
 - Currently requrire cross-referencing  websites
 
-###Solution: 
+### Solution: 
 Create a single accessible tool that allows students to plan their next semester
 
-###Benefits: 
+### Benefits: 
 - Easier to find courses that satisfy degree requirements
 - Help to create a Schedule to fit the needs of the student
 
