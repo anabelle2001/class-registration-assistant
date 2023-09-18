@@ -94,15 +94,13 @@ and making necessary adjustments early in the development process.
 Frequent testing and quality assurance activities are integral to Agile.
 This results in higher software quality,
 as issues are detected and resolved promptly,
-reducing the chances of delivering a buggy product.
+reducing the chances of bugs.
 
 ### 3. Risk Management:
-Agile encourages risk mitigation through regular assessment and adaptation.
+Agile encourages risk mitigation through regular assessment and adaptation. 
 By breaking down the project into smaller,
 manageable increments,
-it becomes easier to identify and manage risks effectively.
-
-## Process - Why use Agile? (Continued)
+it becomes easier to manage risks effectively.
 
 ### 4. Customer involvement:
 Agile encourages the active involvement of customers and end-users throughout the development process,
