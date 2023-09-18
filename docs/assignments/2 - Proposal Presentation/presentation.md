@@ -76,7 +76,7 @@ graph LR
     Bun -->|Query| CofC
     CofC -->|Respose| Bun
     Bun <-->|Cache Course Data| SQL
-    
+
 
     Bun --> |Serve Static Webpages to| Browser
     Bun <--> |AJAX API for Section Data| Browser
@@ -97,7 +97,7 @@ as issues are detected and resolved promptly,
 reducing the chances of delivering a buggy product.
 
 ### 3. Risk Management:
-Agile encourages risk mitigation through regular assessment and adaptation. 
+Agile encourages risk mitigation through regular assessment and adaptation.
 By breaking down the project into smaller,
 manageable increments,
 it becomes easier to identify and manage risks effectively.
@@ -123,7 +123,7 @@ gantt
     section Frontend - Table View of Sections
     Unstyled HTML: baseHTML, 2023-09-14, 3d
     CSS Styling [CSS]: CSS, after baseHTML, 7d
-    
+
     Fetch & Store Section Data [JS]: fetchAndStore, after baseHTML sectionsApi, 3d
     Populate Table With Data: populate, after fetchAndStore, 3d
     Per-Column Sorting, Filtering [Stretch, JS]: sortAndFilter, after populate, 3d
@@ -135,48 +135,19 @@ gantt
     section Architecture Decisions
 ```
 
-## Risk Analysis, 1-2/4
+## Risk Analysis
 
-### Time Risk: 
-All projects suffer the inherent risk of going over their alloted development time.
-Whether it be due to troubleshooting, difficulty in implementation/launching,
-or changes to the project based on feedback causing it to extend past deadlines,
-there is continual risk of not being able to follow our projected timeline.
-To mitigate time issues, the project will be developed using an Agile development
-model, as covered previously.
+### Time Risk:
+- Inherent risk of going over allotted development time. To mitigate time issues, the project will be developed using an Agile development model, as covered previously.
 
-### Database Risk: 
-As no personal user data will be stored on an external server, 
-there is minimal risk to stakeholders in the event of a database breach;
-all personally-identifiable information(PII) will be maintained at the user-level.
-As such, no mitigation is needed for this risk.
-
-## Risk Analysis, 3/4
+### Database Risk:
+- No risk of database breach of user data as user data will be stored locally on user devices.
 
 ### Resource Risk:
-To prevent development from being delayed or outright stopped due to lack of proper development tools or funds,
-this project will be run using public, open-source software on personal equipment, developed primarily in a Linux environment. 
-In the event of individual personal equipment failure, there are backup laptops available for use in development as needed, 
-with all project data being stored on the cloud to prevent catastrophic data loss in the event of equipment damage or loss. 
-Any additional costs for the project (such as server-related costs of hosting, domain name registration, etc.)
-will be handled by the development team on an as-needed basis.
-
-## Risk Analysis, 4/4
+- Potential risk of delayed development due to lack of tools/equipment. Mitigated by using open-source software and personal equipment, with backup laptops available if needed.
 
 ### Functionality Risk:
-The goal of this project is to create an easier process for CofC students to
-determine their class schedule, find appropriate classes, and overall improve
-the registration process we currently have access to via MyPortal. Due to the
-availability of base registration functionality already being accessible to end
-users, there is a risk involved in this project that it either does not bring
-any additional functionality to this process than what is currently available
-or is presented in a manner that makes it unintuitive or too difficult for end
-users to want to use it. As such, as end-users ourselves, the development team
-have our own list of additional functionality we want to implement to help 
-mitigate this risk. In addition, as part of the agile development process,
-implementing additional functionality, removing unused functionality, or 
-improving accessibility to the end user will be done based on feedback or 
-timing constraints on a rolling basis.
+- Many base functions for registration already exist in MyPortal. Goal of this project is to expand this functionality with additional quality-of-life improvements. Risk involved of implementing redundant or unused functionality. Mitigated by removing unused functionality and introducing requested functionality based on rolling testing, ideally with non-development team testers to provide additional feedback.
 
 ## Development Tools
 - [Bun](?)
