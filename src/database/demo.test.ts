@@ -6,7 +6,7 @@ import { pixarDB } from "./demo"
 describe('Demo Database', () => {
     it('Should have at least one entry',() => {
         expect(
-            pixarDB.query("select * from Movies").get()
+            pixarDB.query("SELECT * FROM Movies LIMIT 1").get()
         ).not.toBeNull()
     })
 
