@@ -12,9 +12,7 @@ describe('Demo Database', () => {
 
     it('Should contain "Cars" (2006)', () => {
         expect(
-            pixarDB
-                .query("select * from Movies where Title='Cars'")
-                .get()
+            pixarDB.query("select * from Movies where Title='Cars'").get()
         ).toMatchObject({
             ID: 7,
             Title: 'Cars',
@@ -26,9 +24,7 @@ describe('Demo Database', () => {
 
     it('Should not Contain "Planes" (2013)', ()=>{
         expect(
-            pixarDB
-                .query("select * from Movies where Title='Planes'")
-                .get()
+            pixarDB.query("select * from Movies where Title='Planes'").get()
         ).toBeNull()
     })
 })
