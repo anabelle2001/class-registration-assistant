@@ -7,6 +7,7 @@ import * as path from 'path';
 const __dirname = new URL('.', import.meta.url).pathname;
 const dbPath = path.join(__dirname, "demo.sqlite3");
 
+// console.log(dbPath)
 
 export const pixarDB: Database = new Database(dbPath);
 
