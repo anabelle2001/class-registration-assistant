@@ -1,41 +1,55 @@
+## Notes:
+Values for scheduleTypeDescription
+49.0%	 'Lecture'
+10.1%	 'Laboratory'
+8.8%	 'Online Exclusively'
+6.2%	 'Seminar'
+5.4%	 'Independent Study:Bach Essay'
+3.9%	 'Independent Study:Independent'
+3.5%	 'Independent Study:Studio'
+2.9%	 'Online Study &amp; Class Meetings'
+2.0%	 'Online + Scheduled Online Mtgs'
+
+
+
 [
   {
-    "id": 145013,
-    "term": "202410",
-    "courseReferenceNumber": "10001",
-    "partOfTerm": "1",
-    "courseNumber": "200",
-    "subject": "AAST",
-    "sequenceNumber": "01",
-    "scheduleTypeDescription": "Lecture",
-    "courseTitle": "Introduction to African American Studies",
-    "creditHours": null,
+    <!-- "id": 145013, -->
+    <!-- "term": "202410", -->
+    "courseReferenceNumber": "10001", //CRN of course
+    "partOfTerm": "1", //used to identify whether a course is full-semester, express 1, or express 2.
+    <!-- "courseNumber": "200", -->
+    <!-- "subject": "AAST", -->
+    "sequenceNumber": "01", //section number
+    "scheduleTypeDescription": "Lecture", //Used to create IndependentStudy, Online variables
+    "courseTitle": "Introduction to African American Studies",//stored on server in courses api?
+    <!-- "creditHours": null, (null for 86% of classes) -->
     "maximumEnrollment": 30,
     "enrollment": 30,
     "seatsAvailable": 0,
     "waitCapacity": 0,
     "waitCount": 0,
     "waitAvailable": 0,
-    "crossList": null,
+    <!-- "crossList": null,
     "crossListCapacity": null,
     "crossListCount": null,
-    "crossListAvailable": null,
-    "creditHourHigh": null,
-    "creditHourLow": 3,
-    "creditHourIndicator": null,
-    "openSection": false,
-    "linkIdentifier": null,
-    "isSectionLinked": false,
+    "crossListAvailable": null, --> //this is null for 93% of classes. i don't know what it does
+    <!-- "creditHourHigh": null, -->//null for most classes.
+    "creditHourLow": 3, //becomes credit Hours. 
+    <!-- "creditHourIndicator": null, -->
+    "openSection": false, //may be removed, iff this can be derived by capacity.
+    <!-- "linkIdentifier": null, -->
+    <!-- "isSectionLinked": false, -->
     "courseName": "AAST200",
     "faculty": [
       {
         "bannerId": "24349",
-        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
-        "courseReferenceNumber": "10001",
+        <!-- "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator", -->
+        <!-- "courseReferenceNumber": "10001", -->
         "displayName": "Mahoney, Antron",
         "emailAddress": "mahoneyad@cofc.edu",
         "primaryIndicator": true,
-        "term": "202410"
+        <!-- "term": "202410" -->
       }
     ],
     "meetingsFaculty": [
@@ -45,25 +59,41 @@
         "courseReferenceNumber": "10001",
         "faculty": [],
         "meetingTime": {
-          "building": "MYBK",
+          <!-- "sunday": false,
+          "monday": true,
+          "tuesday": false,
+          "wednesday": true
+          "thursday": false,
+          "friday": true,
+          "saturday": false, --> //turns into meetsOn
+
+
+          "beginTime": "1000", //rename to begins
+          "endTime": "1050", //rename to ends
+          
+          <!-- 
           "campus": "M",
-          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
-	  "classDuration": "1000-1050",
-          "creditHourSession": 3.0,
-          "endDate": "12/11/2023",
-          "hoursWeek": 2.5,
-          "meetingScheduleType": "LEC",
-          "meetingType": "CLAS",
-	  "meetsOn": "m-w-f"
-          "room": "302",
-          "startDate": "08/22/2023",
-          "term": "202410",
-	  
+          "campusDescription": "Main",
+          "buildingDescription": "MAYBANK HALL",
+          "building": "MYBK",
+          "room": "302", 
+          --> //turns into "place": "MYBK 302"
+          <!-- "category": "01", -->
+          <!-- "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator", -->
+          <!-- "courseReferenceNumber": "10001", -->
+          <!-- "creditHourSession": 3.0, -->
+          <!-- "endDate": "12/11/2023", -->
+          <!-- "hoursWeek": 2.5, -->
+          <!-- "meetingScheduleType": "LEC", -->
+          <!-- "meetingType": "CLAS", -->
+          <!-- "meetingTypeDescription": "Class", -->
+          <!-- "startDate": "08/22/2023", Covered by Sequence Number-->
+          <!-- "term": "202410", -->
         },
         "term": "202410"
       }
     ],
-    "reservedSeatSummary": null,
+    <!-- "reservedSeatSummary": null, -->
     "sectionAttributes": [
       {
         "code": "REIU",
@@ -72,28 +102,5 @@
         "isZTCAttribute": false,
         "termCode": "202410"
       }
-    ],
-    "online": "false"
+    ]
   }
-
-
-
-Ignoring "class":"net.hedtech.banner.student.schedule.SectionSessionDecorator"... etc. as requested
-
-removed Monday - Sunday variables and replaced them with meetsOn variable which can either be m-w-f or t-r
-
-replaced subjectCourse with courseName
-
-removed campusDescription, subjectDescription, buildingDescription, meetingTypeDescription, termDesc. Didn't really seem necessary, the abbreviated verison isn't hard to interpret.
-
-combine beginTime and endTime and rename to classDuration 
-
-instead of doing instructionalMethod, instructionalMethodDescription, just do a boolean that is online: true/false.
-
-removed CRN from meetingsFaculty, didn't seem necessary to have in that category.
-
-removed category, doesn't seem to help clairfy anything.
-
-Independent study courses are keeping a couple outliers to the rest of the courses for a json file, was wondering if we had the capability to separate these into two API's to shorten this one down substantially.
-
-I don't know if we need all of the waitlist variables so I left them in for now.
