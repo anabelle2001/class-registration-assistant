@@ -143,18 +143,24 @@ gantt
     Define Schema - Rate my Professors: SQLRMP, 
 
     section AJAX Api
-    /api/demo schema and impl.:     APIDemo, {8SL}
-    /api/sections/ schema:          APIListSectionSchema, {8SL}
-    /api/sections/ implementation:  APIListSection, {7SL}
+    /api/demo schema and impl.:     APIDemo, {8SL-7SL}
+    /api/sections/ schema:          APIListSectionSchema, {8SL} - Tuesday - demo data
+    /iapi/sections/ implementaton:  APIListSection, {7SL} - anabelle, connor
     
     section Frontend - Sections Table
-    Base HTML:                  tableBaseHTML {8SL}
-    CSS:                        tableCSS {8SL}
-    Fetch, Store, Populate Data:tableFetchAndStore {7SL}
-    Sorting, Filtering:         tableFS {7SL}
+    Barebones HTML:             tableBaseHTML {8SL} done
+    CSS Formatting:             tableCSS {7SL} - sierra
+    Fetch, Store, Populate Data:tableFetchAndStore {7SL} - post thursday - sierra, connor
+    Sorting, Filtering:         tableFS {7SL} 
     Searching - Syntax:         tableSearchSchema {7SL}
 
-    section Frontend - Class Details
+    section WebScraper
+    Basic Download Each Section:    scraperRewriteNode, {7SL} Anabelle, Matt
+    Fetch Section Prerequisites:    fetchPrereqs
+
+    section Single Section View
+    /api/section schema:                APISingleSectionSchema 
+    /api/section implementation:        APISingleSection
     Base HTML:                          sectionHTML
     CSS:                                sectionCSS
     Fetch & Populate Section Data:      sectionFetch
@@ -164,15 +170,6 @@ gantt
     /login HTML, CSS:                   authHTML
     Authentication Tokens:              authCookie
     Past Professors - user input HTML: 
-
-    section WebScraper
-    Basic Download Each Section:    scraperRewriteNode, {7SL}
-    Fetch Section Prerequisites:    fetchPrereqs
-
-    section Single Section View
-    /api/section schema:            APISingleSectionSchema 
-    /api/section implementation:    APISingleSection
-
 
     section UI/UX
     Draft Prototype:                                UIDraft
@@ -188,13 +185,9 @@ gantt
     section Interactive Degree Checker
     create form to ask start year, majors:
     
-
-
     section Mutli-Year Course Planning
     Create recursive requirements solver:
     Document fall/spring only classes:
-
-    
 
     section Share Courselist
     create json represen   
