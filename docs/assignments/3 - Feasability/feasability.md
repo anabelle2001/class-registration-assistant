@@ -9,7 +9,7 @@ institute: College of Charleston
 date: September 26, 2023
 
 toc: yes
-colorlinks: yes
+# colorlinks: yes
 links-as-notes: true
 ---
 
@@ -116,13 +116,13 @@ ensuring that the product aligns with their expectations and needs.
 
 | Sprint Name                    | Ends on
 | ---                            | :----:  
-| "8 Sprints Left"                 | 2023-09-24
-| "7 Sprints Left"                 | 2023-10-01
-| "6 Sprints Left"                 | 2023-10-08
-| "5 Sprints Left"                 | 2023-10-15
-| "4 Sprints Left"                 | 2023-10-22
-| "3 Sprints Left"                 | 2023-10-29
-| "2 Sprints Left"                 | 2023-11-05
+| "8 Sprints Left"               | 2023-09-24
+| "7 Sprints Left"               | 2023-10-01
+| "6 Sprints Left"               | 2023-10-08
+| "5 Sprints Left"               | 2023-10-15
+| "4 Sprints Left"               | 2023-10-22
+| "3 Sprints Left"               | 2023-10-29
+| "2 Sprints Left"               | 2023-11-05
 | Peinultimate Sprint            | 2023-11-12
 | Final Sprint                   | 2023-11-19
 | ~~Thanksgiving Week~~          | ~~2023-11-26~~
@@ -134,58 +134,58 @@ gantt
     dateFormat  YYYY-MM-DD
 
     section SQL
-    Define Schema - Section:            SQLSection, {8SL}
-    Define Schema - Rate my Professors: SQLRMP, 
+    Define Schema - Section:            SQLSection, 2023-09-17, 2023-09-28
+    Define Schema - Rate my Professors: SQLRMP
 
     section AJAX Api
-    /api/demo schema and impl.:     APIDemo, {8SL-7SL}
-    /api/sections/ schema:          APIListSectionSchema, {8SL} - Tuesday - demo data
-    /iapi/sections/ implementaton:  APIListSection, {7SL} - anabelle, connor
+    /api/demo schema and impl.:     done, APIDemo, 2023-09-17, 2023-09-24
+    /api/sections/ schema:          APIListSectionSchema, 2023-09-17, 2023-09-26
+    /api/sections/ implementaton:   APIListSection, 2023-09-24, 2023-09-28
     
     section Frontend - Sections Table
-    Barebones HTML:             tableBaseHTML {8SL} done
-    CSS Formatting:             tableCSS {7SL} - sierra
-    Fetch, Store, Populate Data:tableFetchAndStore {7SL} - post thursday - sierra, connor
-    Sorting, Filtering:         tableFS {7SL} 
-    Searching - Syntax:         tableSearchSchema {7SL}
+    Barebones HTML:             done, tableBaseHTML, 2023-09-17, 2023-09-24
+    CSS Formatting:             tableCSS, 2023-09-17, 2023-09-28
+    Fetch, Store, Populate Data:tableFetchAndStore, 2023-09-28, 2023-10-01
+    Sorting, Filtering:         tableFS, 2023-10-01, 2023-10-08
+    Searching - Syntax:         tableSearchSchema, 2023-10-01, 2023-10-08
 
-    section WebScraper
-    Basic Download Each Section:    scraperRewriteNode, {7SL} Anabelle, Matt
-    Fetch Section Prerequisites:    fetchPrereqs
-
-    section Single Section View
-    /api/section schema:                APISingleSectionSchema 
-    /api/section implementation:        APISingleSection
-    Base HTML:                          sectionHTML
-    CSS:                                sectionCSS
-    Fetch & Populate Section Data:      sectionFetch
-    Graph of Remaining Seats over Time: sectionGraph
-
-    section Accounts
-    /login HTML, CSS:                   authHTML
-    Authentication Tokens:              authCookie
-    Past Professors - user input HTML: 
-
-    section UI/UX
-    Draft Prototype:                                UIDraft
-    Create Paper Prototype:                         UIPaper
-    Test Paper Prototype with Students, Teachers:   UIPaperTest
-
-    section Storing Degree Requirements
-    Create schema (json, SQL):                                 ReqCourseSchema
-    Manually add 2023 Gen-ED REQs:                             ReqCourseInitial
-    Create web form to add degree requirements:                ReqCourseForm
-    Use web form to add requirements (all majors, many years): ReqCourseBackfill
-
-    section Interactive Degree Checker
-    create form to ask start year, majors:
-    
-    section Mutli-Year Course Planning
-    Create recursive requirements solver:
-    Document fall/spring only classes:
-
-    section Share Courselist
-    create json represen   
+    %% section WebScraper
+    %% Basic Download Each Section:    scraperRewriteNode, 2023-09-28, 2023-10-01
+    %% Fetch Section Prerequisites:    fetchPrereqs, 2023-10-01, 2023-10-08
+%% 
+    %% section Single Section View
+    %% /api/section schema:                APISingleSectionSchema 
+    %% /api/section implementation:        APISingleSection
+    %% Base HTML:                          sectionHTML
+    %% CSS:                                sectionCSS
+    %% Fetch & Populate Section Data:      sectionFetch
+    %% Graph of Remaining Seats over Time: sectionGraph
+%% 
+    %% section Accounts
+    %% /login HTML, CSS:                   authHTML
+    %% Authentication Tokens:              authCookie
+    %% Past Professors - user input HTML: 
+%% 
+    %% section UI/UX
+    %% Draft Prototype:                                UIDraft
+    %% Create Paper Prototype:                         UIPaper
+    %% Test Paper Prototype with Students, Teachers:   UIPaperTest
+%% 
+    %% section Storing Degree Requirements
+    %% Create schema (json, SQL):                                 ReqCourseSchema
+    %% Manually add 2023 Gen-ED REQs:                             ReqCourseInitial
+    %% Create web form to add degree requirements:                ReqCourseForm
+    %% Use web form to add requirements (all majors, many years): ReqCourseBackfill
+%% 
+    %% section Interactive Degree Checker
+    %% create form to ask start year, majors:
+    %% 
+    %% section Mutli-Year Course Planning
+    %% Create recursive requirements solver:
+    %% Document fall/spring only classes:
+%% 
+    %% section Share Courselist
+    %% create json represen   
 ```
 
 # Risk Analysis:
