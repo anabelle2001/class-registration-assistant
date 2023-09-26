@@ -133,52 +133,75 @@ ensuring that the product aligns with their expectations and needs.
 | ~~Thanksgiving Week~~          | ~~2023-11-26~~
 | ~~Final Full Week of Classes~~ | ~~2023-12-03~~
 
-<!--
+## Gannt
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
 
     section SQL
-    Define Schema - User:               SQLUser, 2023-09-14, 1d
-    Define Schema - Section:            SQLSection, 2023-09-14, 1d
-    Define Schema - Rate my Professors: SQLRMP, 2023-09-14,1d
+    Define Schema - Section:            SQLSection, {8SL}
+    Define Schema - Rate my Professors: SQLRMP, 
 
     section AJAX Api
-    /api/sections/ schema:          APIListSectionSchema, after SQLSection, 3d
-    /api/sections/ implementation:  APIListSection, after APIListSectionSchema jsonSQL, 3d
-    /api/section schema:            APISingleSectionSchema, after SQLSection, 3d
-    /api/section implementation:    APISingleSection, after APISingleSectionSchema jsonSQL, 3d
-
+    /api/demo schema and impl.:     APIDemo, {8SL}
+    /api/sections/ schema:          APIListSectionSchema, {8SL}
+    /api/sections/ implementation:  APIListSection, {7SL}
+    
     section Frontend - Sections Table
-    Base HTML:                  tableBaseHTML, 2023-09-14, 3d
-    CSS:                        tableCSS, after tableBaseHTML, 7d
-    Fetch & Store Section Data: tableFetchAndStore, after tableBaseHTML APIListSectionSchema, 3d
-    Populate Table With Data:   tablePopulate, after tableFetchAndStore, 3d
-    Sorting:                    tableSorting, after tablePopulate, 1d
-    Filtering:                  tableFiltering, after tablePopulate, 1d
+    Base HTML:                  tableBaseHTML {8SL}
+    CSS:                        tableCSS {8SL}
+    Fetch, Store, Populate Data:tableFetchAndStore {7SL}
+    Sorting, Filtering:         tableFS {7SL}
+    Searching - Syntax:         tableSearchSchema {7SL}
 
     section Frontend - Class Details
-    Base HTML:                          sectionHTML, 2023-09-14, 1d
-    CSS:                                sectionCSS, after sectionHTML, 1d
-    Fetch & Populate Section Data:      sectionFetch, after sectionHTML
-    Graph of Remaining Seats over Time: sectionGraph, after sectionHTML
+    Base HTML:                          sectionHTML
+    CSS:                                sectionCSS
+    Fetch & Populate Section Data:      sectionFetch
+    Graph of Remaining Seats over Time: sectionGraph
 
     section Accounts
     /login HTML, CSS:                   authHTML
     Authentication Tokens:              authCookie
     Past Professors - user input HTML: 
 
-
-    fetchAllData():                done, 2023-09-14, 3d
-    getRemainingSeats(CRN) -> int: 2023-09-14, 3d
-
     section WebScraper
-    Rewrite auth code in node.js:    scraperRewriteNode
-    JSON <-> SQL Helper Functions:   jsonSQL, after scraperRewriteNode
+    Basic Download Each Section:    scraperRewriteNode, {7SL}
+    Fetch Section Prerequisites:    fetchPrereqs
+
+    section Single Section View
+    /api/section schema:            APISingleSectionSchema 
+    /api/section implementation:    APISingleSection
+
+
+    section UI/UX
+    Draft Prototype:                                UIDraft
+    Create Paper Prototype:                         UIPaper
+    Test Paper Prototype with Students, Teachers:   UIPaperTest
+
+    section Storing Degree Requirements
+    Create schema (json, SQL):                                 ReqCourseSchema
+    Manually add 2023 Gen-ED REQs:                             ReqCourseInitial
+    Create web form to add degree requirements:                ReqCourseForm
+    Use web form to add requirements (all majors, many years): ReqCourseBackfill
+
+    section Interactive Degree Checker
+    create form to ask start year, majors:
     
 
+
+    section Mutli-Year Course Planning
+    Create recursive requirements solver:
+    Document fall/spring only classes:
+
+    
+
+    section Share Courselist
+    create json represen   
+
+
+
 ```
--->
 
 ## Risk Analysis
 
