@@ -1,13 +1,12 @@
 ---
-title: "Class Registration Assistant:"
-subtitle: A Project Proposal
+title: "Feasability Report"
 author:
 - Anabelle VanDenburgh
 - Connor Fitzgerald
 - Matt Stewart
 - Sierra Puwalowski
 institute: College of Charleston
-date: September 17, 2023
+date: September 26, 2023
 ---
 
 ## Project Idea
@@ -206,7 +205,13 @@ gantt
 - [Pandoc]
 
 ## Budget
-- Nothing Required
+We don't anticipate any mission-critical expenses. However, we may use personal funds to purchase specific resources. One potential item is a domain name. if we choose to aquire a domain name, we'll purchase it for one year for no more than $12. 
+
+Another potential cost is OpenAI tokens - we may use openAI to generate computer-readable JSON objects describing historic academic major requirmeents based off of annual wayback machine snapshots of cofc webpages.
+
+there are hundreds of such documents that need to be encoded in order to ensure accuracy not just for recently-matriculated students, but also for students who declared their major in 2022,21,20,19, etc.
+
+- OpenAI tokens 
 - Domain name
   - classes.anabelle.dev - Free
   - cougarclass.es - $20
