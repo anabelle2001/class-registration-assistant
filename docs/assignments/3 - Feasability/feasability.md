@@ -9,7 +9,6 @@ institute: College of Charleston
 date: September 26, 2023
 
 toc: yes
-# colorlinks: yes
 links-as-notes: true
 ---
 
@@ -133,56 +132,48 @@ ensuring that the product aligns with their expectations and needs.
 gantt
     dateFormat  YYYY-MM-DD
 
-    section SQL
-    Define Schema - Section:            SQLSection, 2023-09-17, 2023-09-28
-    Define Schema - Rate my Professors: SQLRMP
-
     section AJAX Api
-    /api/demo schema and impl.:     done, APIDemo, 2023-09-17, 2023-09-24
-    /api/sections/ schema:          APIListSectionSchema, 2023-09-17, 2023-09-26
-    /api/sections/ implementaton:   APIListSection, 2023-09-24, 2023-09-28
-    
+    implement example / demo  API:     done, APIDemo, 2023-09-17, 2023-09-24
+    /api/sections/ schema:          APIListSectionSchema, 2023-09-17, 2023-09-28
+    /api/sections/ basic implementaton:   APIListSection, 2023-09-24, 2023-09-28
+    /api/sections/ meeting, teachers and sections implementaton:   APIListSectionAdvanced, after APIListSection,
+
     section Frontend - Sections Table
     Barebones HTML:             done, tableBaseHTML, 2023-09-17, 2023-09-24
-    CSS Formatting:             tableCSS, 2023-09-17, 2023-09-28
+    CSS Formatting:             tableCSS, 2023-09-22, 2023-09-28
     Fetch, Store, Populate Data:tableFetchAndStore, 2023-09-28, 2023-10-01
-    Sorting, Filtering:         tableFS, 2023-10-01, 2023-10-08
-    Searching - Syntax:         tableSearchSchema, 2023-10-01, 2023-10-08
+    Sorting, Filtering:         tableFS
+    Searching - Syntax:         tableSearchSchema
 
-    %% section WebScraper
-    %% Basic Download Each Section:    scraperRewriteNode, 2023-09-28, 2023-10-01
-    %% Fetch Section Prerequisites:    fetchPrereqs, 2023-10-01, 2023-10-08
-%% 
-    %% section Single Section View
-    %% /api/section schema:                APISingleSectionSchema 
-    %% /api/section implementation:        APISingleSection
-    %% Base HTML:                          sectionHTML
-    %% CSS:                                sectionCSS
-    %% Fetch & Populate Section Data:      sectionFetch
-    %% Graph of Remaining Seats over Time: sectionGraph
-%% 
-    %% section Accounts
-    %% /login HTML, CSS:                   authHTML
-    %% Authentication Tokens:              authCookie
-    %% Past Professors - user input HTML: 
-%% 
-    %% section UI/UX
-    %% Draft Prototype:                                UIDraft
-    %% Create Paper Prototype:                         UIPaper
-    %% Test Paper Prototype with Students, Teachers:   UIPaperTest
-%% 
-    %% section Storing Degree Requirements
-    %% Create schema (json, SQL):                                 ReqCourseSchema
-    %% Manually add 2023 Gen-ED REQs:                             ReqCourseInitial
-    %% Create web form to add degree requirements:                ReqCourseForm
-    %% Use web form to add requirements (all majors, many years): ReqCourseBackfill
-%% 
-    %% section Interactive Degree Checker
-    %% create form to ask start year, majors:
-    %% 
-    %% section Mutli-Year Course Planning
-    %% Create recursive requirements solver:
-    %% Document fall/spring only classes:
+    section WebScraper
+    Basic Download Each Section:    scraperRewriteNode, 2023-09-28, 2023-10-01
+    Fetch Section Prerequisites:    fetchPrereqs, after ReqCoursePrereqSchema,
+
+    section Single Section View
+    /api/section schema:                APISingleSectionSchema 
+    /api/section implementation:        APISingleSection, after APISingleSectionSchema,
+    /api/section Base HTML:                          sectionHTML
+    /api/section CSS:                                sectionCSS, after sectionHTML,
+    /api/section Fetch & Populate Section Data:      sectionFetch, after sectionHTML,
+    /api/section Graph of Remaining Seats over Time: sectionGraph
+ 
+    section UI/UX
+    Paper Mockup:                                done, UIDraft, 2023-09-17, 2023-09-22
+    Create Paper Prototype:                         UIPaper, after UIDraft,
+    Test Paper Prototype with Students, Teachers:   UIPaperTest
+ 
+    section Showing Academic Requirements
+    Create schema for academic Requirements (json, SQL):       ReqCourseSchema
+    Manually add 2023 Gen-ED REQs:                             ReqCourseInitial, after ReqCourseSchema,
+    backfill historic requirements:                            ReqCourseBackfill, after ReqCourseInitial,
+    create HTML, JS form to ask start year, majors:            ReqCoruseUserQuestions
+
+    create schema for course Prerequisites:                    ReqCoursePrereqSchema
+
+
+
+    Create recursive requirements solver: tmp2
+    Document fall/spring only classes: tmp3
 %% 
     %% section Share Courselist
     %% create json represen   
