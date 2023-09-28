@@ -20,7 +20,7 @@ describe('Class Data', () => {
             online: false,
             independentStudy: false,
             seatsMaximum: 22,
-            seatsAvailable: -3,
+            seatsAvaliable: -3,
             creditHours: 3,
             courseName: "CSCI362"
         })
