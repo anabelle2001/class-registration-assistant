@@ -15,10 +15,11 @@ describe('Class Data', () => {
             classDB.query("select * from section where courseName ='CSCI362'").get()
         ).toMatchObject({
             CRN: 10155,
-            partOfTerm: 1,
-            section: 1,
-            online: false,
-            independentStudy: false,
+            semesterID: 202410,
+            section: 1, //use 0,1 becasue sqlite doesn't support booleans
+            online: 0,
+            independentStudy: 0,
+            express: 0,
             seatsMaximum: 22,
             seatsAvaliable: -3,
             creditHours: 3,
