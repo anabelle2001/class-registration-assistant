@@ -19,9 +19,9 @@ describe('Class Data', () => {
             section: 1,
             online: false,
             independentStudy: false,
-            creditHours: 3,
-            maximumEnrollment: 22,
+            seatsMaximum: 22,
             seatsAvailable: -3,
+            creditHours: 3,
             courseName: "CSCI362"
         })
     })
