@@ -48,3 +48,6 @@ tex: $(shell \
 	| sed -e 's/.md/.tex/' \
 	| tr '\n' ' ' \
 )
+
+
+a3: docs/assignments/3\ -\ Feasability/feasability.pdf
