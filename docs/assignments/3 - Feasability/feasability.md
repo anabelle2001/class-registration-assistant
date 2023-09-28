@@ -88,24 +88,24 @@ graph LR
 # Process:
 We will use agile for this project for a number of reasons:
 
-### 1. Early and Continuous Delivery:
+## 1. Early and Continuous Delivery:
 Agile prioritizes the delivery of working software early and often,
 which helps in identifying issues, gathering feedback,
 and making necessary adjustments early in the development process.
 
-### 2. Improved Quality:
+## 2. Improved Quality:
 Frequent testing and quality assurance activities are integral to Agile.
 This results in higher software quality,
 as issues are detected and resolved promptly,
 reducing the chances of bugs.
 
-### 3. Risk Management:
+## 3. Risk Management:
 Agile encourages risk mitigation through regular assessment and adaptation. 
 By breaking down the project into smaller,
 manageable increments,
 it becomes easier to manage risks effectively.
 
-### 4. Customer involvement:
+## 4. Customer involvement:
 Agile encourages the active involvement of customers and end-users throughout the development process,
 ensuring that the product aligns with their expectations and needs.
 
@@ -128,7 +128,7 @@ ensuring that the product aligns with their expectations and needs.
 | ~~Final Full Week of Classes~~ | ~~2023-12-03~~
 
 ## Gannt
-```mermaid
+<!-- 
 gantt
     dateFormat  YYYY-MM-DD
 
@@ -177,7 +177,8 @@ gantt
 %% 
     %% section Share Courselist
     %% create json represen   
-```
+ -->
+![](./docs/assignments/3%20-%20Feasability/image.png)
 
 # Risk Analysis:
 
@@ -202,7 +203,7 @@ Many base functions for registration already exist in MyPortal. While the goal o
 
 [Minimum Lovable Product]: https://productschool.com/blog/product-strategy/minimum-lovable-product
 
-## Development Tools
+# Development Tools
 - For our backend, we are using [Bun]. Bun is a lightweight serverside javascript runtime produced by Oven. It comes with developer-friendly standard libraries for SQLite and password storage, a speedy package manager, and a builtin test suite based off of Jest.
 
 - To build our API, we're using [Hono].
@@ -216,7 +217,7 @@ Many base functions for registration already exist in MyPortal. While the goal o
   - it makes the process of modifying these diagrams easier (we can change the source code instead of futzing about in a visual WYSIWYG editor)
   - it integrates seamlessly with pandoc (with the npm package "mermaid filter") and github (which renders mermaid charts in it's preview of markdown files). 
 
-## Budget
+# Budget
 We don't anticipate any mission-critical expenses. However, we may use personal funds to purchase specific resources. One potential item is a domain name. if we choose to aquire a domain name, we'll purchase it for one year for no more than $12. 
 
 Another potential cost is OpenAI tokens - we may use openAI to generate computer-readable JSON objects describing historic academic major requirmeents based off of annual wayback machine snapshots of cofc webpages.
@@ -232,7 +233,7 @@ there are hundreds of such documents that need to be encoded in order to ensure 
   - Self-Hosting with own computer - Free
   - AWS Free Tier - Free
 
-## Contingency Plans
+# Contingency Plans
 If we need to switch from [Bun] to NodeJS:
 
 - We'll use Apache to serve static content
