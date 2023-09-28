@@ -6,13 +6,13 @@ import { classDB } from "./classData"
 describe('Class Data', () => {
     it('Should have at least one test',() => {
         expect(
-            classDB.query("SELECT * FROM Classes LIMIT 1")
+            classDB.query("SELECT * FROM section LIMIT 1")
         ).not.toBeNull()
     })
 
     it('Should contain "CSCI362"', () => {
         expect(
-            classDB.query("select * from Classes where courseName ='CSCI362'").get()
+            classDB.query("select * from section where courseName ='CSCI362'").get()
         ).toMatchObject({
             CRN: 10155,
             partOfTerm: 1,
