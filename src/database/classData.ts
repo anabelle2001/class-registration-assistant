@@ -1,7 +1,7 @@
 import { Database } from "bun:sqlite";
 import * as path from 'path';
 
-export const classDB: Database = new Database("database/classData.sqlite3");
+export const classDB: Database = new Database("sql/classData.sqlite3");
 
 
 // External Links: 

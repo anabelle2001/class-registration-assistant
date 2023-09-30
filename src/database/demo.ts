@@ -2,7 +2,7 @@
 // It's used to store the data used in ./api/demo.ts
 import { Database } from "bun:sqlite";
 
-export const pixarDB: Database = new Database("database/demo.sqlite3");
+export const pixarDB: Database = new Database("sql/demo.sqlite3");
 
 
 // External Links: 

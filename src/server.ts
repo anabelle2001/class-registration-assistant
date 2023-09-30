@@ -8,6 +8,6 @@ const app = new Hono();
 
 app.route('/api/demo/',demoAPI);
 app.route('/api/classes/',classAPI);
-app.get('/*',serveStatic({root: 'public'}))
+app.get('/*',serveStatic({root: '../public'}))
 
 export default app
