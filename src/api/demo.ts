@@ -11,11 +11,11 @@ const queries = {
 //By importing it into main.ts
 export const demoAPI = new Hono();
 
-demoAPI.get('/films', (c) => {
+demoAPI.get('/', (c) => {
     return c.json(queries.AllMovies.all())
 })
 
-demoAPI.get('/films/:id', (c) => {
+demoAPI.get('/:id', (c) => {
     const idFromURL = c.req.param().id;
     const movieData = queries.SpecificMovie.get(idFromURL)
     return c.json(movieData)
