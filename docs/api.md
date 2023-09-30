@@ -83,3 +83,27 @@ None.
           <!-- "category": "01", -->
           <!-- "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator", -->
           <!-- "courseReferenceNumber": "10001", -->
+          <!-- "creditHourSession": 3.0, -->
+          <!-- "endDate": "12/11/2023", -->
+          <!-- "hoursWeek": 2.5, -->
+          <!-- "meetingScheduleType": "LEC", -->
+          <!-- "meetingType": "CLAS", -->
+          <!-- "meetingTypeDescription": "Class", -->
+          <!-- "startDate": "08/22/2023", Covered by Sequence Number-->
+          <!-- "term": "202410", -->
+        },
+        "term": "202410"
+      }
+    ],
+    <!-- "reservedSeatSummary": null, -->
+    "sectionAttributes": [
+      {
+        "code": "REIU",
+        "courseReferenceNumber": "10001",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202410"
+      }
+    ]
+  }
+]
