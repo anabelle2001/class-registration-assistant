@@ -1,19 +1,17 @@
 import { Hono } from 'hono'
 import { classDB } from '../database/classData'
 
-const queries = { 
-    AllClasses: classDB.query("SELECT CRN, courseName FROM section"),
-    SpecificClass: classDB.query("SELECT * FROM section WHERE CRN = $1"),
-}
+const queryAllClasses = classDB.query("SELECT * FROM section");
 
 export const classAPI = new Hono();
 
-classAPI.get('/classes', (c) => {
-    return c.json(queries.AllClasses.all())
+classAPI.get('/', (c) => {
+    let resposeJSON = queryAllClasses.all()
+    return c.json(resposeJSON)
 })
 
-classAPI.get('/classes/:CRN', (c) => {
-    const crnFromURL = c.req.param().CRN;
-    const classData = queries.SpecificClass.get(crnFromURL)
-    return c.json(classData)
-})
+// classAPI.get('/classes/:CRN', (c) => {
+//     const crnFromURL = c.req.param().CRN;
+//     const classData = queries.SpecificClass.get(crnFromURL)
+//     return c.json(classData)
+// })
