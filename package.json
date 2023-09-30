@@ -4,7 +4,7 @@
   },
   
   "scripts": {
-    "dev": "bun run --hot ./server.ts"
+    "dev": "bun run --hot ./src/server.ts"
   },
 
   "devDependencies": {
