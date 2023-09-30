@@ -4,7 +4,7 @@ import { classDB } from "./classData"
 //For more info on writing tests, see <https://bun.sh/docs/test/writing>
 
 describe('Class Data', () => {
-    it('Should have at least one test',() => {
+    it('Should have at least one class',() => {
         expect(
             classDB.query("SELECT * FROM section LIMIT 1")
         ).not.toBeNull()
