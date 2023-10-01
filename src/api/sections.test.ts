@@ -25,4 +25,8 @@ describe('Demo API', () => {
         expect(responseJSON).toBeArray()
         expect(responseJSON).not.toBeArrayOfSize(0)
     })
+
+    it('should respond gracefully when given a bad request',async () => {
+         
+    })
 })
