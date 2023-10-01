@@ -15,7 +15,7 @@ On Failure | Returns an empty array.
 Get a list of classes for Fall 2023
 ### Request:
 ```js
-fetch("/api/section?semesterID=202410")
+fetch("/api/section/?semesterID=202410")
 ```
 
 ### Response:
