@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { pixarDB } from '../database/demo'
 
+//this is a comment
 //We have to construct queries before executing them.
 const queries = {
     AllMovies: pixarDB.query("SELECT ID,Title FROM Movies"),
