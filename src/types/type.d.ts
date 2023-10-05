@@ -22,6 +22,6 @@ export type Section = {
     creditHours: number;
     courseName: string;
 
-    Faculty: Faculty[];
-    Schedule: Schedule[];
+    faculty: Faculty[];
+    schedule: Schedule[];
 }
