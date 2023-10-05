@@ -1,6 +1,6 @@
 import { Database, Statement } from "bun:sqlite";
 import * as path from 'path';
-import { Faculty, Schedule, Section } from "../types/type";
+import { Faculty, Schedule, Section } from "../types";
 
 class ClassDB {
     static instance: ClassDB;

@@ -1,3 +1,4 @@
+//used
 export type Faculty = {
     FID: number;
     Name: string;
@@ -12,12 +13,12 @@ export type Schedule = {
 }
 
 export type Section = {
-    CRN: number;
+    CRN: number; 
     semesterID: number;
-    express: number;
+    express: 0 | 1 | 2;
     section: number;
-    online: number;
-    independentStudy: number;
+    online: 0 | 1 | 2;
+    independentStudy: 0 | 1;
     seatsMaximum: number;
     creditHours: number;
     courseName: string;
@@ -25,3 +26,9 @@ export type Section = {
     faculty: Faculty[];
     schedule: Schedule[];
 }
+
+export type Semester = {
+    SID: number;
+    name: string;
+}
+
