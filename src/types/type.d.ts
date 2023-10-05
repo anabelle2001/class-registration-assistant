@@ -1,18 +1,17 @@
-type Faculty = {
+export type Faculty = {
     FID: number;
     Name: string;
     email: string;
 }
 
-type Schedule = {
+export type Schedule = {
     weekdays: string;
     begins: number;
     ends: number;
     room: string;
 }
 
-
-type Section = {
+export type Section = {
     CRN: number;
     semesterID: number;
     express: number;
