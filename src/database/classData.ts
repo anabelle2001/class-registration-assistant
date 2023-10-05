@@ -13,7 +13,7 @@ class ClassDB {
     }
 
     writeToSQLite() {
-
+        
     }
 
     loadFromSQLite() {
@@ -32,9 +32,9 @@ class ClassDB {
         this.data = basicSectionData;
     }
     
-    static getInstance(): ClassDB{
+    static getInstance(path:string): ClassDB{
         if(this.instance == undefined){
-            this.instance = new ClassDB("sql/classData.sqlite3");
+            this.instance = new ClassDB(path);
             return this.instance;
         } else {
             return this.instance;
@@ -42,7 +42,7 @@ class ClassDB {
     }
 };
 
-export let classDB = ClassDB.getInstance();
+export let classDB = ClassDB.getInstance("sql/classData.sqlite3");
 
 // External Links: 
 // [1]: https://bun.sh/docs/api/sqlite
