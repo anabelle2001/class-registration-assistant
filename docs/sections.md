@@ -44,6 +44,7 @@ fetch("/api/section/?semesterID=202410")
         "weekdays": "m-w-f",//Meets on mondays, wednesdays, and fridays
         "begins": "1000", //24-Hour start time
         "ends": "1050", //24-Hour end time
+        "room": "MYBK 302"//
       }
     ],
   }
