@@ -1,39 +1,69 @@
 ---
-title: Smart and private parking system using Blockchain and smart contracts
+title: "Class Registration Assistant: Cover Sheet"
+subtitle: College of Charleston, CSCI362
 author:
 - Anabelle VanDenburgh
 - Matt Stewart
 - Connor Fitzgerald
 - Sierra Puwalowski
+date: 31 August 2023
 ---
 
-# Abstract:
+# 0. Vision
+FOR students trying to register for classes
 
-Between the years of 2012 and 2020 the United States has seen an increase of roughly 38.2 million vehicle registrations - an increase of around 4.7 million per year. This causes a growing shortage of locations for operators to park their vehicles thus causing new facilities to be built to house these cars - all the while homeowners and landowners leave vacant spaces that could be used by the growing number of motorists. ParkD is a web application that provides a parking service similar to how AirBnB provides a service for temporarily renting houses. After registering with personal, vehicle, and financial details, users can explore parking spots within a certain area that fit their desired criteria and then book these spots for the price listed by the host. These exchanges will occur through blockchain transactions through Hyperledger Fabric, allowing it to be secure through decentralization. Renters will be able to make money off their unused space, drivers will be able to find cheap and local parking, and the environment will benefit from less construction to compensate for the increasing number of vehicles.
+WHO are unable to find sections relevant to them,
 
-# Vision:
-FOR drivers and property owners.
+THE Class Registration Assistant is a tool that helps them discover courses which:
 
-WHO are looking for cheap parking and property owners who want to rent out their parking spaces.
+i.   satisfy degree requirements,
+ii.  are taught by professors that they enjoy,
+iii. and are not full.
 
-THE ParkD application is a parking service.
+this is UNLIKE the default class registration tool, which
 
-THAT connects drivers with parking space owners and helps drivers to search for cheap available parking
+iv.  *does not* show which classes meet degree requirements, and
+v.   *does not* show crowd-sourced professor feedback
 
-relative to ordinary parking services.
+# 1. Deliverables
+## 1.1 Section View
+A webpage that lists all sections meeting a certain criteria. 
+Possible features include:
 
-UNLIKE BestParking, in that ParkD displays the type of parking environment making for better ease of
+- Sort / Filter by
+    - column values
+    - degree requirements
+    - ratemyprofessors data (stretch&nbsp;goal)
 
-use in finding the location by sight rather than street names. ParkD is also different from the local
+- Highlight sections taught by professors whose you've taken before (stretch&nbsp;goal)
+- Automatically choose a Schedule based off of declared Major (stretch&nbsp;goal)
 
-competitor XpressPark in that it relies on decentralized technology for greater security.
+## 1.2. Automated Sign-Up
+Backend infrastructure that helps students sign up for class.
+This could involve
 
-OUR product is more secure because it is built using Hyperledger, is easy to use, and is cheaper for users.
+- Reminders - The system could send emails / text when it's time to register
+- Automatic Registration - A student would select their desired classes ahead of time, and the program would use CofC's registration API to sign them up for specific classes (stretch&nbsp;goal)
 
-# Group members:
-1. Anabelle VanDenburgh
-2. Matt Stewart
-3. Connor Fitzgerald
-4. Sierra Puwalowski
+## 1.3. Detailed Section Information
+A webpage that lists information about a particular section. This could include:
 
-# Group skills:
+- Exhaustive information about a section (eg: a dump of the JSON data)
+- A graph showing the history of open seats, to help students anticipate class capacity.
+
+# 2. Potential Integrations
+- Use a SQL database to store class info, changes, etc.
+- Accept and/or incentivize Ethereum (ETH) Donations/Payment (stretch&nbsp;goal)
+
+# 3. Group skills:
+
+| Skill Name                   | Anabelle | Matt | Connor | Sierra |
+| :---                         | :------: | :--: | :----: | :----: |
+| Python                       |   Yes    | Yes  |  Yes   |   -    |
+| HTML / CSS                   |   Yes    | Yes  |   -    |  Yes   |
+| JavaScript                   |   Yes    | Some |  Yes   |  Some  |
+| Pandoc / Markdown            |   Yes    |  -   |  Yes   |   -    |
+| Java                         |  Some    | Yes  |  Some  |  Some  |
+| Databases                    |   Yes    | Some |   -    |  Some  |
+| Git                          |   Yes    |  -   |   -    |   -    |
+| Linux Server Administration  |   Yes    |  -   |   -    |   -    |
