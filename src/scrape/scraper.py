@@ -4,14 +4,13 @@ import requests
 import json 
 from bs4 import BeautifulSoup
 import time
-import pickle
 
 ROOT_URL = "ssb.cofc.edu"
 
 class ellucianConnector():
     def __init__(self,domain):
         #If we don't specify a semester here, then ellucian will handle our authentication request but we won't be able to access specific data later
-        dummySemesterID = "202310"
+        dummySemesterID = "202410"
         self.domain = domain
 
         handshakeURL = f'https://{domain}/StudentRegistrationSsb/ssb/term/termSelection?mode=search'
@@ -71,7 +70,7 @@ class ellucianConnector():
 
     def getSemesters(
         self
-    ):
+    ) -> list:
         url = f"https://{self.domain}/StudentRegistrationSsb/ssb/classSearch/getTerms?offset=0&max=0"
 
         response = self.session.get(url)
@@ -79,19 +78,18 @@ class ellucianConnector():
         return json.loads(response.text)
 
 
-	# session = createSession(ROOT_URL,date)
+if __name__ == '__main__':
+    instance = ellucianConnector('ssb.cofc.edu')
 
-	# try: 
-	# 	data = []
-	# 	for i in range(0, 4000, 50):
-	# 		print(f"getting classes for n={i}")
-	# 		nxt = getClasses(session,date,50,i)
-	# 		print(nxt['data'])
-	# 		if not nxt['success']: break
-	# 		data.extend(nxt['data'])
-	# 		time.sleep(3)
-	# except Exception as e:
-	# 	print(f"oops: {e}")
-	# finally:
-	# 	print(f"<DATA>{data}</DATA>")
+    root_url = "ssb.cofc.edu"
+    date = '202410'
+    supportedCommands = {
+        'getClassesPaginated':instance.getClassesPaginated,
+        'getSemesters': instance.getSemesters,
+    }
+    data = []
 
+    while True:
+        (command, *args) = input().split()
+        output = supportedCommands[command](*args)
+        print(output)
