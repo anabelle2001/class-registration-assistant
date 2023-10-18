@@ -6,63 +6,80 @@ from bs4 import BeautifulSoup
 import time
 import pickle
 
-def createSession(baseURL,datecode):
-	handshakeURL = f'https://{baseURL}/StudentRegistrationSsb/ssb/term/termSelection?mode=search'
-	auth_session = requests.Session()
-	auth_response = auth_session.get(handshakeURL)
-	auth_response_parser = BeautifulSoup(auth_response.text,'html.parser')
-	auth_token = auth_response_parser.find('meta',{'name':'synchronizerToken'}).attrs['content']
+ROOT_URL = "ssb.cofc.edu"
 
-	final_headers = {
-		'Accept':'application/json, text/javascript, */*; q=0.01',
-		'Accept-Encoding':'gzip, deflate, br',
-		'Accept-Language':'en-CA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
-		'Cookie':f'JSESSIONID={auth_session.cookies["JSESSIONID"]}',
-		'Connection':'keep-alive',
-		'Host':baseURL,
-		'Referer':(
-			f'https://{baseURL}/StudentRegistrationSsb/ssb/classSearch/classSearch' 
-		),
-		'User-Agent':(
-			'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-			'(KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
-		),
-		'X-Synchronizer-Token':auth_token,
-		'X-Requested-With':'XMLHttpRequest',
-	}
-	
-	provisional_headers = {
-		** final_headers,
-		'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
-		'Accept':'*/*',
-	}
+class ellucianConnector():
+    def __init__(self,domain):
+        #If we don't specify a semester here, then ellucian will handle our authentication request but we won't be able to access specific data later
+        dummySemesterID = "202310"
+        self.domain = domain
 
-	auth_session.post(
-		f'https://{baseURL}/StudentRegistrationSsb/ssb/term/search?mode=search',
-		data=f'term={datecode}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=',
-		headers=provisional_headers
-	)
+        handshakeURL = f'https://{domain}/StudentRegistrationSsb/ssb/term/termSelection?mode=search'
 
-	auth_session.headers = final_headers
-	return auth_session
+        self.session = requests.Session()
+        auth_response = self.session.get(handshakeURL)
+        auth_response_parser = BeautifulSoup(auth_response.text,'html.parser')
+        auth_token = auth_response_parser.find('meta',{'name':'synchronizerToken'}).attrs['content']
 
-def getClasses(
-	auth_session,
-	datecode,
-	pageMaxSize=50,
-	pageOffset=0
-):
-	subj = None
+        final_headers = {
+            'Accept':'application/json, text/javascript, */*; q=0.01',
+            'Accept-Encoding':'gzip, deflate, br',
+            'Accept-Language':'en-CA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Cookie':f'JSESSIONID={self.session.cookies["JSESSIONID"]}',
+            'Connection':'keep-alive',
+            'Host':domain,
+            'Referer':(
+                f'https://{domain}/StudentRegistrationSsb/ssb/classSearch/classSearch' 
+            ),
+            'User-Agent':(
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                '(KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
+            ),
+            'X-Synchronizer-Token':auth_token,
+            'X-Requested-With':'XMLHttpRequest',
+        }
+        
+        provisional_headers = {
+            ** final_headers,
+            'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
+            'Accept':'*/*',
+        }
 
-	second_url = f"https://{root_url}/StudentRegistrationSsb/ssb/searchResults/searchResults?{'txt_subject={subj}&' if subj else ''}txt_term={datecode}&startDatepicker=&endDatepicker=&pageOffset={pageOffset}&pageMaxSize={pageMaxSize}&sortColumn=courseReferenceNumber&sortDirection=asc"
+        self.session.post(
+            f'https://{domain}/StudentRegistrationSsb/ssb/term/search?mode=search',
+            data=f'term={dummySemesterID}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=',
+            headers=provisional_headers
+        )
 
-	final = auth_session.get(second_url)
-	return json.loads(final.text)
+        self.session.headers = final_headers
 
-if __name__ == "__main__":
-	root_url = "ssb.cofc.edu"
-	date = '202410'
-	# session = createSession(root_url,date)
+
+    def getClassesPaginated(
+        self,
+        semester_id,
+        pageMaxSize=50,
+        pageOffset=0
+    ):
+        subj = None
+
+        url = f"https://{self.domain}/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term={semester_id}&startDatepicker=&endDatepicker=&pageOffset={pageOffset}&pageMaxSize={pageMaxSize}&sortColumn=courseReferenceNumber&sortDirection=asc"
+
+        response = self.session.get(url)
+
+        return json.loads(response.text)
+
+
+    def getSemesters(
+        self
+    ):
+        url = f"https://{self.domain}/StudentRegistrationSsb/ssb/classSearch/getTerms?offset=0&max=0"
+
+        response = self.session.get(url)
+
+        return json.loads(response.text)
+
+
+	# session = createSession(ROOT_URL,date)
 
 	# try: 
 	# 	data = []
