@@ -8,7 +8,7 @@ function waitFor(milliseconds: number){
     })
 }
 
-class DatabaseUpdater {
+export class DatabaseUpdater {
     constructor(){
         const proc = Bun.spawn(['/usr/bin/python3', './scraper.py'])
     }
