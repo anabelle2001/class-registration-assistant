@@ -1,9 +1,9 @@
 import requests
 import json 
 from bs4 import BeautifulSoup
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
-class ellucianProxy():
+class ellucianConnector():
     def __init__(self,domain):
         #If we don't specify a semester here, then ellucian will handle our authentication request but we won't be able to access specific data later
         dummySemesterID = "202410"
@@ -50,13 +50,13 @@ class ellucianProxy():
 
     def getClassesPaginated(
         self,
-        semester_id,
+        semesterID,
         pageMaxSize=50,
         pageOffset=0
     ) -> str:
         subj = None
 
-        url = f"https://{self.domain}/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term={semester_id}&startDatepicker=&endDatepicker=&pageOffset={pageOffset}&pageMaxSize={pageMaxSize}&sortColumn=courseReferenceNumber&sortDirection=asc"
+        url = f"https://{self.domain}/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term={semesterID}&startDatepicker=&endDatepicker=&pageOffset={pageOffset}&pageMaxSize={pageMaxSize}&sortColumn=courseReferenceNumber&sortDirection=asc"
 
         response = self.session.get(url)
 
@@ -74,10 +74,27 @@ class ellucianProxy():
 if __name__ == '__main__':
     instance = ellucianConnector('ssb.cofc.edu')
 
-    app = Flask('foo')
+    app = Flask(__name__)
 
     @app.route('/getSemesters',methods=['GET'])
     def getData():
         return instance.getSemesters()
+
+    @app.route('/getClassesPaginated')
+    def getClassesPaginated():
+        if request.args.get('semesterID') is None:
+            return "can i have a <code>?semesterID=20xxxx</code> please? 🥺"
+
+        positionalArgs = {'pageMaxSize','pageOffset','semesterID'}
+        paramsReceived = set(request.args.keys())
+    
+        # We 
+        functionArgs = {
+            param: request.args.get(param) 
+            for param in paramsReceived if param in positionalArgs
+        }
+
+        print(functionArgs)
+        return instance.getClassesPaginated(**functionArgs)
 
     app.run()
