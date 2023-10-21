@@ -1,4 +1,10 @@
-export type sectionListResponse = {
+
+export type term = {
+    code: string
+    description: string
+}
+
+export type listSectionsResponse = {
     success: boolean
 
     /**The number of sections returned by the query*/
