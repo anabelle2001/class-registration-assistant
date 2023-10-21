@@ -1,13 +1,9 @@
-#!/usr/bin/python3
-
 import requests
 import json 
 from bs4 import BeautifulSoup
-import time
+from flask import Flask, jsonify
 
-ROOT_URL = "ssb.cofc.edu"
-
-class ellucianConnector():
+class ellucianProxy():
     def __init__(self,domain):
         #If we don't specify a semester here, then ellucian will handle our authentication request but we won't be able to access specific data later
         dummySemesterID = "202410"
@@ -52,44 +48,36 @@ class ellucianConnector():
 
         self.session.headers = final_headers
 
-
     def getClassesPaginated(
         self,
         semester_id,
         pageMaxSize=50,
         pageOffset=0
-    ):
+    ) -> str:
         subj = None
 
         url = f"https://{self.domain}/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term={semester_id}&startDatepicker=&endDatepicker=&pageOffset={pageOffset}&pageMaxSize={pageMaxSize}&sortColumn=courseReferenceNumber&sortDirection=asc"
 
         response = self.session.get(url)
 
-        return json.loads(response.text)
-
+        return response.text
 
     def getSemesters(
         self
-    ) -> list:
+    ) -> str:
         url = f"https://{self.domain}/StudentRegistrationSsb/ssb/classSearch/getTerms?offset=0&max=0"
 
         response = self.session.get(url)
 
-        return json.loads(response.text)
-
+        return response.text
 
 if __name__ == '__main__':
     instance = ellucianConnector('ssb.cofc.edu')
 
-    root_url = "ssb.cofc.edu"
-    date = '202410'
-    supportedCommands = {
-        'getClassesPaginated':instance.getClassesPaginated,
-        'getSemesters': instance.getSemesters,
-    }
-    data = []
+    app = Flask('foo')
 
-    while True:
-        (command, *args) = input().split()
-        output = supportedCommands[command](*args)
-        print(output)
+    @app.route('/getSemesters',methods=['GET'])
+    def getData():
+        return instance.getSemesters()
+
+    app.run()
