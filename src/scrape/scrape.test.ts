@@ -1,37 +1,41 @@
-import { describe, it, expect } from "bun:test"
+import { describe, it, expect, afterAll } from "bun:test"
 import {getAuthHeaders} from "./authenticate"
 import { getSemesters } from "./getSemesters"
 import { getClasses } from "./getClasses"
-import { term } from "./ellucianResponseTypes"
+import { listSectionsResponse, sectionResponse, term } from "./ellucianResponseTypes"
 
-// describe('authenticator', () => {
-//     it("should return without erroring", async () => {
-//         let headers = await getAuthHeaders("ssb.cofc.edu")
-//         console.log(headers);
-        
-//         expect(headers).not.toBeNil()
-//     })
-// })
+describe('getAuthHeaders()', () => {
+    it("should return without erroring", async () => {
+        let headers = await getAuthHeaders("ssb.cofc.edu")        
+        expect(headers).not.toBeNil()
+    })
+})
 
-// describe('getSemesters()', async () => {
+describe('getSemesters()', async () => {
 
-//     let response:term[];
+    let response:term[];
 
-//     await it("should return without erroring", async () => {
-//         response = await getSemesters()
-//     })
+    await it("should return without erroring", async () => {
+        response = await getSemesters()
+    })
 
-//     it("should return a list of at least one semester", ()=>{
-//         expect(response).toBeArray;
-//         expect(response.length).toBeGreaterThan(0)
-//     })
-// })
+    it("should return a list of at least one semester", ()=>{
+        expect(response).toBeArray;
+        expect(response.length).toBeGreaterThan(0)
+    })
+})
 
 describe('getClasses()', async() =>{
     let headers = await getAuthHeaders("ssb.cofc.edu")
+    let result: sectionResponse[];
 
     await it("should return without erroring",async () => {
-        let result = await getClasses('202410', headers)
-        console.log(result);
+        result = await getClasses('202410', headers,20,0)
     })
+
+    it("should return an array containing at least one section", ()=>{
+        expect(result).toBeArray()
+        expect(result[0]).not.toBeNil()
+    })
+    
 })
