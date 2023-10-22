@@ -95,8 +95,8 @@ export class DatabaseUpdater {
     }
 
 
-    terms: resTypes.term[]
-    termsLastUpdated: Date
+    terms: term[] = []
+    termsLastUpdated = new Date('1970-01-01Z00:00:00:000')
 
     async updateTerms() {
 

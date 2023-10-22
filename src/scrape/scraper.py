@@ -76,6 +76,11 @@ if __name__ == '__main__':
 
     app = Flask(__name__)
 
+    @app.route('/newIdentity',methods=['GET'])
+    def newIdentity():
+        instance = ellucianConnector('ssb.cofc.edu')
+        return "done"
+
     @app.route('/getSemesters',methods=['GET'])
     def getData():
         return instance.getSemesters()

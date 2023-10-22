@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
 
 // import { demoAPI } from './api/demo'
-import { sectionsAPI} from './api/sections'
+import { sectionsAPI } from './api/sections'
 import { listSemestersAPI } from './api/semesters'
 
 //this program will compile files from src/scripts to public/scripts in realtime
