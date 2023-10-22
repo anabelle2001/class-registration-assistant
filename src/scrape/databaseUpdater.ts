@@ -36,7 +36,7 @@ export class DatabaseUpdater {
         }
 
         //part three: figure out how many sections are listed in the given term.
-        let initialQueryURL = `http://127.0.0.1:5000/getClassesPaginated?pageMaxSize=0&pageOffset=0&semesterID=${termcode}'`
+        let initialQueryURL = `http://127.0.0.1:5000/getClassesPaginated?pageMaxSize=0&pageOffset=0&semesterID=${termcode}`
 
         let initialResponse = await fetch(initialQueryURL)
         let initialResponseTxt = await initialResponse.text() 
