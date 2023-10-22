@@ -28,7 +28,7 @@ export class DatabaseUpdater {
 
         //part two: make sure our list of terms / semesters is up to date,
         //          and make sure that the supplied termcode is valid.
-        this.updateTerms();
+        await this.updateTerms();
         if(!this.validTerm(termcode)){
             const err = `Cannot get sections for term/semester "${termcode}" because "${termcode}" is not a valid term `
 
