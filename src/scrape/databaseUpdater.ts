@@ -10,7 +10,7 @@ function waitFor(milliseconds: number){
 
 export class DatabaseUpdater {
     constructor(){
-        const proc = Bun.spawn(['/usr/bin/python3', './scraper.py'])
+        // const proc = Bun.spawn(['/usr/bin/python3', './scraper.py'])
     }
 
     async getSectionListResponse(
@@ -36,7 +36,7 @@ export class DatabaseUpdater {
         }
 
         //part three: figure out how many sections are listed in the given term.
-        let initialQueryURL = `http://localhost:5000/getClassesPaginated?pageMaxSize=0&pageOffset=0&semesterID=${termcode}'`
+        let initialQueryURL = `http://127.0.0.1:5000/getClassesPaginated?pageMaxSize=0&pageOffset=0&semesterID=${termcode}'`
 
         let initialResponse = await fetch(initialQueryURL)
         let initialResponseTxt = await initialResponse.text() 
@@ -58,7 +58,7 @@ export class DatabaseUpdater {
         let responses: resTypes.listSectionsResponse[] = []
         let retryCount = 0;
         for(let offset = 0; offset < numSections; offset+= sectionsPerQuery){
-            const url = `http://localhost:5000/getClassesPaginated?pageMaxSize=${sectionsPerQuery}&pageOffest=${offset}&semesterID=${termcode}`
+            const url = `http://127.0.0.1:5000/getClassesPaginated?pageMaxSize=${sectionsPerQuery}&pageOffest=${offset}&semesterID=${termcode}`
             const res = await fetch(url)
             const resText = await res.text()
             const resJSON = await res.json() as resTypes.listSectionsResponse
@@ -95,7 +95,7 @@ export class DatabaseUpdater {
     }
 
 
-    terms: term[] = []
+    terms: resTypes.term[] = []
     termsLastUpdated = new Date('1970-01-01Z00:00:00:000')
 
     async updateTerms() {
@@ -110,7 +110,7 @@ export class DatabaseUpdater {
 
         this.termsLastUpdated = now;
         
-        let res = await fetch('http://localhost:5000/getSemesters')
+        let res = await fetch('http://127.0.0.1:5000/getSemesters')
         
         let resJSON = JSON.parse(await res.text()) as resTypes.term[]
         this.terms = resJSON

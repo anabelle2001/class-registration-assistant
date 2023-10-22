@@ -27,10 +27,10 @@ let bundlerArgs = [
     ...sourceFileList
 ]
 
-console.log(`Starting bun build:`);
-console.log(bundlerArgs);
+// console.log(`Starting bun build:`);
+// console.log(bundlerArgs);
 
 
 
-Bun.spawn(bundlerArgs,{stdout:"inherit"})
+// Bun.spawn(bundlerArgs,{stdout:"inherit"})
 // await ps.exited
