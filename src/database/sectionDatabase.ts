@@ -4,9 +4,9 @@ import translateClass from "./translateClass";
 import {DatabaseUpdater} from '../scrape/databaseUpdater'
 import { section } from "./sectionTypes";
 
-class SectionDB {    
+class SectionDatabase {    
     SQLiteOBJ: Database;
-    data: {[key: number]: section[]};
+    data: {[key: number]: section[]} = {};
     databaseUpdater: DatabaseUpdater
 
     constructor(path: string) {
@@ -62,7 +62,7 @@ class SectionDB {
     async updateSemesterFromInternet(semesterID:number){
         const downloadedData = await this
             .databaseUpdater
-            .getSectionListResponse(String(semesterID),50)
+            .getSectionListResponse(String(semesterID))
 
         const newData = downloadedData.map(translateClass)
 
@@ -75,10 +75,11 @@ class SectionDB {
         
     }
 
-    static instance: SectionDB;
-    static getInstance(path:string): SectionDB{
+    static instance: SectionDatabase;
+    static getInstance(): SectionDatabase{
+        let path = "sql/classData.sqlite3"
         if(this.instance == undefined){
-            this.instance = new SectionDB(path);
+            this.instance = new SectionDatabase(path);
             return this.instance;
         } else {
             return this.instance;
@@ -86,7 +87,9 @@ class SectionDB {
     }
 };
 
-export let classDB = SectionDB.getInstance("sql/classData.sqlite3");
+export default SectionDatabase.getInstance();
+
+Bun.db = SectionDatabase.getInstance()
 // External Links: 
 // [1]: https://bun.sh/docs/api/sqlite
 // [2]: <https://stackoverflow.com/questions/73339396/how-does-nodejs-handle-relative-paths>
