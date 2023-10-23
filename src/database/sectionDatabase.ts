@@ -1,21 +1,29 @@
 import { Database, Statement } from "bun:sqlite";
 import * as path from 'path';
-import translateClass from "./translateClass";
-import {DatabaseUpdater} from '../scrape/databaseUpdater'
+import translateSection from "./translateSection";
 import { section } from "./sectionTypes";
 
-class SectionDatabase {    
-    SQLiteOBJ: Database;
-    data: {[key: number]: section[]} = {};
-    databaseUpdater: DatabaseUpdater
+import { getAuthHeaders } from '../scrape/authenticate'
+import { listSectionsResponse, term } from '../scrape/ellucianResponseTypes'
+import { getSections } from '../scrape/getSections'
+import { getSemesters } from '../scrape/getSemesters'
+import { sleep } from "bun";
+import { inMilliseconds } from "../scrape/millisecondDurations";
 
-    constructor(path: string) {
+export class SectionDatabase {    
+    SQLiteOBJ: Database;
+    data: {[key: string]: section[]} = {};
+    semesterList: term[]
+    domain: string
+
+    constructor(
+        path: string,
+        domain: string = 'ssb.cofc.edu'
+    ) {
         this.SQLiteOBJ = new Database(path);
         this.loadFromSQLite()
-        this.databaseUpdater = new DatabaseUpdater();
-
+        this.domain = domain
         // this.__initializeEnrollmentMethods()
-
     }
 
     __initializeEnrollmentMethods(){
@@ -48,30 +56,68 @@ class SectionDatabase {
         ) as CallableFunction as (x: section[]) => void
     }
 
-    writeToSQLite() {
-        
-    }
-
-    loadFromSQLite() {
-        
-    }
+    writeToSQLite() { }
+    loadFromSQLite() { }
     
     insertEnrollmentRecord: Statement
     appendCurrentCapacityOfSectionsIntoSQLite: (x: section[]) => void
 
-    async updateSemesterFromInternet(semesterID:number){
-        const downloadedData = await this
-            .databaseUpdater
-            .getSectionListResponse(String(semesterID))
+    async updateSemesterList(){
+        this.semesterList = await getSemesters()
+    }
 
-        const newData = downloadedData.map(translateClass)
+    getSemester(semesterID:string): term | null {
 
-        newData.forEach((section)=>{
-            this.SQLiteOBJ
-        })
+        for (let i = 0; i < this.semesterList.length; i++) {
+            if (this.semesterList[i].code == semesterID) {
+                return this.semesterList[i]
+            }
+        }
+        return null
+    }
 
-        this.data[semesterID] = newData;
+    async updateSections(semesterID:string){
+        console.log("updating....")
 
+        if (semesterID == undefined){
+            throw new Error("No semester given");
+
+        }
+
+        await this.updateSemesterList()
+        if (this.getSemester(semesterID) == null) {
+            throw new Error("No such semester:"+semesterID);
+        }
+        
+        let auth = await getAuthHeaders(this.domain);
+        const numSections = 200 //(await getSections(semesterID,auth,0,0)).totalCount
+        let newSectionList:section[] = [];
+
+        
+        for (let i = 0; i < numSections; i+=50) {
+            console.info(
+                "Downloading Sections... ",
+                Math.round(100*i/numSections),
+                "%",
+            )
+
+            let response: listSectionsResponse;
+
+            try {
+                response = await getSections(semesterID, auth, 50, i)
+            } catch (error) {
+                
+                console.log("Request was denied - trying new authentication")
+
+                auth = await(getAuthHeaders(this.domain))
+                continue
+            }
+
+            newSectionList.push(...response.data.map(translateSection))
+            await sleep(inMilliseconds(3,"seconds"))
+        }
+
+        this.data[semesterID] = newSectionList
         
     }
 
@@ -87,9 +133,4 @@ class SectionDatabase {
     }
 };
 
-export default SectionDatabase.getInstance();
-
-Bun.db = SectionDatabase.getInstance()
-// External Links: 
-// [1]: https://bun.sh/docs/api/sqlite
-// [2]: <https://stackoverflow.com/questions/73339396/how-does-nodejs-handle-relative-paths>
+Bun.global = {sdb: SectionDatabase.getInstance}

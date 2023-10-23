@@ -1,7 +1,7 @@
 import { describe, it, expect, afterAll } from "bun:test"
 import {getAuthHeaders} from "./authenticate"
 import { getSemesters } from "./getSemesters"
-import { getClasses } from "./getClasses"
+import { getSections } from "./getSections"
 import { listSectionsResponse, sectionResponse, term } from "./ellucianResponseTypes"
 
 describe('getAuthHeaders()', () => {
@@ -27,15 +27,15 @@ describe('getSemesters()', async () => {
 
 describe('getClasses()', async() =>{
     let headers = await getAuthHeaders("ssb.cofc.edu")
-    let result: sectionResponse[];
+    let result: listSectionsResponse;
 
     await it("should return without erroring",async () => {
-        result = await getClasses('202410', headers,20,0)
+        result = await getSections('202410', headers,20,0)
     })
 
-    it("should return an array containing at least one section", ()=>{
-        expect(result).toBeArray()
-        expect(result[0]).not.toBeNil()
+    it("should return (in .data) an array containing at least one section", ()=>{
+        expect(result.data).toBeArray()
+        expect(result.data[0]).not.toBeNil()
     })
     
 })

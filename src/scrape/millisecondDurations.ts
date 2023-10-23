@@ -1,9 +1,14 @@
 type timeUnit =
     | 'millisecond'
+    | 'milliseconds'
     | 'second'
+    | 'seconds'
     | 'minute'
+    | 'minutes'
     | 'hour'
-    | 'day';
+    | 'hours'
+    | 'day'
+    | 'days';
 
 const conversionFactors:{[key in timeUnit]:number} = {
     'millisecond':1,
@@ -11,6 +16,12 @@ const conversionFactors:{[key in timeUnit]:number} = {
     'minute':6000,
     'hour': 3600000,
     'day': 8.64e+7,
+
+    'milliseconds': 1,
+    'seconds': 1000,
+    'minutes': 6000,
+    'hours': 3600000,
+    'days': 8.64e+7,
 }
 
 export function inMilliseconds(

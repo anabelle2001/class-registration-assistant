@@ -1,7 +1,7 @@
 import {sectionResponse} from '../scrape/ellucianResponseTypes'
 import {section} from  './sectionTypes'
 
-export default function translateClass(
+export default function translateSection(
     responseToTranslate:sectionResponse
 ): section {
     return {

@@ -12,8 +12,8 @@ const app = new Hono();
 
 // app.route('/api/demo/',demoAPI);
 app.route('/api/sections/',sectionsAPI);
-app.route('/api/semesters',listSemestersAPI)
-
+app.route('/api/semesters/',listSemestersAPI)
 app.get('/*',serveStatic({root: './public'}))
+
 
 export default app
