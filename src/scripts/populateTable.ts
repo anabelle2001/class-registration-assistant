@@ -15,14 +15,22 @@ const tableFields: ((x: section) => string)[] = [
     (x:section) =>  x.schedule.map(x=>x.room).join(', '), //Room(s)
     (x:section) => `${x.seatsAvailable} / ${x.seatsMaximum}`, //seats left
     (x: section) => x.CRN.toString(), //crn
-    (x: section) => x.CRN.toString(), //crn
+    (x: section) => 'work in progress', //time
 ]
 
 async function clearAndPopulate(SID: string){
-    let table = document.getElementsByTagName('table')[0]
+    let table = document.getElementById('sections') as HTMLTableElement
 
     //clear the inner html of the table
-    table.innerHTML = '';
+    table.innerHTML = `<thead class="bg-mid rounded">
+                <td class="text">Title</td>
+                <td class="num">Section</td>
+                <td class="text">Instructor</td>
+                <td class="num">Room</td>
+                <td class="num">Seats Left</td>
+                <td class="num">CRN</td>
+                <td class="text">Time</td>
+            </thead>`;
 
     let resp = await fetch('/api/sections/'+SID) 
     let data = await resp.json() as section[];
