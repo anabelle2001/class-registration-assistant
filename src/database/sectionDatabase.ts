@@ -4,7 +4,7 @@ import translateSection from "./translateSection";
 import { section } from "./sectionTypes";
 
 import { getAuthHeaders } from '../scrape/authenticate'
-import { listSectionsResponse, term } from '../scrape/ellucianResponseTypes'
+import { listSectionsResponse, sectionResponse, term } from '../scrape/ellucianResponseTypes'
 import { getSections } from '../scrape/getSections'
 import { getSemesters } from '../scrape/getSemesters'
 import { sleep } from "bun";
@@ -23,6 +23,8 @@ export class SectionDatabase {
         this.SQLiteOBJ = new Database(path);
         this.loadFromSQLite()
         this.domain = domain
+        this.loadFromJSON('202410')
+        this.loadFromJSON('202420')
         // this.__initializeEnrollmentMethods()
     }
 
@@ -58,6 +60,12 @@ export class SectionDatabase {
 
     writeToSQLite() { }
     loadFromSQLite() { }
+
+    async loadFromJSON(SID: string){
+        let fileContents = await Bun.file(`./json/${SID}.json`)
+        let data = await fileContents.json() as sectionResponse[];
+        this.data[SID] = data.map(translateSection);
+    }
     
     insertEnrollmentRecord: Statement
     appendCurrentCapacityOfSectionsIntoSQLite: (x: section[]) => void

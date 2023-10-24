@@ -18,7 +18,7 @@ sectionsAPI.get('/:semester/:crn', (c) => {
     return c.json({})
 });
 
-sectionsAPI.get('/doUpdate',(c)=>{
-    db.updateSections('202410')
-    return c.text("Updating! tyty")
-})
+// sectionsAPI.get('/doUpdate',(c)=>{
+//     db.updateSections('202410')
+//     return c.text("Updating! tyty")
+// })
