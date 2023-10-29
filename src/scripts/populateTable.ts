@@ -1,6 +1,7 @@
 import { section } from "../database/sectionTypes";
 
 
+
 // a list of functions
 // each function takes in a section and spits out a string
 // they're orered in the order that columns show up in the table
@@ -11,6 +12,7 @@ const tableFields: ((x: section) => string)[] = [
         x.faculty
             .map(teacher=>teacher.name)
             .join(', ')
+    
     ),
     (x:section) =>  x.schedule.map(x=>x.room).join(', '), //Room(s)
     (x:section) => `${x.seatsAvailable} / ${x.seatsMaximum}`, //seats left
@@ -23,13 +25,13 @@ async function clearAndPopulate(SID: string){
 
     //clear the inner html of the table
     table.innerHTML = `<thead class="bg-mid rounded">
-                <td class="text">Title</td>
-                <td class="num">Section</td>
-                <td class="text">Instructor</td>
-                <td class="num">Room</td>
-                <td class="num">Seats Left</td>
-                <td class="num">CRN</td>
-                <td class="text">Time</td>
+                <th class="text">Title</th>
+                <th class="num">Section</th>
+                <th class="text">Instructor</th>
+                <th class="num">Room</th>
+                <th class="num">Seats Left</th>
+                <th class="num">CRN</th>
+                <th class="text">Time</th>
             </thead>`;
 
     let resp = await fetch('/api/sections/'+SID) 
