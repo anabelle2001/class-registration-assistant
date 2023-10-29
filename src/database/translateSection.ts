@@ -1,10 +1,49 @@
-import {facultyResponse, sectionResponse} from '../scrape/ellucianResponseTypes'
-import {section, trinaryInt, faculty, schedule} from  './sectionTypes'
+import {facultyResponse, sectionResponse, meetingsFacultyResponse} from '../scrape/ellucianResponseTypes'
+import {section, trinaryInt, faculty, schedule, weekdayList} from  './sectionTypes'
+
+function getFaculty(
+    ellucianSection: sectionResponse
+):faculty[] {
+    return ellucianSection.faculty.map( ellucianFaculty => ({
+        id: +ellucianFaculty.bannerId,
+        email: ellucianFaculty.emailAddress,
+        name: ellucianFaculty.displayName,
+    }))
+}
+
+function getMeetings(
+    ellucianSection: sectionResponse
+): schedule[] {
+    let meetings: schedule[] = [];
+
+    for(const mf of ellucianSection.meetingsFaculty) {
+        let weekdays = (
+            mf.meetingTime.monday    ? 'm' : '-' +
+            mf.meetingTime.tuesday   ? 't' : '-' +
+            mf.meetingTime.wednesday ? 'w' : '-' +
+            mf.meetingTime.thursday  ? 'r' : '-' +
+            mf.meetingTime.friday    ? 'f' : '-' 
+        ) as weekdayList
+
+        meetings.push({
+            begins: +mf.meetingTime.beginTime,
+            ends: +mf.meetingTime.endTime,
+            room: (
+                mf.meetingTime.building + 
+                ' ' +
+                mf.meetingTime.room
+            ),
+            weekdays         
+        })
+    }
+
+    return meetings
+}
 
 export default function translateSection(
     responseToTranslate:sectionResponse
 ): section {
-    let convertedSection:section =  {
+    return  {
         CRN: +responseToTranslate.courseReferenceNumber,
         semesterID: +responseToTranslate.term,
         
@@ -13,43 +52,11 @@ export default function translateSection(
         
         creditHours: responseToTranslate.creditHourLow,
         express: null, //TODO: FIX ME
-        faculty: [],//TODO: IMPLEMENT ME
+        faculty: getFaculty(responseToTranslate),
         independentStudy: 0, //TODO: IMPLEMENT ME
         online: null, //TODO: IMPLEMENT ME
-        schedule: [], //TODO: IMPLEMENT ME
+        schedule: getMeetings(responseToTranslate),
         seatsAvailable: responseToTranslate.seatsAvailable,
         seatsMaximum: responseToTranslate.maximumEnrollment,
     }
-
-    for(let i = 0; i < responseToTranslate.faculty.length ; i++)
-    {
-        let facultyToTranslate = responseToTranslate.faculty[i]
-
-        let newFacObj:faculty = {
-            id: +facultyToTranslate.bannerId,
-            email: facultyToTranslate.emailAddress,
-            name: facultyToTranslate.displayName,
-            
-        }
-
-        convertedSection.faculty.push(newFacObj)
-    }
-
-    // for(let i = 0; i < responseToTranslate.meetingsFaculty.length ; i++)
-    // {
-    //     let scheduleToTranslate = responseToTranslate.meetingsFaculty[i]
-
-    //     let newSchObj:schedule = {
-    //         begins: +scheduleToTranslate.begins,
-    //         ends: +scheduleToTranslate.ends,
-    //         weekdays: scheduleToTranslate.weekdayList,
-    //         room: scheduleToTranslate.room,
-
-    //     }
-
-    //     convertedSection.schedule.push(newSchObj)
-    // }
-
-
-    return convertedSection
 }
