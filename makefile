@@ -5,6 +5,7 @@ SHELL := /bin/bash
 
 # SASS
 sass:
+	rm -rf public/sass
 	bunx sass src/scss:public/style --watch --color
 
 # DOCUMENTATION:
