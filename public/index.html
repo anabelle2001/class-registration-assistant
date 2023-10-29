@@ -3,365 +3,192 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Class Registration Assistant</title>
-    
-    <link 
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style/sectionList.css"/>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="script/fetchAndStore.js"></script>
+    <title>Claire - A Class Registration Assistant</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/sectionList.css" />
     <script src="/scripts/populateTable.js"></script>
-    
 </head>
 
-<body >
-    <!--TEST: Should've been working, don't know why it isn't now-->
-    <!--<select id="mySelect" onchange="alert(this.value)"></select>-->
-
+<body>
     <!--Header-->
-    <div class="container-fluid p-3 pt-5 bg-main">
-        <h1>Class Registration Assistant</h1>
-    </div>
+    <header class="container-fluid p-3 pt-5 bg-main">
+        Claire - A Class Registration Assistant
+    </header>
 
     <!--Dropdown Menu-->
-    <div class="dropdown p-3 pt-6">
-        <button type="button" class="btn btn-bg btn-lg dropdown-toggle" data-bs-toggle="dropdown">
+    <label for="semesterSelect">Choose a Semester:</label>
+    <select name="semesterSelect">
+    </select>
+    <!-- <div class="dropdown p-3 pt-6">
+        <button type="button" class="btn btn-bg btn-lg dropdown-toggle"
+            data-bs-toggle="dropdown">
             Semester
         </button>
 
-        <!--Temp Semester List-->
         <ul class="dropdown-menu">
-            <li><a onclick="javascript:window.populateTable(202410)"class="dropdown-item" href="#">Fall 2023</a></li>
-            <li><a onclick="javascript:window.populateTable(202420)"class="dropdown-item" href="#">Spring 2024</a></li>
+            <li><a onclick="javascript:window.populateTable(202410)"
+                    class="dropdown-item" href="#">Fall 2023</a></li>
+            <li><a onclick="javascript:window.populateTable(202420)"
+                    class="dropdown-item" href="#">Spring 2024</a></li>
         </ul>
-    </div>
+    </div> -->
 
-    <!--Sections Table: Currently filled with some random sections-->
+    <!--Requirements Table: Currently filled with some random requirements-->
     <div class="row m-3 justify-content-around">
-    <div class="col-3 p-3">
-        <table class="table table-hover table-striped bg-main rounded">
+        <div class="col-3 p-3">
+            <table class="table table-hover table-striped bg-main rounded">
                 <thead class="bg-mid">
                     <th>Sections</th>
                 </thead>
                 <tr>
-                    <th>Accounting</th>
+                    <td>Accounting</td>
                 </tr>
                 <tr>
-                    <th>African American Studies</th>
+                    <td>African American Studies</td>
                 </tr>
                 <tr>
-                    <th>Anthropology</th>
+                    <td>Anthropology</td>
                 </tr>
                 <tr>
-                    <th>Arabic</th>
+                    <td>Arabic</td>
                 </tr>
                 <tr>
-                    <th>Arabic Studies</th>
+                    <td>Arabic Studies</td>
                 </tr>
                 <tr>
-                    <th>Archaeology</th>
+                    <td>Archaeology</td>
                 </tr>
                 <tr>
-                    <th>Art History</th>
+                    <td>Art History</td>
                 </tr>
                 <tr>
-                    <th>Arts Management</th>
+                    <td>Arts Management</td>
                 </tr>
                 <tr>
-                    <th>Arts and Cultural Management</th>
+                    <td>Arts and Cultural Management</td>
                 </tr>
                 <tr>
-                    <th>Astronomy</th>
+                    <td>Astronomy</td>
                 </tr>
                 <tr>
-                    <th>Biology</th>
+                    <td>Biology</td>
                 </tr>
                 <tr>
-                    <th>Business Law</th>
+                    <td>Business Law</td>
                 </tr>
                 <tr>
-                    <th>Chemistry</th>
+                    <td>Chemistry</td>
                 </tr>
                 <tr>
-                    <th>Child Life</th>
+                    <td>Child Life</td>
                 </tr>
                 <tr>
-                    <th>Chinese</th>
+                    <td>Chinese</td>
                 </tr>
                 <tr>
-                    <th>Chinese Studies</th>
+                    <td>Chinese Studies</td>
                 </tr>
                 <tr>
-                    <th>Classics</th>
+                    <td>Classics</td>
                 </tr>
                 <tr>
-                    <th>Communication</th>
+                    <td>Communication</td>
                 </tr>
                 <tr>
-                    <th>Computer And Information Sciences</th>
+                    <td>Computer And Information Sciences</td>
                 </tr>
                 <tr>
-                    <th>Computer Science</th>
+                    <td>Computer Science</td>
                 </tr>
                 <tr>
-                    <th>Computing in the Arts</th>
+                    <td>Computing in the Arts</td>
                 </tr>
                 <tr>
-                    <th>Construction Management</th>
+                    <td>Construction Management</td>
                 </tr>
                 <tr>
-                    <th>Cooperative Program</th>
+                    <td>Cooperative Program</td>
                 </tr>
                 <tr>
-                    <th>Crime, Law And Society</th>
+                    <td>Crime, Law And Society</td>
                 </tr>
                 <tr>
-                    <th>Cross Registration</th>
+                    <td>Cross Registration</td>
                 </tr>
                 <tr>
-                    <th>Dance</th>
+                    <td>Dance</td>
                 </tr>
                 <tr>
-                    <th>Data Science</th>
+                    <td>Data Science</td>
                 </tr>
                 <tr>
-                    <th>Accounting</th>
+                    <td>Accounting</td>
                 </tr>
                 <tr>
-                    <th>African American Studies</th>
+                    <td>African American Studies</td>
                 </tr>
                 <tr>
-                    <th>Anthropology</th>
+                    <td>Anthropology</td>
                 </tr>
                 <tr>
-                    <th>Arabic</th>
+                    <td>Arabic</td>
                 </tr>
                 <tr>
-                    <th>Arabic Studies</th>
+                    <td>Arabic Studies</td>
                 </tr>
                 <tr>
-                    <th>Archaeology</th>
+                    <td>Archaeology</td>
                 </tr>
                 <tr>
-                    <th>Art History</th>
+                    <td>Art History</td>
                 </tr>
                 <tr>
-                    <th>Arts Management</th>
+                    <td>Arts Management</td>
                 </tr>
                 <tr>
-                    <th>Arts and Cultural Management</th>
+                    <td>Arts and Cultural Management</td>
                 </tr>
                 <tr>
-                    <th>Astronomy</th>
+                    <td>Astronomy</td>
                 </tr>
                 <tr>
-                    <th>Biology</th>
+                    <td>Biology</td>
                 </tr>
                 <tr>
-                    <th>Arabic Studies</th>
+                    <td>Arabic Studies</td>
                 </tr>
                 <tr>
-                    <th>Archaeology</th>
+                    <td>Archaeology</td>
                 </tr>
                 <tr>
-                    <th>Art History</th>
+                    <td>Art History</td>
                 </tr>
                 <tr>
-                    <th>Arts Management</th>
+                    <td>Arts Management</td>
                 </tr>
                 <tr>
-                    <th>Arts and Cultural Management</th>
+                    <td>Arts and Cultural Management</td>
                 </tr>
                 <tr>
-                    <th>Astronomy</th>
+                    <td>Astronomy</td>
                 </tr>
                 <tr>
-                    <th>Biology</th>
+                    <td>Biology</td>
                 </tr>
                 <tr>
-                    <th>Art History</th>
+                    <td>Art History</td>
                 </tr>
-                
-        </table>
-    </div>
 
-    <!--Degree Requirements Table: Currently filled with 19 requirements-->
-    <div class="col-8 p-3">
-        <table id="sections" class="table table-hover table-striped bg-main rounded">
-            <thead class="bg-mid rounded">
-                <td class="text">Title</td>
-                <td class="num">Section</td>
-                <td class="text">Instructor</td>
-                <td class="num">Room</td>
-                <td class="num">Seats Left</td>
-                <td class="num">CRN</td>
-                <td class="text">Time</td>
-            </thead>
-            <tr>
-                <td>AAST200</td>
-                <td>3</td>
-                <td>Mahoney, Antron</td>
-                <td>MYBK 666</td>
-                <td>2 / 10</td>
-                <td>10001</td>
-                <td>
-                    <table>
-                        <tr>
-                            <td class="btn-bg">M</td>
-                            <td>T</td>
-                            <td class="btn-bg">W</td>
-                            <td>R</td>
-                            <td class="btn-bg">F</td>
-                            <td>10:00 AM - 10:50 AM</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+            </table>
+        </div>
 
-        <!--
-        <table class="table table-hover table-striped bg-main rounded">
-                <thead class="bg-mid rounded">
-                    <th>Computer Science, B.S. Degree Requirements</th>
-                </thead>
-                <tr>
-                    <td>CSCI 220 Computer Programming I</td>
-                </tr>
-                <tr>
-                    <td>CSCI 220L Programming I Laboratory </td>
-                </tr>
-                <tr>
-                    <td>CSCI 221 Computer Programming II</td>
-                </tr>
-                <tr>
-                    <td>CSCI 230 Data Structures and Algorithms</td>
-                </tr>
-                <tr>
-                    <td>CSCI 250 Introduction to Computer Organization and Assembly Language Programming</td>
-                </tr>
-                <tr>
-                    <td>CSCI 310 Advanced Algorithms</td>
-                </tr>
-                <tr>
-                    <td>CSCI 320 Programming Language Concepts</td>
-                </tr>
-                <tr>
-                    <td>CSCI 332 Database Concepts</td>
-                </tr>
-                <tr>
-                    <td>CSCI 340 Operating Systems</td>
-                </tr>
-                <tr>
-                    <td>CSCI 345 Computer and Network Security</td>
-                </tr>
-                <tr>
-                    <td>CSCI 350 Digital Logic and Computer Organization</td>
-                </tr>
-                <tr>
-                    <td>CSCI 362 Software Engineering</td>
-                </tr>
-                <tr>
-                    <td>CSCI 392 Seminar on Computing and Society</td>
-                </tr>
-                <tr>
-                    <td>CSCI 462 Software Engineering Capstone</td>
-                </tr>
-                <tr>
-                    <td>MATH 120 Introductory Calculus</td>
-                </tr>
-                <tr>
-                    <td>MATH 207 Discrete Structures I</td>
-                </tr>
-                <tr>
-                    <td>MATH 250 Statistical Methods I</td>
-                </tr>
-                <tr>
-                    <td>MATH 307 Discrete Structures II</td>
-                </tr>
-                <tr>
-                    <td>COMM 104 Public Speaking</td>
-                </tr>
-                                    <th>Humanities Courses</th>
-                </thead>
-                <tr>
-                    <td>AAST 200 Introduction to African American Studies</td>
-                </tr>
-                <tr>
-                    <td>ARTH 213 Art and Architecture of Ancient Mesopotamia and the Near East</td>
-                </tr>
-                <tr>
-                    <td>ARTH 265 The City as a Work of Art</td>
-                </tr>
-                <tr>
-                    <td>CLAS 104 Introduction to Classical Archaeology</td>
-                </tr>
-                <tr>
-                    <td>CLAS 223 Aegean Prehistory</td>
-                </tr>
-                <tr>
-                    <td>CLAS 225 The Archaeology of Athens</td>
-                </tr>
-                <tr>
-                    <td>ENGL 234 Survey of Third-World Masterpieces</td>
-                </tr>
-                <tr>
-                    <td>ENGL 302 Shakespeare</td>
-                </tr>
-                <tr>
-                    <td>ENGL 317 The Seventeenth Century</td>
-                </tr>
-                <tr>
-                    <td>ENGL 335 Modern Poetry</td>
-                </tr>
-                <tr>
-                    <td>FREN 337 Survey of French Culture and Civilization</td>
-                </tr>
-                <tr>
-                    <td>GRMN 326 German Media</td>
-                </tr>
-                <tr>
-                    <td>GRMN 472 Studies in German Cinema</td>
-                </tr>
-                <tr>
-                    <td>HIST 222 History of South Carolina</td>
-                </tr>
-                <tr>
-                    <td>HIST 249 Witchcraft and Witch-Hunting in the Modern World</td>
-                </tr>
-                <tr>
-                    <td>JWST 240 Jewish Philosophy</td>
-                </tr>
-                <tr>
-                    <td>LTAR 270 Studies in Arab Cinema</td>
-                </tr>
-                <tr>
-                    <td>LTRS 210 19th Century Russian Literature in (English) Translation</td>
-                </tr>
-                <tr>
-                    <td>MUSC 223 History of Electronic Music: Electronica, Rock, and the Avant-Garde</td>
-                </tr>
-                <tr>
-                    <td>PHIL 101 Introduction to Philosophy</td>
-                </tr>
-                <tr>
-                    <td>PHIL 160 Ethics and Sports</td>
-                </tr>
-                <tr>
-                    <td>PHIL 202 History of Modern Philosophy</td>
-                </tr>
-                <tr>
-                    <td>PHIL 260 Philosophy of Biology</td>
-                </tr>
-                <tr>
-                    <td>WGST 229 History of Queer America 1600-2000</td>
-                </tr>
-        </table>
-    -->
-    </div>
+        <!--Degree Requirements Table: Currently filled with 19 requirements-->
+        <div class="col-8 p-3">
+            <table id="sections"
+                class="table table-hover table-striped bg-main rounded">
+                <p>Click the button on the side to load a semester</p>
+            </table>
+        </div>
     </div>
 
 </body>
