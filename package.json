@@ -3,9 +3,8 @@
     "jsdom": "^22.1.0",
     "hono": "^3.6.3"
   },
-  
   "scripts": {
-    "dev": "bun run --hot ./src/server.ts",
+    "dev": "bun run src/bundle.ts & bun run --hot src/server.ts",
     "bundle": "bun build --watch --splitting --target browser --sourcemap --outdir ./public/scripts src/scripts/*"
   },
 
