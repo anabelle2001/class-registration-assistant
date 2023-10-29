@@ -1,5 +1,6 @@
 $mobile-cutoff: 600px;
 
+
 .bottomTabBar {
     //Position at bottom of screen
     position:fixed;
@@ -46,7 +47,8 @@ header {
     overflow: hidden;
     max-width: 100%;
     background: lightgray;
-
+    white-space: nowrap;
+    
     h1 {
         text-align: left;
         padding-left: 16px;
@@ -95,4 +97,17 @@ header {
     flex: 1;
     padding: 10px;
     margin: 10px;
+}
+
+table { 
+    //This code is a bit buggy. It lets the user scroll the table horizontally, but for some reason, it also stops the table from growing dynamically
+    width: 100%;
+    display: table-row-group;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    td.meeting .days {
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+    }
 }

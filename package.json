@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "bootstrap": "^5.3.2",
+    "hono": "^3.6.3",
     "jsdom": "^22.1.0",
-    "hono": "^3.6.3"
+    "popper.js": "^1.16.1"
   },
   "scripts": {
     "dev": "bun run src/bundle.ts & make sass & bun run --hot src/server.ts",
