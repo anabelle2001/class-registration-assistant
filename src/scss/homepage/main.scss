@@ -15,10 +15,15 @@ body {
 
 .main-container {
     display: flex;
-
+    overflow-y: scroll;
     //vertical layout
     @media screen and (max-width: variables.$mobile-cutoff) {
         flex-direction: column;
+        position: fixed;
+        top:42px;
+        bottom:variables.$bottomTabBarHeight;
+        left: 0px;
+        right: 0px;
     }
 }
 
