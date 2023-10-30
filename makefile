@@ -5,8 +5,8 @@ SHELL := /bin/bash
 
 # SASS
 sass:
-	rm -rf public/sass
-	bunx sass src/scss:public/style --watch --color
+	rm -rf ./public/style
+	bunx sass --watch --color --no-source-map src/scss:public/style 
 
 # DOCUMENTATION:
 %.beamer.pdf: %.md

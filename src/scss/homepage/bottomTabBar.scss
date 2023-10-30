@@ -1,0 +1,35 @@
+@use '../variables';
+
+.bottomTabBar {
+    //Position at bottom of screen
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 64px;
+
+    //background / border
+    background: white;
+    box-shadow: 0 0 10px;
+
+
+    //Icon Alignment
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .button {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    @media screen and (min-width: (variables.$mobile-cutoff + 1)) {
+        display: none;
+    }
+}

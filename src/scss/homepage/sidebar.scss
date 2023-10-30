@@ -1,0 +1,15 @@
+@use '../variables.scss';
+
+.sidebar {
+    width: 40%;
+    max-width: 400px;
+    height: 100%;
+
+
+    //Vertical Layout
+    @media screen and (max-width: variables.$mobile-cutoff) {
+        width: auto;
+        max-width: none;
+        height: auto;
+    }
+}
