@@ -1,4 +1,4 @@
-import { Database, Statement } from "bun:sqlite";
+import { Database, SQLQueryBindings, Statement } from "bun:sqlite";
 import * as path from 'path';
 import translateSection from "./translateSection";
 import { section } from "./sectionTypes";
@@ -29,8 +29,11 @@ export class SectionDatabase {
     }
 
     
-    insertEnrollmentRecord: Statement
-    appendCurrentCapacityOfSectionsIntoSQLite: (x: section[]) => void
+    /**
+     * Addsa section to the 
+     */
+   //Defined in this.__initializeEnrollmentMethods
+   insertEnrollmentRecordTransaction: Statement
 
     /**
      * Prepares SQL transactions required to read and write from 
@@ -51,35 +54,9 @@ export class SectionDatabase {
         `)
 
         //Prepare trans
-        this.insertEnrollmentRecord = this.SQLiteOBJ.prepare(`
-            INSERT INTO enrollment (
-                SID,
-                CRN,
-                maxSeats,
-                filledSeats,
-                atTime
-            ) VALUES (
-                $SID,
-                $CRN,
-                $maxSeats,
-                $filledSeats,
-                CURRENT_TIMESTAMP
-            )
-        `);
-
-        this.appendCurrentCapacityOfSectionsIntoSQLite = (
-            this.SQLiteOBJ.transaction((s: section) => {
-                this.insertEnrollmentRecord.run({
-                    $SID: s.semesterID,
-                    $CRN: s.CRN,
-                    $maxSeats: s.seatsMaximum,
-                    $filledSeats: s.seatsMaximum-s.seatsAvailable,
-                })
-            })
-        //I'm not quite sure why i have to do two as statments. but removing 
-        // either one breaks the code.
-        ) as CallableFunction as (x: section[]) => void
     }
+
+
 
     /**
      * Loads a particular semester into the database
@@ -138,7 +115,7 @@ export class SectionDatabase {
             throw new Error("No such semester:"+SID);
         }
         
-        let auth = await getAuthHeaders(this.domain);
+        let auth = await getAuthHeaders(this.domain,SID);
 
         const numSections = (await getSections(SID,auth,0,0)).totalCount
         
@@ -168,7 +145,7 @@ export class SectionDatabase {
                         console.log("attempt ",i,"to reauth");
                         
                         await sleep(inMilliseconds(5,'seconds'))
-                        auth = await(getAuthHeaders(this.domain))
+                        auth = await(getAuthHeaders(this.domain),SID)
                         break;
                     } catch { }
                 }
@@ -186,7 +163,41 @@ export class SectionDatabase {
             `json/${SID}.json`,
             JSON.stringify(newSectionList)
         )
+
+        //save to db
+        this.writeSemesterAttendanceValues(newSectionList)
         
+    }
+
+    writeSemesterAttendanceValues(semester: string | section[]){
+        const transaction = this.SQLiteOBJ.prepare(`
+            INSERT INTO enrollment (
+                SID,
+                CRN,
+                maxSeats,
+                filledSeats,
+                atTime
+            ) VALUES (
+                $SID,
+                $CRN,
+                $maxSeats,
+                $filledSeats,
+                CURRENT_TIMESTAMP
+            )
+        `);
+
+        const actualSemester = (semester instanceof String) ?
+            this.data[semester as string] as section[]:
+            semester as section[]
+        
+        actualSemester.forEach( section => {
+            transaction.run({
+                $SID: section.semesterID,
+                $CRN: section.CRN,
+                $maxSeats: section.seatsMaximum,
+                $filledSeats: section.seatsMaximum-section.seatsAvailable
+            })
+        })
     }
 
     static instance: SectionDatabase;
