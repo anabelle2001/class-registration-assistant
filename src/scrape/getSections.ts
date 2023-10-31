@@ -13,13 +13,23 @@ export async function getSections(
     
     let json = (await response.json()) as listSectionsResponse
 
+    if (json == null) {
+        throw new Error(
+            "when requesting section list, got null response"
+        )
+    }
+
     if(json.success == false){
-        throw new Error("response said success false");
+        throw new Error(
+            "when requesting section list, got response of {success: false}"
+        );
     }
 
     if(json.ztcEncodedImage.length < 2000) {
-        throw new Error("Got back an unusually short image, expected a big one");
+        throw new Error(
+            "Got back an unusually short image, expected a big one"
+        );
     }
     
-    return json
+    return json;
 }

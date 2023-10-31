@@ -10,7 +10,8 @@ import {JSDOM} from "jsdom";
  */
 
 export async function getAuthHeaders(
-    targetDomain: String = "ssb.cofc.edu"
+    targetDomain: String = "ssb.cofc.edu",
+    SID: string,
 ): Promise<Headers> {
     console.info(`Authenticating with ${targetDomain}...`)
 
@@ -37,7 +38,7 @@ export async function getAuthHeaders(
 
     // Step 5: Authorize our new user
     let final_url = `https://${targetDomain}/StudentRegistrationSsb/ssb/term/search?mode=search`
-    let final_data = 'term=202410&studyPath=&studyPathText=&startDatepicker=&endDatepicker='
+    let final_data = `term=${SID}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=`
 
     await fetch(final_url,{
         method:'post',

@@ -6,7 +6,7 @@ import { listSectionsResponse, sectionResponse, term } from "./ellucianResponseT
 
 describe('getAuthHeaders()', () => {
     it("should return without erroring", async () => {
-        let headers = await getAuthHeaders("ssb.cofc.edu")        
+        let headers = await getAuthHeaders("ssb.cofc.edu",'202410')        
         expect(headers).not.toBeNil()
     })
 })
@@ -26,7 +26,7 @@ describe('getSemesters()', async () => {
 })
 
 describe('getClasses()', async() =>{
-    let headers = await getAuthHeaders("ssb.cofc.edu")
+    let headers = await getAuthHeaders("ssb.cofc.edu",'202410')
     let result: listSectionsResponse;
 
     await it("should return without erroring",async () => {
