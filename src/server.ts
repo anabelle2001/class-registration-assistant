@@ -21,4 +21,7 @@ app.get('/style/normalize.css', serveStatic({
 }))
 app.get('/*',serveStatic({root: './public'}))
 
+const db = SectionDatabase.getInstance()
+db.updateSections('202410')
+
 export default app

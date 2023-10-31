@@ -23,16 +23,34 @@ export class SectionDatabase {
         path: string,
         domain: string = 'ssb.cofc.edu'
     ) {
-        this.SQLiteOBJ = new Database(path);
-        this.loadFromSQLite()
         this.domain = domain
-        this.loadFromJSON('202410')
-        this.loadFromJSON('202420')
-        // this.__initializeEnrollmentMethods()
+        this.SQLiteOBJ = new Database(path);
+        this.__initializeEnrollmentMethods()
     }
 
-    __initializeEnrollmentMethods(){
+    
+    insertEnrollmentRecord: Statement
+    appendCurrentCapacityOfSectionsIntoSQLite: (x: section[]) => void
 
+    /**
+     * Prepares SQL transactions required to read and write from 
+     * enrollment table (tracks enrollment history)
+     */
+    __initializeEnrollmentMethods(){
+        //First, if the Tables don't exist, create them.
+        this.SQLiteOBJ.exec(`
+            CREATE TABLE IF NOT EXISTS enrollment(
+                SID INTEGER,
+                CRN INTEGER,
+                maxSeats INTEGER,
+                filledSeats INTEGER,
+                atTime INTEGER,
+
+                PRIMARY KEY(SID,CRN,atTime)
+            );
+        `)
+
+        //Prepare trans
         this.insertEnrollmentRecord = this.SQLiteOBJ.prepare(`
             INSERT INTO enrollment (
                 SID,
@@ -58,54 +76,78 @@ export class SectionDatabase {
                     $filledSeats: s.seatsMaximum-s.seatsAvailable,
                 })
             })
+        //I'm not quite sure why i have to do two as statments. but removing 
+        // either one breaks the code.
         ) as CallableFunction as (x: section[]) => void
     }
 
-    writeToSQLite() { }
-    loadFromSQLite() { }
-
-    async loadFromJSON(SID: string){
+    /**
+     * Loads a particular semester into the database
+     * 
+     * @param {string} SID  - 6-digit SID (format: YYYYSS)
+     */
+    async loadSemesterFromJSON(SID: string){
         let fileContents = await Bun.file(`./json/${SID}.json`)
         let data = await fileContents.json() as sectionResponse[];
         this.data[SID] = data.map(translateSection);
     }
     
-    insertEnrollmentRecord: Statement
-    appendCurrentCapacityOfSectionsIntoSQLite: (x: section[]) => void
 
+    /**
+     * Fetches a list of semesters from Ellucian. 
+     * Stores result in `this.semesterlist`
+     * 
+     * 
+     * @authentication none required
+     * @params none
+     * @returns none
+     */
     async updateSemesterList(){
         this.semesterList = await getSemesters()
     }
 
-    getSemester(semesterID:string): term | null {
+    /**
+     * If a semester exists, it returns the `term` object 
+     * containing `{SID, name}`
+     * 
+     * @param SID The 6-digit SID of the semester 
+     * @returns {term} The object representing the semester name
+    */
+    getSemester(SID:string): term | null {
 
         for (let i = 0; i < this.semesterList.length; i++) {
-            if (this.semesterList[i].code == semesterID) {
+            if (this.semesterList[i].code == SID) {
                 return this.semesterList[i]
             }
         }
         return null
     }
 
-    async updateSections(semesterID:string){
+    /**
+     * Queries Ellucian to get all classes for a particular semester
+     */
+    async updateSections(SID:string){
         console.log("updating....")
 
-        if (semesterID == undefined){
+        if (SID == undefined){
             throw new Error("No semester given");
-
         }
 
         await this.updateSemesterList()
-        if (this.getSemester(semesterID) == null) {
-            throw new Error("No such semester:"+semesterID);
+        if (this.getSemester(SID) == null) {
+            throw new Error("No such semester:"+SID);
         }
         
         let auth = await getAuthHeaders(this.domain);
-        const numSections = 200 //(await getSections(semesterID,auth,0,0)).totalCount
+
+        const numSections = (await getSections(SID,auth,0,0)).totalCount
+        
         let newSectionList:section[] = [];
 
         
         for (let i = 0; i < numSections; i+=50) {
+            await sleep(inMilliseconds(1, "seconds"))
+
             console.info(
                 "Downloading Sections... ",
                 Math.round(100*i/numSections),
@@ -115,20 +157,35 @@ export class SectionDatabase {
             let response: listSectionsResponse;
 
             try {
-                response = await getSections(semesterID, auth, 50, i)
+                response = await getSections(SID, auth, 50, i)
             } catch (error) {
                 
                 console.log("Request was denied - trying new authentication")
 
-                auth = await(getAuthHeaders(this.domain))
+                for(let i = 1; true; i++) {
+                    try {
+                        if(i >= 5) {return null}
+                        console.log("attempt ",i,"to reauth");
+                        
+                        await sleep(inMilliseconds(5,'seconds'))
+                        auth = await(getAuthHeaders(this.domain))
+                        break;
+                    } catch { }
+                }
                 continue
             }
 
             newSectionList.push(...response.data.map(translateSection))
-            await sleep(inMilliseconds(3,"seconds"))
         }
 
-        this.data[semesterID] = newSectionList
+        this.data[SID] = newSectionList
+
+        //save to json
+
+        await Bun.write(
+            `json/${SID}`,
+            JSON.stringify(newSectionList)
+        )
         
     }
 
@@ -144,4 +201,3 @@ export class SectionDatabase {
     }
 };
 
-Bun.global = {sdb: SectionDatabase.getInstance}
