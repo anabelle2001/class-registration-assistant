@@ -183,7 +183,7 @@ export class SectionDatabase {
         //save to json
 
         await Bun.write(
-            `json/${SID}`,
+            `json/${SID}.json`,
             JSON.stringify(newSectionList)
         )
         
