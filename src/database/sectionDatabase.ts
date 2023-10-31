@@ -2,13 +2,16 @@ import { Database, Statement } from "bun:sqlite";
 import * as path from 'path';
 import translateSection from "./translateSection";
 import { section } from "./sectionTypes";
-
 import { getAuthHeaders } from '../scrape/authenticate'
-import { listSectionsResponse, sectionResponse, term } from '../scrape/ellucianResponseTypes'
+import {
+    listSectionsResponse,
+    sectionResponse,
+    term 
+} from '../scrape/ellucianResponseTypes'
 import { getSections } from '../scrape/getSections'
 import { getSemesters } from '../scrape/getSemesters'
 import { sleep } from "bun";
-import { inMilliseconds } from "../scrape/millisecondDurations";
+import { inMilliseconds } from "../millisecondDurations";
 
 export class SectionDatabase {    
     SQLiteOBJ: Database;

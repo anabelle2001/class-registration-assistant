@@ -4,6 +4,8 @@ import { serveStatic } from 'hono/bun'
 // import { demoAPI } from './api/demo'
 import { sectionsAPI } from './api/sections'
 import { listSemestersAPI } from './api/semesters'
+import { SectionDatabase } from './database/sectionDatabase'
+import { inMilliseconds } from './millisecondDurations'
 
 // //this program will compile files from src/scripts to public/scripts in realtime
 // import './bundle'
