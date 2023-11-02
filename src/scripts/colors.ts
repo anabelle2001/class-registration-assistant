@@ -26,7 +26,13 @@ export class Color implements color {
     hex: string
     
     constructor(values: color){
-        const {r,g,b,h,s,v} = values
+        //helper functions assert_is_unit8, assert_is_percentage, and 
+        //numberToTwoCharHex are defined at the end of this function,
+        //after the constructor returns
+        const {r,g,b,h,s,v} = values;
+
+        [r, g, b].forEach(assert_is_uint8);
+        [h, s, v].forEach(assert_is_percentage);
 
         this.r = r;
         this.g = g;
@@ -34,20 +40,37 @@ export class Color implements color {
         this.h = h;
         this.s = s;
         this.v = v;
-
-        function numTo2DigitHex(i: number): string {
-            const varLenString = i.toString(16);
-            return (varLenString.length == 1) ? "0" + varLenString : varLenString;
-        }
-
+        
         this.hex = (
             '#' +
-            numTo2DigitHex(this.r) +
-            numTo2DigitHex(this.g) +
-            numTo2DigitHex(this.b)
+            numberToTwoCharHex(this.r) +
+            numberToTwoCharHex(this.g) +
+            numberToTwoCharHex(this.b)
         )
 
         Object.seal(this);
+        return;
+
+        function assert_is_uint8(i: number){
+            if (i < 0 || i > 255 || i != Math.floor(i))
+                console.trace("Expected integer in [0,255]. got", i);
+        }
+        
+        
+        function assert_is_percentage(i: number){
+            if (i < 0 || i > 1)
+                console.trace("Expected float between [0,1]. got",i);
+        }
+
+
+        function numberToTwoCharHex(i: number): string {
+            //turns i into a hex of length 1 or 2 (eg: 'f' or 'ff)
+            const varLenString = i.toString(16); 
+
+            //pad result with a '0' and return
+            return (varLenString.length == 1) ? "0" + varLenString : varLenString;
+        }
+
     }
 
     /**
