@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Claire - A Class Registration Assistant</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/sectionListSierra.css" />
+    <script src="/scripts/populateTable.js"></script>
+
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <h1 class="container-fluid p-3 pt-5 bg-main">
+        Claire - A Class Registration Assistant
+    </h1>
+
+    <!--Dropdown Menu-->
+    <div class="dropdown p-3 pt-6">
+        <button type="button" class="btn btn-bg btn-lg dropdown-toggle"
+            data-bs-toggle="dropdown">
+            Semester
+        </button>
+
+        <ul class="dropdown-menu">
+            <li><a onclick="javascript:window.populateTable(202410)"
+                    class="dropdown-item" href="#">Fall 2023</a></li>
+            <li><a onclick="javascript:window.populateTable(202420)"
+                    class="dropdown-item" href="#">Spring 2024</a></li>
+        </ul>
+    </div>
+
+    <!--Requirements Table: Currently filled with some random requirements-->
+    <div class="row m-3 justify-content-around">
+        <div class="col-3 p-3">
+            <table class="table table-hover table-striped bg-main rounded">
+                <thead class="bg-mid">
+                    <th>Sections</th>
+                </thead>
+                <tr>
+                    <td>Accounting</td>
+                </tr>
+                <tr>
+                    <td>African American Studies</td>
+                </tr>
+                <tr>
+                    <td>Anthropology</td>
+                </tr>
+                <tr>
+                    <td>Arabic</td>
+                </tr>
+                <tr>
+                    <td>Arabic Studies</td>
+                </tr>
+                <tr>
+                    <td>Archaeology</td>
+                </tr>
+                <tr>
+                    <td>Art History</td>
+                </tr>
+                <tr>
+                    <td>Arts Management</td>
+                </tr>
+                <tr>
+                    <td>Arts and Cultural Management</td>
+                </tr>
+                <tr>
+                    <td>Astronomy</td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                </tr>
+                <tr>
+                    <td>Business Law</td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                </tr>
+                <tr>
+                    <td>Child Life</td>
+                </tr>
+                <tr>
+                    <td>Chinese</td>
+                </tr>
+                <tr>
+                    <td>Chinese Studies</td>
+                </tr>
+                <tr>
+                    <td>Classics</td>
+                </tr>
+                <tr>
+                    <td>Communication</td>
+                </tr>
+                <tr>
+                    <td>Computer And Information Sciences</td>
+                </tr>
+                <tr>
+                    <td>Computer Science</td>
+                </tr>
+                <tr>
+                    <td>Computing in the Arts</td>
+                </tr>
+                <tr>
+                    <td>Construction Management</td>
+                </tr>
+                <tr>
+                    <td>Cooperative Program</td>
+                </tr>
+                <tr>
+                    <td>Crime, Law And Society</td>
+                </tr>
+                <tr>
+                    <td>Cross Registration</td>
+                </tr>
+                <tr>
+                    <td>Dance</td>
+                </tr>
+                <tr>
+                    <td>Data Science</td>
+                </tr>
+                <tr>
+                    <td>Accounting</td>
+                </tr>
+                <tr>
+                    <td>African American Studies</td>
+                </tr>
+                <tr>
+                    <td>Anthropology</td>
+                </tr>
+                <tr>
+                    <td>Arabic</td>
+                </tr>
+                <tr>
+                    <td>Arabic Studies</td>
+                </tr>
+                <tr>
+                    <td>Archaeology</td>
+                </tr>
+                <tr>
+                    <td>Art History</td>
+                </tr>
+                <tr>
+                    <td>Arts Management</td>
+                </tr>
+                <tr>
+                    <td>Arts and Cultural Management</td>
+                </tr>
+                <tr>
+                    <td>Astronomy</td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                </tr>
+                <tr>
+                    <td>Arabic Studies</td>
+                </tr>
+                <tr>
+                    <td>Archaeology</td>
+                </tr>
+                <tr>
+                    <td>Art History</td>
+                </tr>
+                <tr>
+                    <td>Arts Management</td>
+                </tr>
+                <tr>
+                    <td>Arts and Cultural Management</td>
+                </tr>
+                <tr>
+                    <td>Astronomy</td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                </tr>
+                <tr>
+                    <td>Art History</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!--Degree Requirements Table: Currently filled with 19 requirements-->
+        <div class="col-8 p-3">
+            <table id="sections"
+                class="table table-hover table-striped bg-main rounded">
+                <p>Click the button on the side to load a semester</p>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

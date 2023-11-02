@@ -1,11 +1,8 @@
-import {getAuthHeaders} from './authenticate';
+import './ellucianResponseTypes'
+import { term } from './ellucianResponseTypes';
 
-export let endpointURL ='https://ssb.cofc.edu'+'/StudentRegistrationSsb/ssb/classSearch/getTerms'+'?offset=0&max=0'
-
-export let headers = await getAuthHeaders();
-
-export let res = await fetch(endpointURL,{headers})
-
-export let text = await res.text()
-
-console.log(text)
+export async function getSemesters(): Promise<term[]> {
+    let url = 'https://ssb.cofc.edu/StudentRegistrationSsb/ssb/classSearch/getTerms?offset=0&max=0'
+    let response = await fetch(url);
+    return await response.json()
+}

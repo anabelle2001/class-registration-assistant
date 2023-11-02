@@ -1,0 +1,52 @@
+.content {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    max-height: 90%;
+}
+
+//This block handles the animation of the "V" that shows if something is collapsed
+.course {
+    input {
+            display: none;
+        }
+    
+    input+label>i::before {
+        transition: all 0.1s ease-in-out;
+    }
+    
+    input:checked+label>i::before {
+        transform: scaleY(-100%);
+    }
+}
+
+//This animates the collapsing of the table
+.course {
+    .tableBox {
+        max-height: 10rem;
+        transition: max-height 0.25s ease-in-out;
+        overflow: hidden;
+    }
+
+    input:checked~.tableBox {
+        color: red;
+        max-height: 0px;
+    }
+}
+
+.course {
+    table {
+        //This code is a bit buggy. It lets the user scroll the table horizontally, but for some reason, it also stops the table from growing dynamically
+        width: 100%;
+        overflow-x: scroll;
+        display: block;
+        white-space: nowrap;
+
+        td.meeting .days {
+            font-variant-caps: all-small-caps;
+            font-weight: bolder;
+        }
+
+        padding-bottom: 50px;
+    }
+}

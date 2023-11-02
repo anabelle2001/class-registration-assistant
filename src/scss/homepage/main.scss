@@ -1,0 +1,36 @@
+@use '../variables.scss';
+
+@use './bottomTabBar.scss';
+@use './courseList.scss';
+@use './sidebar.scss';
+@use './header.scss';
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.main-container {
+    display: flex;
+    overflow-y: scroll;
+    //vertical layout
+    @media screen and (max-width: variables.$mobile-cutoff) {
+        flex-direction: column;
+        position: fixed;
+        top:42px;
+        bottom:variables.$bottomTabBarHeight;
+        left: 0px;
+        right: 0px;
+    }
+}
+
+.card {
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 1px 8px -2px;
+    padding: 10px;
+    margin: 10px;
+}

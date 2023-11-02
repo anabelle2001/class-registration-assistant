@@ -34,7 +34,7 @@ fetch("/api/section/?semesterID=202410")
     "courseName": "AAST200",// African American Studies 200
     "faculty": [//Array because class may have multiple faculty.
       {
-        "id": "24349",
+        "id": 24349,
         "name": "Mahoney, Antron",
         "email": "mahoneyad@cofc.edu",
       }
@@ -42,8 +42,8 @@ fetch("/api/section/?semesterID=202410")
     "schedule": [ //Array because class may have multiple meet times
       {
         "weekdays": "m-w-f",//Meets on mondays, wednesdays, and fridays
-        "begins": "1000", //24-Hour start time
-        "ends": "1050", //24-Hour end time
+        "begins": 1000, //24-Hour start time
+        "ends": 1050, //24-Hour end time
         "room": "MYBK 302"//
       }
     ],

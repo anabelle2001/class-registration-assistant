@@ -14,5 +14,15 @@
             "watchMode": true,
             "internalConsoleOptions": "neverOpen"
         },
+        {
+            "type": "bun",
+            "request": "launch",
+            "name": "start Database",
+            "program": "src/database/sectionDatabase.ts",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "watchMode": true,
+            "internalConsoleOptions": "neverOpen",
+        }
     ]
 }

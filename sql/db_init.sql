@@ -1,11 +1,11 @@
-CREATE TABLE semester (
+CREATE TABLE IF NOT EXISTS semester (
     SID          INTEGER,
     semesterName TEXT,
 
     PRIMARY KEY(SID)
 );
 
-CREATE TABLE section (
+CREATE TABLE IF NOT EXISTS section (
     SID INTEGER NOT NULL,
     CRN INTEGER NOT NULL,
     section INTEGER,
@@ -20,7 +20,7 @@ CREATE TABLE section (
     PRIMARY KEY(SID,CRN)
 );
 
-CREATE TABLE meeting (
+CREATE TABLE IF NOT EXISTS meeting (
     SID INTEGER,
     CRN INTEGER,
 
@@ -32,14 +32,14 @@ CREATE TABLE meeting (
     FOREIGN KEY(SID,CRN) REFERENCES section(SID,CRN)
 );
 
-CREATE TABLE faculty (
+CREATE TABLE IF NOT EXISTS faculty (
     FID INTEGER NOT NULL UNIQUE,
     Name TEXT,
     Email TEXT,
     PRIMARY KEY(FID)
 );
 
-CREATE TABLE teaches (
+CREATE TABLE IF NOT EXISTS teaches (
     SID INTEGER,
     CRN INTEGER,
     FID INTEGER,
@@ -48,7 +48,7 @@ CREATE TABLE teaches (
     FOREIGN KEY(SID,CRN) REFERENCES section(SID,CRN)
 );
 
-CREATE TABLE enrollment(
+CREATE TABLE IF NOT EXISTS enrollment(
     SID INTEGER,
     CRN INTEGER,
     maxSeats INTEGER,
