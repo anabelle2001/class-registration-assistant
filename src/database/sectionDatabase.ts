@@ -145,7 +145,7 @@ export class SectionDatabase {
                         console.log("attempt ",i,"to reauth");
                         
                         await sleep(inMilliseconds(5,'seconds'))
-                        auth = await(getAuthHeaders(this.domain),SID)
+                        auth = await getAuthHeaders(this.domain,SID)
                         break;
                     } catch { }
                 }
