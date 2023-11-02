@@ -22,6 +22,15 @@ app.get('/style/normalize.css', serveStatic({
 app.get('/*',serveStatic({root: './public'}))
 
 const db = SectionDatabase.getInstance()
-db.updateSections('202410')
+
+
+if('--fetch' in Bun.argv){
+     db.updateSections('202420')
+     setInterval(
+          ()=>{
+               db.updateSections('202420')
+          }, inMilliseconds(20, 'minutes')
+     )
+}
 
 export default app
