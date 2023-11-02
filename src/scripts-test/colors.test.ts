@@ -1,4 +1,4 @@
-import { Color, color, rgb, hsv } from "./colors";
+import { Color, color, rgb, hsv } from "../scripts/colors";
 import { it, expect, describe} from "bun:test"
 
 describe('Color.fromHex, Color.fromRGB, Color.fromHSV',()=>{
