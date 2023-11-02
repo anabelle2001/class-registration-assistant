@@ -1,0 +1,158 @@
+{
+    "computerScienceBSv2": [
+	{
+        "degName": "Computer Science, B.S",
+		"minCredits": 73,
+		"reqCourses": ["CSCI220", "CSCI220L", "CSCI221", "CSCI230", "CSCI250", "CSCI300", "CSCI320", "CSCI340", "CSCI345", 
+                "CSCI350", "CSCI362", "CSCI431", "CSCI462", "MATH120", "MATH207", "MATH250", "MATH307", "COMM104"],
+		"condRequirements": [
+            {
+                "numClasses": 1, 
+                "classList": ["MATH203", "MATH220", "MATH245", "MATH350", "MATH440"]
+            }
+        ],
+		"electives": [
+            {
+                "numCredits": 6, 
+                "operation": "greater than", 
+                "course": ["CSCI", 300]
+            }
+        ], 
+		"classRestrictions": [
+            {
+                "operation": ["at most", 12, "specific class", "CSCI399"]
+            }
+        ], 
+		"numEmphasis": 0
+	}
+],
+
+    "computerScienceBSv1": [
+	{
+        "degName": "Computer Science, B.S",
+		"minCredits": 73,
+		"reqCourses": ["CSCI220", "CSCI220L", "CSCI221", "CSCI230", "CSCI250", "CSCI300", "CSCI320", "CSCI340", "CSCI345", 
+                "CSCI350", "CSCI362", "CSCI431", "CSCI462", "MATH120", "MATH207", "MATH250", "MATH307", "COMM104"],
+		"numConditions": 1, 
+		"condReq1": [1, "MATH203", "MATH220", "MATH245", "MATH350", "MATH440"],
+		"numElectives": 1,
+		"electives1": [6, "greater than", 300, "CSCI"], 
+		"numRestrictions": 1, 
+		"classRestrictions1": ["at most", 12, "specific class", "CSCI399"], 
+		"numEmphasis": 0
+	}
+],
+
+"computerScienceBA": [
+	{
+        "degName": "Computer Science, B.A",
+		"minCredits": 47,
+		"reqCourses": ["CSCI220", "CSCI220L", "CSCI221", "CSCI230", "CSCI250", "CSCI320", "CSCI340", "CSCI362", 
+				"CSCI462", "MATH120", "MATH207", "MATH307", "COMM104"],
+		"numConditions": 0,
+		"numElectives": 1,
+		"electives1": [9, "greater than", 300, "CSCI"],
+		"numRestrictions": 1,
+		"classRestrictions1": ["at most", 12, "specific class", "CSCI399"],
+		"numEmphasis": 0 
+	}
+],
+
+"computerInformationSystemsv1": [
+	{
+        "degName": "Computer Information Systems",
+		"minCredits": 64,
+		"reqCourses": ["CSCI111", "CSCI115", "CSCI220",  "CSCI220L", "CSCI221", "CSCI300", "CSCI315", "CSCI380", "CSCI431", 
+				"CSCI462", "MATH120", "MATH207", "MATH250", "COMM104", "ACCC203", "ACCT204", "DSCI232", "INFM220"],
+		"numConditions": 2,
+		"condReq1": [1, "DATA101", "CSCI230", "CSCI250", "CSCI270", "CSCI280", "CSCI282", "CSCI299", "CSCI310", "CSCI320", "CSCI325", "CSCI334", 
+                    "CSCI340", "CSCI350", "CSCI360", "CSCI362", "CSCI399", "CSCI410", "CSCI420", "CSCI432", "CSCI440", "CSCI450", "CSCI480", "CSCI490"],
+		"condReq2": [2, "DSCI306", "DSCI323", "DSCI406", "ENTR200", "ENTR321", "ENTR360", "INFM330", "INFM340", "INFM350", "INFM360", "INFM390"],
+		"numRestrictions": 1,
+		"classRestrictions1": ["at most", 12, "specific class", "CSCI399"],
+		"numEmphasis": 0 	
+	}
+],
+
+"computerInformationSystemsv2": [
+	{
+        "degName": "Computer Information Systems",
+		"minCredits": 64,
+		"reqCourses": ["CSCI111", "CSCI115", "CSCI220",  "CSCI220L", "CSCI221", "CSCI300", "CSCI315", "CSCI380", "CSCI431", 
+				"CSCI462", "MATH120", "MATH207", "MATH250", "COMM104", "ACCC203", "ACCT204", "DSCI232", "INFM220"],
+		"condReq": [
+            { 
+                "numClasses": 1, 
+                "classList": ["DATA101", "CSCI230", "CSCI250", "CSCI270", "CSCI280", "CSCI282", "CSCI299", "CSCI310", "CSCI320", "CSCI325", "CSCI334", 
+                    "CSCI340", "CSCI350", "CSCI360", "CSCI362", "CSCI399", "CSCI410", "CSCI420", "CSCI432", "CSCI440", "CSCI450", "CSCI480", "CSCI490"]
+            },
+            {
+                "numClasses": 2,
+                "classList": ["DSCI306", "DSCI323", "DSCI406", "ENTR200", "ENTR321", "ENTR360", "INFM330", "INFM340", "INFM350", "INFM360", "INFM390"]
+            }
+        ],
+		"classRestrictions": [
+            {
+                "operation": ["at most", 12, "specific class", "CSCI399"]
+            }
+        ], 
+		"numEmphasis": 0 	
+	}
+],
+
+"dataSciencev2": [
+	{
+        "degName": "Data Science",
+		"minCredits": 65,
+		"reqCourses": ["CSCI220", "CSCI220L", "CSCI221", "CSCI230", "CSCI310", "CSCI334", "CSCI470", "MATH120", "MATH203", "MATH207", "MATH250", 
+				"MATH350", "MATH440", "MATH441"],
+		"numConditions": 1,
+		"condReq1": [2, "CSCI315", "CSCI325", "CSCI380", "CSCI390", "CSCI399", "CSCI410", "CSCI420", "CSCI431", "CSCI432", "CSCI440", "CSCI450", 
+				"CSCI459", "CSCI480", "CSCI490", "MATH307", "MATH323", "MATH340", "MATH399", "MATH402", "MATH403", "MATH411", "MATH415",
+				"MATH417", "MATH418", "MATH423", "MATH430", "MATH431", "MATH445", "MATH449", "MATH451", "MATH452", "MATH455", "MATH460",
+				"MATH461", "MATH470", "MATH475", "MATH480", "MATH485", "MATH490"],
+		"classRestrictions": [
+            {
+                "operation": ["at most", 12, "specific class", "CSCI399"]
+            }
+        ],
+		"emphasis": [
+            {
+                "operation": "greater than", 
+				"numCredits": 9, 
+                "course": [300, "CSCI"]
+            },
+            {
+
+            }
+        ]
+
+	}
+],
+
+"genReq": [
+	{
+		"degName": "General Degree Requirements",
+		"foreignLang": [
+			{
+				"sectionName": "Foreign Language",
+				"operation": "equal to",
+				"classList": ["ARBC202", "CHNS202", "FREN202", "GREK202", "GRMN202", "HBRW202", "ITAL202", "JPNS202", "LATN202", "PORT202", "RUSS202", "SPAN202"]
+			}
+		],
+		"histPre": [
+			{
+				"sectionName": "History, Pre-Modern Era",
+				"classList": ["CLAS105", "HIST101", "HIST103", "HIST115", "HIST117", "HONS226", "JWST210", "RELS117"]
+			}
+		],
+		"histMod": [
+			{
+				"sectionName": "History, Modern Era",
+				"classList": ["HIST102", "HIST104", "HIST116", "HIST118", "HONS227", "JWST215", "RELS118"]
+			}
+		]
+
+	}
+]
+}
