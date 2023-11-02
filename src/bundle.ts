@@ -18,6 +18,7 @@ let bundlerArgs = [
     'build',
     '--watch',//Recompile the javascript whenever the typescript updates
     '--splitting',
+    '--minify-identifiers', //workaround for https://github.com/oven-sh/bun/issues/5344
     '--target','browser',
     '--sourcemap',
     '--outdir','./public/scripts',
