@@ -16,7 +16,9 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 
+        <!-- Claire -->
     <link rel="stylesheet" href="./style/homepage/main.css">
+        <link rel="stylesheet" href="./style/schedule/main.css">
 </head>
 <body>
     <header>
@@ -38,11 +40,21 @@
                 <h2>Weekly Schedule</h2>
                 <p>This is currently not implemented.</p>
 
-                <div class="week" sid="202420">
-                    <div class="day" dow="m" color="red">
+                <div class="week" sid="202420" dir="ltr" >
+                    <div class="day" dow="m" dir="auto">
+                        <h1>Monday / Wednesday / Friday</h1>
                         <div class="meeting" crn="102344">
-                            <h4>CSCI 362</h4>
+                            <h4>Monday</h4>
                             <span class="loc">HWEA 302</span>
+                            <span class="time">10-4:45</span>
+                        </div>
+                    </div>
+                    <div dir="auto" class="day" dow="m" color="red">
+                        <h1>Tuesday / Thursday</h1>
+                        <div class="meeting" crn="102344">
+                            <h4>Tuesday</h4>
+                            <span class="loc">HWEA 302</span>
+                            <span class="time">10-4:45</span>
                         </div>
                     </div>
                 </div>

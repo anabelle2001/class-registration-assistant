@@ -1,0 +1,32 @@
+.week {
+    font-size: smaller;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .day {
+        flex: 1;
+        > h1 {
+            font-size: medium;
+            text-align: center;
+            max-width: 75%;
+        }
+        
+        .meeting {
+    
+            h4 {
+                font-size: large;
+                padding: 0;
+                margin: 0;
+            }
+            .loc {
+        
+            }
+        
+            .time {
+        
+            }
+            
+        }
+    }
+
+}
