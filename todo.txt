@@ -1,0 +1,19 @@
+- [ ] Periodically fetch new data from server
+
+- Misc
+    - [d] Mobile: Scroll Buttons
+
+- [ ] Requirements
+    
+- [ ] Class Schedule
+    - [ ] Simple: Table of classes
+    - [ ] Advanced: Cool visualization
+    - [ ] share / embed into link
+
+- [ ] Class Search
+    - Teacher Name
+    - Class Name - Introduction to Programming
+    - CRN
+    - Class Name - AAST200
+
+- [ ] Populate 
