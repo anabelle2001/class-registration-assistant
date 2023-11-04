@@ -23,13 +23,6 @@ describe('Color.fromHex, Color.fromRGB, Color.fromHSV',()=>{
         redFromRGB = Color.fromRGB({ r: 255, g: 0, b: 0 })
     })
 
-
-    it('should Object.seal() the returned values', ()=>{
-        expect(Object.isSealed(blackFromHSV)).toBeTrue()
-        expect(Object.isSealed(blackFromRGB)).toBeTrue()
-        expect(Object.isSealed(blackFromHex)).toBeTrue()
-    })
-
     it('should return the same values for black', () => {
         expect(blackFromRGB).toEqual(blackFromHex)
         expect(blackFromHSV).toEqual(blackFromHex)

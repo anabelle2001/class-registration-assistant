@@ -16,14 +16,15 @@ export type hsv = {
 };
 
 export interface color extends hsv,rgb {};
+
 export class Color implements color {
-    r: number
-    g: number
-    b: number
-    h: number
-    s: number
-    v: number
-    hex: string
+    readonly r: number
+    readonly g: number
+    readonly b: number
+    readonly h: number
+    readonly s: number
+    readonly v: number
+    readonly hex: string
     
     constructor(values: color){
         //helper functions assert_is_unit8, assert_is_percentage, and 
@@ -48,7 +49,6 @@ export class Color implements color {
             numberToTwoCharHex(this.b)
         )
 
-        Object.seal(this);
         return;
 
         function assert_is_uint8(i: number){
