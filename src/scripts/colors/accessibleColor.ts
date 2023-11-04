@@ -4,54 +4,19 @@ import {
     minimumContrastStandard
 } from './minimumContrastStandards'
 
-export class AccessibleColor extends Color {
-    __luminance__ : number
-
-    constructor(values: color){
-        super(values)
-    }
-    
-    get luminance() {
-        if (this.__luminance__ !== undefined) {
-            return this.__luminance__
-        }
-        const { r, g, b } = this;
-
-        const RED = 0.2126;
-        const GREEN = 0.7152;
-        const BLUE = 0.0722;
-
-        const GAMMA = 2.4;
-
-        var a = [r, g, b].map((intensity) => {
-            intensity /= 255; //map intensity from 0-255 to 0-1
-            return intensity <= 0.03928
-                ? intensity / 12.92
-                : Math.pow((intensity + 0.055) / 1.055, GAMMA);
-        });
-        this.__luminance__ = a[0] * RED + a[1] * GREEN + a[2] * BLUE;
-        return this.__luminance__;
-    }
+export class ColorTools {
 
 
-    static contrastRatio(foreground: AccessibleColor, background: AccessibleColor) {
-        const lum1 = foreground.luminance,
-            lum2 = background.luminance;
-        const brightLuminance = Math.max(lum1, lum2),
+    static WCAGContrastRatio(foreground: Color, background: Color) {
+        const 
+            lum1 = foreground.WCAGLuminance,
+            lum2 = background.WCAGLuminance;
+
+        const
+            brightLuminance = Math.max(lum1, lum2),
             darkLuminance = Math.min(lum1, lum2);
 
         return (brightLuminance + 0.05) / (darkLuminance + 0.05);
-    }
-    contrastRatio(foreground:AccessibleColor) {
-        return AccessibleColor.contrastRatio(this,foreground)
-    }
-
-    static fromHEX(color: `#${string}`): AccessibleColor {
-        return new AccessibleColor(super.fromHEX(color))
-    }
-
-    static fromHSV(color: hsv): AccessibleColor {
-        return super.fromHSV(color) as AccessibleColor
     }
 
     /**
@@ -68,61 +33,105 @@ export class AccessibleColor extends Color {
      * @returns an object with a `darkColor` and a `lightColor`, which are 
      * similar to the base color but have contrast betwene them
      */
-    deriveContrastingPair(
-        strategy: "saturation" | 'value' | 'both',
+    static deriveContrastingPair(
+        baseColor: Color,
         standard:minimumContrastStandard,
-        minIterations: number
-    ): false | {
-        darkColor:AccessibleColor,
-        lightColor:AccessibleColor
-    } {
+        minIterations: number,
+        maxIterations: number,
+    ): {
+        light:Color,
+        dark:Color,
+    } | undefined {
+
+        //check type of args
         if(!Number.isInteger(minIterations) || minIterations <= 0){
             console.trace("minIterations must be integer")
         }
 
-        //step 1, check if possible
-
         const desiredContrastRatio = minimumContrastStandards[standard];
-        let prevContrastRatio = 1
-        let candidateProgression = 0.5
 
-        for(
-            let i = 0;
-            i < minIterations || prevContrastRatio < desiredContrastRatio;
-            i++
-        ){
-            switch (strategy) {
-                case 'saturation':
-                    let newSaturations = interpolate(
-                        this.s,
-                        candidateProgression
-                    )
+        //binary search for good color pair. 
 
-                    prevContrastRatio = AccessibleColor.contrastRatio(
-                        AccessibleColor.fromHSV({
+        let progression = 0.5; //in (0,1)
 
-                        }),
-                        AccessibleColor.fromHSV({
+        for(let iterations = 0; iterations < maxIterations; iterations++) {
+            //step 1: calculate new interpolated values
+            const newSaturations = interpolate(
+                baseColor.s,
+                progression
+            )
 
-                        })
-                    )
+            const newValue = interpolate(
+                baseColor.v,
+                progression
+            )
 
-                    break;
+            //step 2: figue out which permutation works best 
             
-                case 'value':
-
-                    break;
-                case 'both':
-
-                    break;
-                default:
-                    break;
+            const pair1 = {
+                light: Color.fromHSV({
+                    h: baseColor.h,
+                    s: newSaturations.bright,
+                    v: newValue.bright
+                }),
+                dark: Color.fromHSV({
+                    h: baseColor.h,
+                    s: newSaturations.dark,
+                    v: newValue.dark
+                }),
             }
-            prevContrastRatio =0;
+            const pair2 = {
+                light: Color.fromHSV({
+                    h: baseColor.h,
+                    s: newSaturations.dark,
+                    v: newValue.bright
+                }),
+                dark: Color.fromHSV({
+                    h: baseColor.h,
+                    s: newSaturations.bright,
+                    v: newValue.dark
+                })
+            }
+            
+            const pair1ContrastRatio = ColorTools.WCAGContrastRatio(
+                pair1.light,
+                pair1.dark
+            )
+
+            const pair2ContrastRatio = ColorTools.WCAGContrastRatio(
+                pair2.light,
+                pair2.dark
+            )
+
+            const [candidateContrastRatio,candidatePair] = 
+                pair1ContrastRatio > pair2ContrastRatio?
+                    [pair1ContrastRatio, pair1]:
+                    [pair2ContrastRatio, pair2];
+
+
+            //step 3 - test contrast ratio,
+            if (
+                candidateContrastRatio > desiredContrastRatio
+                && iterations > minIterations
+            ){
+                return candidatePair;
+            }
+
+            //step 4: else, do an iteration
+
+            const nudgeBy = 2 ** -(2 + iterations)  //we start at 1/2
+                                                    //then nudge by \pm 1/4
+                                                    //then nudge by \pm 1/8
+                                                    //etc.
+            
+            if ( candidateContrastRatio > desiredContrastRatio )
+                progression -= nudgeBy;//get closer to base colors
+            else
+                progression += nudgeBy;//increase contrast
+
         }
 
-
-        return false;
+        return undefined;
 
 
         /**
@@ -165,12 +174,11 @@ export class AccessibleColor extends Color {
                 slopeBright = 1 - center,
                 slopeDark = -center;
 
-            return [
-                center + slopeBright * progression,
-                center + slopeDark * progression,
-            ]
+            return {
+                bright: center + slopeBright * progression,
+                dark: center + slopeDark * progression,
+            }
         }
-        
         
         
     }
