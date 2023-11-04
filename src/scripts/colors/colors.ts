@@ -158,4 +158,29 @@ export class Color implements color {
             b: Math.floor(Math.random() * 255),
         })
     }
+
+
+    __WCAGLuminance__: number
+    
+    get WCAGLuminance() {
+        if (this.__WCAGLuminance__ !== undefined) {
+            return this.__WCAGLuminance__
+        }
+        const { r, g, b } = this;
+
+        const RED = 0.2126;
+        const GREEN = 0.7152;
+        const BLUE = 0.0722;
+
+        const GAMMA = 2.4;
+
+        var a = [r, g, b].map((intensity) => {
+            intensity /= 255; //map intensity from 0-255 to 0-1
+            return intensity <= 0.03928
+                ? intensity / 12.92
+                : Math.pow((intensity + 0.055) / 1.055, GAMMA);
+        });
+        this.__WCAGLuminance__ = a[0] * RED + a[1] * GREEN + a[2] * BLUE;
+        return this.__WCAGLuminance__;
+    }
 }
