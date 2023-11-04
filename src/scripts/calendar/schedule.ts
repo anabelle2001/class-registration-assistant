@@ -1,8 +1,8 @@
-import { Color } from "./colors";
+import { Color } from "../colors/colors";
 import { computeTextColor,computeBackgroundColor } from "./calendarColors";
 
 setInterval(()=>{
-    document.querySelectorAll('.week').forEach(el=>{
+    document.querySelectorAll('.meeting').forEach(el=>{
         let ell = el as HTMLElement;
 
         const foo = Color.random()
@@ -12,6 +12,5 @@ setInterval(()=>{
         ell.style.color = tx.hex;
         ell.style.backgroundColor = bg.hex+'88';
         ell.style.borderLeft = `solid ${foo.hex}`;
-        console.log({bg,tx})
     })
 },1000)
