@@ -32,9 +32,9 @@
                 </select></div>
         </div>
     </header>
-    <div class="main-container">
+    <div class="main-container" data-spy="scroll" data-target=".bottomTabBar">
         <div class="sidebar">
-            <div class="card">
+            <div class="card" id="WeeklySchedule">
                 <h2>Weekly Schedule</h2>
                 <p>This is currently not implemented.</p>
 
@@ -47,12 +47,12 @@
                     </div>
                 </div>
             </div>
-            <div class="card" style="margin-top: 20px;">
+            <div class="card" style="margin-top: 20px;" id="Requirements">
                 <h2>Requirements</h2>
                 <p>This is currently unimplemented.</p>
             </div>
         </div><!-- Sidebar content goes here-->
-        <div class="content card">
+        <div class="content card" id="Courses">
             <h2>Courses</h2>
             <div class="course">
                 <input type="checkbox" id="sections-CSCI362"></input>
@@ -86,18 +86,18 @@
             </div>
         </div>
     </div>
-    <div class="bottomTabBar">
+    <div class="bottomTabBar" id="bottomTabBar">
         <div class="button">
             <i class="bi bi-calendar-event"></i>
-            <span>Schedule</span>
+            <a href="#WeeklySchedule"><span>Schedule</span></a>
         </div>
         <div class="button">
             <i class="bi bi-building"></i>
-            <span>Requirements</span>
+            <a href="#Requirements"><span>Requirements</span></a>
         </div>
         <div class="button">
             <i class="bi bi-book"></i>
-            <span>Sections</span>
+            <a href="#Courses"><span>Sections</span></a>
         </div>
     </div>
 </body>
