@@ -1,4 +1,5 @@
 import { Color } from "../colors/colors";
+import { ColorTools } from '../colors/accessibleColor'
 import { computeTextColor,computeBackgroundColor } from "./calendarColors";
 
 setInterval(()=>{
@@ -6,11 +7,10 @@ setInterval(()=>{
         let ell = el as HTMLElement;
 
         const foo = Color.random()
-        const bg = computeBackgroundColor(foo)
-        const tx = computeTextColor(foo)
+        const {dark,light} = ColorTools.deriveContrastingPair(foo)
 
-        ell.style.color = tx.hex;
-        ell.style.backgroundColor = bg.hex+'88';
-        ell.style.borderLeft = `solid ${foo.hex}`;
+        ell.style.color = dark.hex;
+        ell.style.backgroundColor = light.hex+'ff';
+        ell.style.borderLeft = `solid ${dark.hex}`;
     })
 },1000)
