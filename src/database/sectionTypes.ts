@@ -1,6 +1,14 @@
 export type booleanInt = 0|1
 export type trinaryInt = 0| 1  | 2
 
+export type course = {
+    credits: number | 'depends';
+    courseName: string //Actual name of course(ex. "Programming II")
+    courseAbb: string //ex CSCI300
+    courseEquiv: course[] | null //List of equivalent classes; can this be done autonomously?
+    coursePrereqs: string //May not use, but here if needed
+}
+
 export type section = {
     /**
      * Course Reference Number, usually 5 digits 
@@ -50,8 +58,8 @@ export type section = {
     /**
      * e.g: `"AAST200"`
      */
-    courseName: string
-
+    courseAbb: string
+    
     faculty: faculty[]
     schedule: schedule[]
 }
