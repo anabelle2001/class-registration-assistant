@@ -229,7 +229,7 @@ export class SectionDatabase {
 
     static instance: SectionDatabase;
     static getInstance(): SectionDatabase{
-        let path = "sql/classData.sqlite3"
+        let path = "data/sql/classData.sqlite3"
         if(this.instance == undefined){
             this.instance = new SectionDatabase(path);
             return this.instance;
