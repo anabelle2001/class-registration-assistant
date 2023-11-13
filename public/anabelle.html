@@ -34,9 +34,9 @@
                 </select></div>
         </div>
     </header>
-    <div class="main-container">
+    <div class="main-container" data-spy="scroll" data-target=".bottomTabBar">
         <div class="sidebar">
-            <div class="card">
+            <div class="card" id="WeeklySchedule">
                 <h2 class="text-center">Schedule</h2>
 
                 <div class="week" sid="202420" dir="ltr" >
@@ -46,7 +46,7 @@
                     </div>
                     <div class="days">
                         <div class="day" dow="m" dir="auto">
-                            <div class="meeting" crn="102344">
+                            <div class="meeting" crn="102344"><div class="deleteBtn">X</div>
                                 <h4>CSCI 362</h4>
                                 <span class="full">Software Engineering</span>
                                 <span class="loc">HWEA 302</span>
@@ -54,14 +54,14 @@
                             </div>
                         </div>
                         <div dir="auto" class="day" dow="m" color="red">
-                            <div class="meeting" crn="102344">
+                            <div class="meeting" crn="102344"><div class="deleteBtn">X</div>
                                 <h4>HIST 112</h4>
                                 <span class="full">Pre-Modern History</span>
                                 <span class="loc">MYBK 223</span>
                                 <span class="time">10:00&nbsp;AM - 4:45&nbsp;PM</span>
                             </div>
                             <span class="passing">5 min gap</span>
-                            <div class="meeting" crn="102344">
+                            <div class="meeting" crn="102344"><div class="deleteBtn">X</div>
                                 <h4>HIST 116</h4>
                                 <span class="full">Modern History</span>
                                 <span class="loc">MYBK 223</span>
@@ -72,12 +72,12 @@
                     </div>
                 </div>
             </div>
-            <div class="card" style="margin-top: 20px;">
+            <div class="card" style="margin-top: 20px;" id="Requirements">
                 <h2>Requirements</h2>
                 <p>This is currently unimplemented.</p>
             </div>
         </div><!-- Sidebar content goes here-->
-        <div class="content card">
+        <div class="content card" id="Courses">
             <h2>Courses</h2>
             <div class="course">
                 <input type="checkbox" id="sections-CSCI362"></input>
@@ -92,6 +92,7 @@
                             <th>CRN</th>
                             <th>Teacher</th>
                             <th>Schedule</th>
+                            <th></th>
                         </tr>
                         <tr>
                             <td>201532</td>
@@ -99,30 +100,37 @@
                             <td class="meeting">
                                 <span class="days">m-w-f</span>
                                 <br>
-                                <span class="time">8:00&nbsp;AM - 12:00&nbsp;AM</span>
+                                <span class="time">8:00&nbsp;AM - 12:00&nbsp;PM</span>
                             </td>
+                            <td><div class="addBtn">Add</div></td>
                         </tr>
                         <tr>
                             <td>201532</td>
                             <td>Baza, Mohammed</td>
+                            <td class="meeting">
+                                <span class="days">m-w-f</span>
+                                <br>
+                                <span class="time">1:00&nbsp;PM - 4:00&nbsp;PM</span>
+                            </td>
+                            <td><div class="addBtn">Add</div></td>
                         </tr>
                     </table><!-- Table content goes here-->
                 </div>
             </div>
         </div>
     </div>
-    <div class="bottomTabBar">
+    <div class="bottomTabBar" id="bottomTabBar">
         <div class="button">
             <i class="bi bi-calendar-event"></i>
-            <span>Schedule</span>
+            <a href="#WeeklySchedule"><span>Schedule</span></a>
         </div>
         <div class="button">
             <i class="bi bi-building"></i>
-            <span>Requirements</span>
+            <a href="#Requirements"><span>Requirements</span></a>
         </div>
         <div class="button">
             <i class="bi bi-book"></i>
-            <span>Sections</span>
+            <a href="#Courses"><span>Sections</span></a>
         </div>
     </div>
 </body>
