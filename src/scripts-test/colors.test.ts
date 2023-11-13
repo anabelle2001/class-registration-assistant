@@ -1,4 +1,4 @@
-import { Color, color, rgb, hsv } from "../scripts/colors";
+import { Color, color, rgb, hsv } from "../scripts/colors/colors";
 import { it, expect, describe} from "bun:test"
 
 describe('Color.fromHex, Color.fromRGB, Color.fromHSV',()=>{
@@ -21,13 +21,6 @@ describe('Color.fromHex, Color.fromRGB, Color.fromHSV',()=>{
         whiteFromHSV = Color.fromHSV({ h: 0, s: 0, v: 1 })
         redFromHex = Color.fromHEX("#ff0000")
         redFromRGB = Color.fromRGB({ r: 255, g: 0, b: 0 })
-    })
-
-
-    it('should Object.seal() the returned values', ()=>{
-        expect(Object.isSealed(blackFromHSV)).toBeTrue()
-        expect(Object.isSealed(blackFromRGB)).toBeTrue()
-        expect(Object.isSealed(blackFromHex)).toBeTrue()
     })
 
     it('should return the same values for black', () => {

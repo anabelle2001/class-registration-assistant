@@ -16,14 +16,15 @@ export type hsv = {
 };
 
 export interface color extends hsv,rgb {};
+
 export class Color implements color {
-    r: number
-    g: number
-    b: number
-    h: number
-    s: number
-    v: number
-    hex: string
+    readonly r: number
+    readonly g: number
+    readonly b: number
+    readonly h: number
+    readonly s: number
+    readonly v: number
+    readonly hex: string
     
     constructor(values: color){
         //helper functions assert_is_unit8, assert_is_percentage, and 
@@ -48,7 +49,6 @@ export class Color implements color {
             numberToTwoCharHex(this.b)
         )
 
-        Object.seal(this);
         return;
 
         function assert_is_uint8(i: number){
@@ -157,5 +157,30 @@ export class Color implements color {
             g: Math.floor(Math.random() * 255),
             b: Math.floor(Math.random() * 255),
         })
+    }
+
+
+    __WCAGLuminance__: number
+    
+    get WCAGLuminance() {
+        if (this.__WCAGLuminance__ !== undefined) {
+            return this.__WCAGLuminance__
+        }
+        const { r, g, b } = this;
+
+        const RED = 0.2126;
+        const GREEN = 0.7152;
+        const BLUE = 0.0722;
+
+        const GAMMA = 2.4;
+
+        var a = [r, g, b].map((intensity) => {
+            intensity /= 255; //map intensity from 0-255 to 0-1
+            return intensity <= 0.03928
+                ? intensity / 12.92
+                : Math.pow((intensity + 0.055) / 1.055, GAMMA);
+        });
+        this.__WCAGLuminance__ = a[0] * RED + a[1] * GREEN + a[2] * BLUE;
+        return this.__WCAGLuminance__;
     }
 }

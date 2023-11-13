@@ -5,8 +5,25 @@ SHELL := /bin/bash
 
 # SASS
 sass:
-	rm -rf ./public/style
-	bunx sass --watch --color --no-source-map src/scss:public/style 
+	rm -rf public/style
+	bunx sass \
+		--watch \
+		--color \
+		--no-source-map \
+		src/scss:public/style 
+
+scripts:
+	rm -rf public/scripts
+	bunx esbuild \
+		--source-root=src/scripts \
+		--sourcemap \
+		--watch=forever \
+		--splitting \
+		--format=esm \
+		--color=true \
+		--outdir=public/scripts \
+		--tsconfig=src/scripts/tsconfig.json\
+		$$(find src/scripts -name "*\.[tj]s")
 
 # DOCUMENTATION:
 %.beamer.pdf: %.md

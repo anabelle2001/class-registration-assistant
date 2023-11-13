@@ -6,13 +6,13 @@ const db = SectionDatabase.getInstance()
 
 sectionsAPI.get('/:semester', (c) => {
     const semester = c.req.param('semester')
-    return c.json(db.data[semester])
+    return c.json(db.sectionData[semester])
 });
 
 sectionsAPI.get('/:semester/:crn', (c) => {
     const semester = c.req.param('semester')
     const crn = +c.req.param('crn')
-    for (const section of db.data[semester]) {
+    for (const section of db.sectionData[semester]) {
         if (section.CRN == crn) return c.json(crn);
     }
     return c.json({})
