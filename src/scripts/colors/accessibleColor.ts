@@ -28,19 +28,20 @@ export class ColorTools {
      * 
      * @param strategy - whether to mess with the saturation, value, or both
      * @param standard - what minimum contrast standard to adhere to
-     * @param minIterations - minimum number of times to perform binary search for sufficently contrastted pair.
+     * @param minIterations - minimum number of times to perform binary search for sufficently contrastmted pair.
      * 
      * @returns an object with a `darkColor` and a `lightColor`, which are 
      * similar to the base color but have contrast betwene them
      */
     static deriveContrastingPair(
         baseColor: Color,
-        standard:minimumContrastStandard,
-        minIterations: number,
-        maxIterations: number,
+        standard:minimumContrastStandard = 'AAA_text',
+        minIterations: number = 3,
+        maxIterations: number = 100,
     ): {
         light:Color,
         dark:Color,
+        contrastRatio:number,
     } | undefined {
 
         //check type of args
@@ -114,7 +115,10 @@ export class ColorTools {
                 candidateContrastRatio > desiredContrastRatio
                 && iterations > minIterations
             ){
-                return candidatePair;
+                return {
+                    contrastRatio:candidateContrastRatio, 
+                    ...candidatePair
+                };
             }
 
             //step 4: else, do an iteration

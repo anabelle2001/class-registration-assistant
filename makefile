@@ -14,8 +14,12 @@ sass:
 
 scripts:
 	rm -rf public/scripts
+
+	echo $(shell find src/scripts -name "*\.[tj]s")
+
+
 	bunx esbuild \
-		--source-root=src/scripts \
+		--source-root=src/scripts/ \
 		--sourcemap \
 		--watch=forever \
 		--splitting \
@@ -23,7 +27,8 @@ scripts:
 		--color=true \
 		--outdir=public/scripts \
 		--tsconfig=src/scripts/tsconfig.json\
-		$$(find src/scripts -name "*\.[tj]s")
+		$(shell find src/scripts -name "*\.[tj]s")
+
 
 # DOCUMENTATION:
 %.beamer.pdf: %.md

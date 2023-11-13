@@ -19,6 +19,15 @@ app.route('/api/semesters/',listSemestersAPI)
 app.get('/style/normalize.css', serveStatic({
      path:'node_modules/normalize.css/normalize.css'
 }))
+app.get('/scripts/*', serveStatic({
+     root: './public/',
+     rewriteRequestPath: (path) => {
+          console.log(path)
+          return path.endsWith('js') ? 
+               path :
+               path+'.js'
+     }
+}))
 app.get('/*',serveStatic({root: './public'}))
 
 const db = SectionDatabase.getInstance()

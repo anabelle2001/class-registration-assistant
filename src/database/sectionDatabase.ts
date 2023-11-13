@@ -1,7 +1,7 @@
 import { Database, SQLQueryBindings, Statement } from "bun:sqlite";
 import * as path from 'path';
 import translateSection from "./translateSection";
-import { section } from "./sectionTypes";
+import { section, course } from "./sectionTypes";
 import { getAuthHeaders } from '../scrape/authenticate'
 import {
     listSectionsResponse,
@@ -15,7 +15,8 @@ import { inMilliseconds } from "../millisecondDurations";
 
 export class SectionDatabase {    
     SQLiteOBJ: Database;
-    data: {[key: string]: section[]} = {};
+    sectionData: { [key: string]: section[] } = {};
+    courseData: { [key: string]: course[] } = {};
     semesterList: term[]
     domain: string
 
@@ -66,7 +67,33 @@ export class SectionDatabase {
     async loadSemesterFromJSON(SID: string){
         let fileContents = await Bun.file(`./json/${SID}.json`)
         let data = await fileContents.json() as sectionResponse[];
-        this.data[SID] = data.map(translateSection);
+        this.sectionData[SID] = data.map(translateSection);
+        
+        const thisSemesterCourseData = this.courseData[SID]
+
+
+        for (const section of data){
+            const courseAbb = section.subjectCourse
+            if (courseAbb in thisSemesterCourseData) {
+                if(
+                    thisSemesterCourseData[courseAbb].credits
+                    != section.creditHourLow || (
+                        section.creditHourHigh != undefined &&
+                        section.creditHourHigh != section.creditHourLow
+                    ) 
+                ){
+                    thisSemesterCourseData[courseAbb].credits='depends'
+                }
+            } else {
+                thisSemesterCourseData[courseAbb] = {
+                    courseAbb,
+                    courseEquiv:null,
+                    credits: section.creditHourLow,
+                    coursePrereqs: "",
+                    courseName: section.courseTitle,
+                } as course
+            }
+        }
     }
     
 
@@ -155,7 +182,7 @@ export class SectionDatabase {
             newSectionList.push(...response.data.map(translateSection))
         }
 
-        this.data[SID] = newSectionList
+        this.sectionData[SID] = newSectionList
 
         //save to json
 
@@ -187,7 +214,7 @@ export class SectionDatabase {
         `);
 
         const actualSemester = (semester instanceof String) ?
-            this.data[semester as string] as section[]:
+            this.sectionData[semester as string] as section[]:
             semester as section[]
         
         actualSemester.forEach( section => {
@@ -202,7 +229,7 @@ export class SectionDatabase {
 
     static instance: SectionDatabase;
     static getInstance(): SectionDatabase{
-        let path = "sql/classData.sqlite3"
+        let path = "data/sql/classData.sqlite3"
         if(this.instance == undefined){
             this.instance = new SectionDatabase(path);
             return this.instance;

@@ -6,7 +6,7 @@ import { section } from "../database/sectionTypes";
 // each function takes in a section and spits out a string
 // they're orered in the order that columns show up in the table
 const tableFields: ((x: section) => string)[] = [
-    (x:section) => x.courseName, //title
+    (x:section) => x.courseAbb, //title
     (x:section) => x.section.toString(), //section Number
     (x:section) => (    //Teachers
         x.faculty
