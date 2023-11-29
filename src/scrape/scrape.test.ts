@@ -1,6 +1,6 @@
 import { describe, it, expect, afterAll } from "bun:test"
 import {getAuthHeaders} from "./authenticate"
-import { getSemesters } from "./getSemesters"
+import { getSemestersFromEllucian } from "./getSemesters"
 import { getSections } from "./getSections"
 import { listSectionsResponse, sectionResponse, term } from "./ellucianResponseTypes"
 
@@ -16,7 +16,7 @@ describe('getSemesters()', async () => {
     let response:term[];
 
     await it("should return without erroring", async () => {
-        response = await getSemesters()
+        response = await getSemestersFromEllucian()
     })
 
     it("should return a list of at least one semester", ()=>{

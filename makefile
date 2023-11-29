@@ -19,7 +19,7 @@ scripts:
 
 
 	bunx esbuild \
-		--source-root=src/scripts/ \
+		--source-root=./esbuild-webroot/ \
 		--sourcemap \
 		--watch=forever \
 		--splitting \

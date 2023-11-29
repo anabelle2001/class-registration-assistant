@@ -1,0 +1,17 @@
+
+AB: ["AND"
+	["GPA-MIN", 2.5],
+	["NAME-DESC", "Latin or Greek Language Requiremnt",
+		["OR",
+			["HOURS-FROM-LIST", 6,
+				"LATN 305",
+				"LATN 321",
+				"LATN ..."],
+			["HOURS-FROM-LIST", 6,
+				"GREK 305",
+				"GREK 321",
+				"GREK ..."]
+			]
+	]
+		
+]

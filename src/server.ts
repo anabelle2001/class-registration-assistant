@@ -14,7 +14,7 @@ const app = new Hono();
 
 
 // app.route('/api/demo/',demoAPI);
-app.route('/api/sections/',sectionsAPI);
+app.route('/api/sections',sectionsAPI);
 app.route('/api/semesters/',listSemestersAPI)
 app.get('/style/normalize.css', serveStatic({
      path:'node_modules/normalize.css/normalize.css'
@@ -31,13 +31,13 @@ app.get('/scripts/*', serveStatic({
 app.get('/*',serveStatic({root: './public'}))
 
 const db = SectionDatabase.getInstance()
-
+global.db=db
 
 if('--fetch' in Bun.argv){
-     db.updateSections('202420')
+     db.updateSectionsFromEllucian('202420')
      setInterval(
           ()=>{
-               db.updateSections('202420')
+               db.updateSectionsFromEllucian('202420')
           }, inMilliseconds(20, 'minutes')
      )
 }

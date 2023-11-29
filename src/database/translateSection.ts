@@ -48,6 +48,7 @@ export default function translateSection(
         semesterID: +responseToTranslate.term,
         
         courseAbb: responseToTranslate.subjectCourse,
+        courseName: responseToTranslate.courseTitle,
         section: +responseToTranslate.sequenceNumber,
         
         creditHours: responseToTranslate.creditHourLow,

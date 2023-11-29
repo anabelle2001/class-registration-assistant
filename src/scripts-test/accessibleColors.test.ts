@@ -1,7 +1,7 @@
 //describe accessible colors
 import { describe, expect, it } from "bun:test";
-import { Color } from "../scripts/colors/colors";
-import { ColorTools } from '../scripts/colors/accessibleColor'
+import { Color } from "../scripts/common/colors/colors";
+import { ColorTools } from '../scripts/common/colors/accessibleColor'
 
 describe('accessible colors',async ()=>{
     it('should generate valid AAA_text pairs for 10000 random colors', function(){

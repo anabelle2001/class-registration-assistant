@@ -1,5 +1,11 @@
-export type booleanInt = 0|1
-export type trinaryInt = 0| 1  | 2
+export type booleanInt = 0 | 1
+export type trinaryInt = 0 | 1  | 2
+
+export type simpleCourse = {
+    courseAbb: string,
+    courseName: string,
+    sid: string
+}
 
 export type course = {
     credits: number | 'depends';
@@ -59,6 +65,8 @@ export type section = {
      * e.g: `"AAST200"`
      */
     courseAbb: string
+
+    courseName: string
     
     faculty: faculty[]
     schedule: schedule[]
@@ -93,6 +101,11 @@ export type schedule = {
     weekdays: weekdayList
 
     room: string
+}
+
+export type semester = {
+    name: string
+    sid: string
 }
 
 export type weekdayList = `${'m' | '-'}${'t' | '-'}${'w' | '-'}${'r' | '-'}${'f' | '-'}`

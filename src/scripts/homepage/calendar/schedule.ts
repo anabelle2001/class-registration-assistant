@@ -1,8 +1,8 @@
-import { Color } from "../colors/colors";
-import { ColorTools } from '../colors/accessibleColor'
+import { Color } from "../../common/colors/colors";
+import { ColorTools } from '../../common/colors/accessibleColor'
 import { computeTextColor,computeBackgroundColor } from "./calendarColors";
 
-document.querySelectorAll('.schedule .meeting').forEach(el=>{
+document.querySelectorAll('#WeeklySchedule .meeting').forEach(el=>{
     let ell = el as HTMLElement;
 
     const foo = Color.random()

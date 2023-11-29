@@ -3,13 +3,13 @@ import * as path from 'path';
 import translateSection from "./translateSection";
 import { section, course } from "./sectionTypes";
 import { getAuthHeaders } from '../scrape/authenticate'
-import {
+import type {
     listSectionsResponse,
     sectionResponse,
     term 
 } from '../scrape/ellucianResponseTypes'
 import { getSections } from '../scrape/getSections'
-import { getSemesters } from '../scrape/getSemesters'
+import { getSemestersFromEllucian } from '../scrape/getSemesters'
 import { sleep } from "bun";
 import { inMilliseconds } from "../millisecondDurations";
 
@@ -27,6 +27,12 @@ export class SectionDatabase {
         this.domain = domain
         this.SQLiteOBJ = new Database(path);
         this.__initializeEnrollmentMethods()
+
+        this.updateSemesterListFromEllucian().then(()=>{
+            for (const semester of this.semesterList)
+                this.loadSemesterFromJSON(semester.code);
+        })
+
     }
 
     
@@ -57,19 +63,25 @@ export class SectionDatabase {
         //Prepare trans
     }
 
-
-
     /**
      * Loads a particular semester into the database
      * 
      * @param {string} SID  - 6-digit SID (format: YYYYSS)
      */
     async loadSemesterFromJSON(SID: string){
-        let fileContents = await Bun.file(`./json/${SID}.json`)
+        let file = await Bun.file(`data/json/${SID}.json`)
+
+        if (await file.exists() == false) {
+            return
+        }
+        console.info("Loading Semester",SID)
+        
+        let fileContents = await file
+
         let data = await fileContents.json() as sectionResponse[];
         this.sectionData[SID] = data.map(translateSection);
         
-        const thisSemesterCourseData = this.courseData[SID]
+        const thisSemesterCourseData = this.courseData[SID] = []
 
 
         for (const section of data){
@@ -106,8 +118,8 @@ export class SectionDatabase {
      * @params none
      * @returns none
      */
-    async updateSemesterList(){
-        this.semesterList = await getSemesters()
+    async updateSemesterListFromEllucian(){
+        this.semesterList = await getSemestersFromEllucian()
     }
 
     /**
@@ -130,14 +142,14 @@ export class SectionDatabase {
     /**
      * Queries Ellucian to get all classes for a particular semester
      */
-    async updateSections(SID:string){
+    async updateSectionsFromEllucian(SID:string){
         console.log("updating....")
 
         if (SID == undefined){
             throw new Error("No semester given");
         }
 
-        await this.updateSemesterList()
+        await this.updateSemesterListFromEllucian()
         if (this.getSemester(SID) == null) {
             throw new Error("No such semester:"+SID);
         }
@@ -238,4 +250,3 @@ export class SectionDatabase {
         }
     }
 };
-
