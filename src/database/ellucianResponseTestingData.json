@@ -1,0 +1,1046 @@
+[
+  {
+    "id": 153007,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "20800",
+    "partOfTerm": "1",
+    "courseNumber": "200",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "01",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Introduction to African American Studies",
+    "creditHours": null,
+    "maximumEnrollment": 30,
+    "enrollment": 8,
+    "seatsAvailable": 22,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST200",
+    "faculty": 
+    [
+      {
+        "bannerId": "63280",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "20800",
+        "displayName": "Antron Mahoney",
+        "emailAddress": "mahoneyad@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "20800",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1050",
+          "building": "MYBK",
+          "buildingDescription": "MAYBANK HALL",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "20800",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1205",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "317",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "HUMS",
+        "courseReferenceNumber": "20800",
+        "description": "Humanities",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "cladata/example/all.jsonss": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "20800",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 152938,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "20731",
+    "partOfTerm": "1",
+    "courseNumber": "200",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "02",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Introduction to African American Studies",
+    "creditHours": null,
+    "maximumEnrollment": 30,
+    "enrollment": 6,
+    "seatsAvailable": 24,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST200",
+    "faculty": 
+    [
+      {
+        "bannerId": "63280",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "20731",
+        "displayName": "Antron Mahoney",
+        "emailAddress": "mahoneyad@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "20731",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1215",
+          "building": "MYBK",
+          "buildingDescription": "MAYBANK HALL",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "20731",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1330",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "317",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "HUMS",
+        "courseReferenceNumber": "20731",
+        "description": "Humanities",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "20731",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 154206,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "21999",
+    "partOfTerm": "1",
+    "courseNumber": "200",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "03",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Online Exclusively",
+    "courseTitle": "Introduction to African American Studies",
+    "creditHours": 3,
+    "maximumEnrollment": 30,
+    "enrollment": 24,
+    "seatsAvailable": 6,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST200",
+    "faculty": 
+    [
+      {
+        "bannerId": "63281",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "21999",
+        "displayName": "Michael Owens",
+        "emailAddress": "mowens@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "21999",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": null,
+          "building": "ONLINE",
+          "buildingDescription": "ONLINE COURSE",
+          "campus": "O",
+          "campusDescription": "Off-Campus",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "21999",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": null,
+          "friday": false,
+          "hoursWeek": 0.0,
+          "meetingScheduleType": "ONL",
+          "meetingType": "ONL",
+          "meetingTypeDescription": "Online",
+          "monday": false,
+          "room": null,
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": false,
+          "tuesday": false,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "HUMS",
+        "courseReferenceNumber": "21999",
+        "description": "Humanities",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "21999",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": "DE1",
+    "instructionalMethodDescription": "Online Education"
+  },
+  {
+    "id": 153151,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "20944",
+    "partOfTerm": "1",
+    "courseNumber": "200",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "04",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Online Exclusively",
+    "courseTitle": "Introduction to African American Studies",
+    "creditHours": null,
+    "maximumEnrollment": 30,
+    "enrollment": 10,
+    "seatsAvailable": 20,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST200",
+    "faculty": 
+    [
+      {
+        "bannerId": "63281",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "20944",
+        "displayName": "Michael Owens",
+        "emailAddress": "mowens@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "20944",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": null,
+          "building": "ONLINE",
+          "buildingDescription": "ONLINE COURSE",
+          "campus": "O",
+          "campusDescription": "Off-Campus",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "20944",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": null,
+          "friday": false,
+          "hoursWeek": 0.0,
+          "meetingScheduleType": "ONL",
+          "meetingType": "ONL",
+          "meetingTypeDescription": "Online",
+          "monday": false,
+          "room": null,
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": false,
+          "tuesday": false,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "HUMS",
+        "courseReferenceNumber": "20944",
+        "description": "Humanities",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "20944",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": "DE1",
+    "instructionalMethodDescription": "Online Education"
+  },
+  {
+    "id": 158098,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "23615",
+    "partOfTerm": "1",
+    "courseNumber": "290",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "01",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Special Topics",
+    "creditHours": null,
+    "maximumEnrollment": 5,
+    "enrollment": 0,
+    "seatsAvailable": 5,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": "90",
+    "crossListCapacity": 35,
+    "crossListCount": 6,
+    "crossListAvailable": 29,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST290",
+    "faculty": 
+    [
+      {
+        "bannerId": "63285",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "23615",
+        "displayName": "Erica Veal",
+        "emailAddress": "enveal@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "23615",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1525",
+          "building": "MYBK",
+          "buildingDescription": "MAYBANK HALL",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "23615",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1640",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": true,
+          "room": "306",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": false,
+          "tuesday": false,
+          "wednesday": true
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "ST",
+        "courseReferenceNumber": "23615",
+        "description": "Special Topics",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 157113,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "23420",
+    "partOfTerm": "1",
+    "courseNumber": "300",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "01",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Special Topics: Black Sexual Politics\n",
+    "creditHours": null,
+    "maximumEnrollment": 25,
+    "enrollment": 7,
+    "seatsAvailable": 18,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST300",
+    "faculty": 
+    [
+      {
+        "bannerId": "63280",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "23420",
+        "displayName": "Antron Mahoney",
+        "emailAddress": "mahoneyad@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "23420",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1505",
+          "building": "MYBK",
+          "buildingDescription": "MAYBANK HALL",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "23420",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1620",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "304",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "23420",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "ST",
+        "courseReferenceNumber": "23420",
+        "description": "Special Topics",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 157134,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "23421",
+    "partOfTerm": "1",
+    "courseNumber": "300",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "02",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Special Topics: Black Love, Black Protest, and the Writings of James Baldwin\n",
+    "creditHours": null,
+    "maximumEnrollment": 25,
+    "enrollment": 7,
+    "seatsAvailable": 18,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST300",
+    "faculty": 
+    [
+      {
+        "bannerId": "63284",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "23421",
+        "displayName": "Mari Crabtree",
+        "emailAddress": "crabtreemn@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "23421",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "0925",
+          "building": "RSS",
+          "buildingDescription": "ROBERT SCOTT SMALL BUILDING",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "23421",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1045",
+          "friday": false,
+          "hoursWeek": 2.66,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "251",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "23421",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "ST",
+        "courseReferenceNumber": "23421",
+        "description": "Special Topics",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 153888,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "21681",
+    "partOfTerm": "1",
+    "courseNumber": "300",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "03",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Special Topics: Intersections of Spirituality, Anti-Racism, Social Justice, and Practice \n",
+    "creditHours": null,
+    "maximumEnrollment": 5,
+    "enrollment": 2,
+    "seatsAvailable": 3,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": "39",
+    "crossListCapacity": 20,
+    "crossListCount": 13,
+    "crossListAvailable": 7,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST300",
+    "faculty": 
+    [
+      {
+        "bannerId": "63282",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "21681",
+        "displayName": "Drisana McDaniel",
+        "emailAddress": "dlmcdani@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "21681",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1050",
+          "building": "BELL",
+          "buildingDescription": "BELLSOUTH BUILDING",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "21681",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1205",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "404",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "21681",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "ST",
+        "courseReferenceNumber": "21681",
+        "description": "Special Topics",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 154207,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "22000",
+    "partOfTerm": "1",
+    "courseNumber": "300",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "04",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": " Special Topics: Major Authors - Toni Morrison \n",
+    "creditHours": null,
+    "maximumEnrollment": 5,
+    "enrollment": 3,
+    "seatsAvailable": 2,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": "40",
+    "crossListCapacity": 31,
+    "crossListCount": 27,
+    "crossListAvailable": 4,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST300",
+    "faculty": 
+    [
+      {
+        "bannerId": "63283",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "22000",
+        "displayName": "Kenneth Johnson II",
+        "emailAddress": "johnsoniikl@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "22000",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1525",
+          "building": "MYBK",
+          "buildingDescription": "MAYBANK HALL",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "22000",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1640",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": true,
+          "room": "220",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": false,
+          "tuesday": false,
+          "wednesday": true
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "22000",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      },
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "ST",
+        "courseReferenceNumber": "22000",
+        "description": "Special Topics",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  },
+  {
+    "id": 154208,
+    "term": "202420",
+    "termDesc": "2024 Spring",
+    "courseReferenceNumber": "22001",
+    "partOfTerm": "1",
+    "courseNumber": "360",
+    "subject": "AAST",
+    "subjectDescription": "African American Studies",
+    "sequenceNumber": "01",
+    "campusDescription": "Main",
+    "scheduleTypeDescription": "Lecture",
+    "courseTitle": "Mass Incarceration and Its Roots",
+    "creditHours": null,
+    "maximumEnrollment": 25,
+    "enrollment": 8,
+    "seatsAvailable": 17,
+    "waitCapacity": 0,
+    "waitCount": 0,
+    "waitAvailable": 0,
+    "crossList": null,
+    "crossListCapacity": null,
+    "crossListCount": null,
+    "crossListAvailable": null,
+    "creditHourHigh": null,
+    "creditHourLow": 3,
+    "creditHourIndicator": null,
+    "openSection": true,
+    "linkIdentifier": null,
+    "isSectionLinked": false,
+    "subjectCourse": "AAST360",
+    "faculty": 
+    [
+      {
+        "bannerId": "63284",
+        "category": null,
+        "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+        "courseReferenceNumber": "22001",
+        "displayName": "Mari Crabtree",
+        "emailAddress": "crabtreemn@cofc.edu",
+        "primaryIndicator": true,
+        "term": "202420"
+      }
+    ],
+    "meetingsFaculty": 
+    [
+      {
+        "category": "01",
+        "class": "net.hedtech.banner.student.schedule.SectionSessionDecorator",
+        "courseReferenceNumber": "22001",
+        "faculty": 
+        [
+        ],
+        "meetingTime": {
+          "beginTime": "1340",
+          "building": "ECTR",
+          "buildingDescription": "EDUCATION CENTER",
+          "campus": "M",
+          "campusDescription": "Main",
+          "category": "01",
+          "class": "net.hedtech.banner.general.overall.MeetingTimeDecorator",
+          "courseReferenceNumber": "22001",
+          "creditHourSession": 3.0,
+          "endDate": "05/01/2024",
+          "endTime": "1455",
+          "friday": false,
+          "hoursWeek": 2.5,
+          "meetingScheduleType": "LEC",
+          "meetingType": "CLAS",
+          "meetingTypeDescription": "Class",
+          "monday": false,
+          "room": "103",
+          "saturday": false,
+          "startDate": "01/10/2024",
+          "sunday": false,
+          "term": "202420",
+          "thursday": true,
+          "tuesday": true,
+          "wednesday": false
+        },
+        "term": "202420"
+      }
+    ],
+    "reservedSeatSummary": null,
+    "sectionAttributes": 
+    [
+      {
+        "class": "net.hedtech.banner.student.schedule.SectionDegreeProgramAttributeDecorator",
+        "code": "REIU",
+        "courseReferenceNumber": "22001",
+        "description": "REI - US",
+        "isZTCAttribute": false,
+        "termCode": "202420"
+      }
+    ],
+    "instructionalMethod": null,
+    "instructionalMethodDescription": null
+  }
+]

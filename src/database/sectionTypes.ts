@@ -8,11 +8,10 @@ export type simpleCourse = {
 }
 
 export type course = {
+    sid: string
     credits: number | 'depends';
     courseName: string //Actual name of course(ex. "Programming II")
     courseAbb: string //ex CSCI300
-    courseEquiv: course[] | null //List of equivalent classes; can this be done autonomously?
-    coursePrereqs: string //May not use, but here if needed
 }
 
 export type section = {
