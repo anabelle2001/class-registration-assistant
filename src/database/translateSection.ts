@@ -18,11 +18,11 @@ function getMeetings(
 
     for(const mf of ellucianSection.meetingsFaculty) {
         let weekdays = (
-            mf.meetingTime.monday    ? 'm' : '-' +
-            mf.meetingTime.tuesday   ? 't' : '-' +
-            mf.meetingTime.wednesday ? 'w' : '-' +
-            mf.meetingTime.thursday  ? 'r' : '-' +
-            mf.meetingTime.friday    ? 'f' : '-' 
+            (mf.meetingTime.monday    ? 'm' : '-') +
+            (mf.meetingTime.tuesday   ? 't' : '-') +
+            (mf.meetingTime.wednesday ? 'w' : '-') +
+            (mf.meetingTime.thursday  ? 'r' : '-') +
+            (mf.meetingTime.friday    ? 'f' : '-')
         ) as weekdayList
 
         meetings.push({

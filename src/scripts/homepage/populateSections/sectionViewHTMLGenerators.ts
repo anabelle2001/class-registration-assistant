@@ -1,4 +1,4 @@
-import type { course } from "../../../database/sectionTypes";
+import type { course, section } from "../../../database/sectionTypes";
 
 export function makeCourseElement(course: course) {
     const courseBox = document.createElement('div') as HTMLDivElement
@@ -30,13 +30,83 @@ export function makeCourseElement(course: course) {
     courseBox.appendChild(collapseToggle)
     courseBox.appendChild(collapseToggleLabel)
     courseBox.appendChild(sectionsDiv)
-    return courseBox
+    return {
+        courseBox,
+        sectionsTable
+    }
 }
 
 export function populateCourseData(
     table: HTMLTableElement,
     course: course,
-    sectionsOfCourse: section
+    sectionsOfCourse: section[]
 ) {
-    
+    const header = table.insertRow();
+    [
+        'CRN',
+        'Faculty',
+        "Meets",
+        "Availible Seats",
+    ].forEach(heading => {
+        // const h = document.createElement('th')
+        // h.innerText = heading
+        header.insertCell().innerText = heading
+    });
+
+
+
+    for(const section of sectionsOfCourse){
+        const sectionRow = table.insertRow();
+        
+        toRowAddCells(sectionRow,
+            section.CRN.toString(),
+        )
+
+        //add teachers
+        sectionRow.insertCell().innerHTML =
+            section.faculty.map(fac=>fac.name).join(', ')
+
+        
+        ///add meetings
+        sectionRow.insertCell().innerHTML = 
+            section.schedule.map(meetingTime =>`
+                <span class="days">${meetingTime.weekdays.toUpperCase()}</span>
+                <br>
+                <span class="time">${prettyTime(meetingTime.begins)} - ${prettyTime(meetingTime.ends)}</span>                
+            `).join('<br>')
+
+        //crn
+        sectionRow.insertCell().innerText =
+            section.seatsAvailable +
+            ' / '
+            + section.seatsMaximum
+    }
+}
+
+
+function toRowAddCells(
+    row: HTMLTableRowElement,
+    ...cells: string[]
+) {
+    for (const cellText of cells){
+        row.insertCell().innerText = cellText
+    }
+}
+function prettyTime(
+    time:number //time in four digit number. tens and ones are mins. rest 24 hr
+) {
+    const minsInt = time % 100;
+    const minsStr = (
+        minsInt < 10? 
+            '0': 
+            ''
+    ) + minsInt
+
+    const hour24 = ~~(time / 100); //integer division
+    const hour12 = hour24 % 12 || 12
+
+    const xm = (time >= 1200) ? 'PM' : 'AM'
+
+
+    return `${hour12}:${minsStr}&nbsp;${xm}`
 }

@@ -29,7 +29,13 @@ export async function clearFetchAndShowSemester(sid: string){
         )
 
         const courseBoxContainingSections = makeCourseElement(course)
-        courseListDiv.appendChild(courseBoxContainingSections)
+    
+        courseListDiv.appendChild(courseBoxContainingSections.courseBox)
+        populateCourseData(
+            courseBoxContainingSections.sectionsTable,
+            course,
+            sectionsOfCourse
+        )
         // if (i++ > 10) break;
     }
    

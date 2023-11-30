@@ -38,7 +38,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
-            "url": "http://localhost:3000/anabelle.html",
+            "url": "http://localhost:3000/",
             "webRoot": "${workspaceFolder}",
             "runtimeExecutable": "/usr/bin/chromium-browser"
         }
