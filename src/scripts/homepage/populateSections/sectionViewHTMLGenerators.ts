@@ -27,9 +27,21 @@ export function makeCourseElement(course: course) {
     )
     sectionsDiv.appendChild(sectionsTable)
 
+
+    const link = document.createElement('a') as HTMLAnchorElement;
+    link.href = `/classDetail?sid=${course.sid}&courseAbb=${course.courseAbb}`
+    link.classList.add('button','btn')
+    link.innerText='View All Sections'
+    link.style.display = 'inline-block'
+    
     courseBox.appendChild(collapseToggle)
     courseBox.appendChild(collapseToggleLabel)
+    courseBox.appendChild(link)
     courseBox.appendChild(sectionsDiv)
+
+
+
+
     return {
         courseBox,
         sectionsTable
