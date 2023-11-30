@@ -1,26 +1,36 @@
-import type { section, semester, simpleCourse } from '../../../database/sectionTypes'
-import { makeCourseElement } from './sectionViewHTMLGenerators';
+import type { course, section, semester} from '../../../database/sectionTypes'
+import { makeCourseElement, populateCourseData } from './sectionViewHTMLGenerators';
 
-export const semesters = {} as { [x: string]: section[] }
+export const db = {} as { 
+    [x: string]: {//sid
+        courses: course[]
+        sections: section[]
+    }
+}
 
 export async function clearFetchAndShowSemester(sid: string){
-    document.getElementById('Courses').innerHTML = `
+    const courseListDiv = document.getElementById('Courses')
+    
+    courseListDiv.innerHTML = `
         <h2>Courses</h2>
         <p>Loading...</p>
     `
-    if(!(sid in semesters))
+
+    if(!(sid in db)) //in is good here becaseu db has semester asa key not value
         await fetchSemester(sid);
+    const {sections,courses} = db[sid]
 
-    const sections = semesters[sid]
+    courseListDiv.innerHTML = `<h2>Courses</h2>`
 
-    const courses = new Set(sections.map(section=>({
-        sid,
-        courseAbb: section.courseAbb,
-        courseName: section.courseName
-    })))
-
+    let i = 0;
     for (const course of courses) {
-        const courseBox = makeCourseElement(course)
+        const sectionsOfCourse = sections.filter(
+            sec => sec.courseAbb == course.courseAbb
+        )
+
+        const courseBoxContainingSections = makeCourseElement(course)
+        courseListDiv.appendChild(courseBoxContainingSections)
+        // if (i++ > 10) break;
     }
    
 }
@@ -38,15 +48,13 @@ async function fetchSemester(sid: string){
     }
 
     const sectionsResponse = await fetch(`/api/sections/${sid}`)
+    const coursesResponse = await fetch(`/api/courses/${sid}`)
     
     const sections = await sectionsResponse.json() as section[]
+    const courses = await coursesResponse.json() as course[]
 
-    semesters[sid] = sections
-
-    sections[0]
-
-    const courses = new Set(sections.map((section: section)=>({
-        courseAbb: section.courseAbb,
-        courseName: section.courseName,
-    })))
+    db[sid] = {
+        sections,
+        courses,
+    }
 }

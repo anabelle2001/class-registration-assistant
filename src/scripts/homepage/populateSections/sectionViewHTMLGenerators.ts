@@ -1,24 +1,25 @@
-import type { simpleCourse } from "../../../database/sectionTypes";
+import type { course } from "../../../database/sectionTypes";
 
-export function makeCourseElement(course: simpleCourse) {
-    const courseBox = new HTMLDivElement()
+export function makeCourseElement(course: course) {
+    const courseBox = document.createElement('div') as HTMLDivElement
     courseBox.classList.add('course')
     courseBox.setAttribute('courseAbb', course.courseAbb)
 
-    const collapseToggle = new HTMLInputElement();
+    const collapseToggle = document.createElement('input') as HTMLInputElement;
     collapseToggle.setAttribute('type', 'checkbox');
     collapseToggle.id = `sections-${course.courseAbb}`
 
-    const collapseToggleLabel = new HTMLLabelElement();
-    collapseToggle.innerHTML =
+    const collapseToggleLabel = document.createElement('label') as HTMLLabelElement;
+    collapseToggleLabel.innerHTML =
         `${course.courseName} (${course.courseAbb})` +
         `<i class="bi bi-chevron-down"></i>`
-    collapseToggle.setAttribute('for', collapseToggle.id)
+    collapseToggleLabel.setAttribute('for', collapseToggle.id)
+    collapseToggleLabel.classList.add('h4')
 
-    const sectionsDiv = new HTMLDivElement()
+    const sectionsDiv = document.createElement('div') as HTMLDivElement
     sectionsDiv.classList.add('tableBox')
 
-    const sectionsTable = new HTMLTableElement();
+    const sectionsTable = document.createElement('table') as HTMLTableElement;
     sectionsTable.classList.add(
         'table',
         'table-bordered',
@@ -26,17 +27,16 @@ export function makeCourseElement(course: simpleCourse) {
     )
     sectionsDiv.appendChild(sectionsTable)
 
-    populateCourseData(sectionsTable, course)
-
     courseBox.appendChild(collapseToggle)
     courseBox.appendChild(collapseToggleLabel)
-
+    courseBox.appendChild(sectionsDiv)
     return courseBox
 }
 
 export function populateCourseData(
     table: HTMLTableElement,
-    course: simpleCourse
+    course: course,
+    sectionsOfCourse: section
 ) {
-
+    
 }

@@ -1,14 +1,13 @@
 import type { section, semester } from "../../../database/sectionTypes";
 
-
 export const semesterSelectButton = 
     document.getElementById('semesterSelect') as HTMLSelectElement;
 
-export let semesterList: semester[];
+export let semesterList;
 
 async function getSemesterList(){
     semesterSelectButton.innerHTML="<option>Loading...</option>"
-    let response = await fetch('/api/semesters/');
+    const response = await fetch('/api/semesters/');
     semesterList = await response.json() as semester[]
 
     Object.seal(semesterList);

@@ -12,6 +12,7 @@ import { getSections } from '../scrape/getSections'
 import { getSemestersFromEllucian } from '../scrape/getSemesters'
 import { sleep } from "bun";
 import { inMilliseconds } from "../millisecondDurations";
+import { generateCourseListFromSectionResponse } from "./course";
 
 export class SectionDatabase {    
     SQLiteOBJ: Database;
@@ -80,32 +81,7 @@ export class SectionDatabase {
 
         let data = await fileContents.json() as sectionResponse[];
         this.sectionData[SID] = data.map(translateSection);
-        
-        const thisSemesterCourseData = this.courseData[SID] = []
-
-
-        for (const section of data){
-            const courseAbb = section.subjectCourse
-            if (courseAbb in thisSemesterCourseData) {
-                if(
-                    thisSemesterCourseData[courseAbb].credits
-                    != section.creditHourLow || (
-                        section.creditHourHigh != undefined &&
-                        section.creditHourHigh != section.creditHourLow
-                    ) 
-                ){
-                    thisSemesterCourseData[courseAbb].credits='depends'
-                }
-            } else {
-                thisSemesterCourseData[courseAbb] = {
-                    courseAbb,
-                    courseEquiv:null,
-                    credits: section.creditHourLow,
-                    coursePrereqs: "",
-                    courseName: section.courseTitle,
-                } as course
-            }
-        }
+        this.courseData[SID] = generateCourseListFromSectionResponse(data)
     }
     
 
@@ -141,8 +117,10 @@ export class SectionDatabase {
 
     /**
      * Queries Ellucian to get all classes for a particular semester
+     * 
+     * BROKEN --- using cached value for demo
      */
-    async updateSectionsFromEllucian(SID:string){
+    async updateSemesterFromEllucian(SID:string){
         console.log("updating....")
 
         if (SID == undefined){
@@ -195,7 +173,7 @@ export class SectionDatabase {
         }
 
         this.sectionData[SID] = newSectionList
-
+        // this.courseData[SID] = generateCourseListFromSectionResponse(data)
         //save to json
 
         await Bun.write(
